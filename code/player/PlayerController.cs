@@ -17,7 +17,7 @@ public sealed class PlayerController : Component
 
 	[Sync] public Angles EyeAngles { get; set; }
 	[Sync] public Vector3 WishVelocity { get; set; }
-	[RequireComponent] CharacterController CharacterController { get; }
+	[RequireComponent] CharacterController CharacterController { get; set; }
 
 	public float EyeHeight = 48;
 
@@ -72,7 +72,6 @@ public sealed class PlayerController : Component
 	{
 		if ( CharacterController is null )
 			return;
-
 		var cc = CharacterController;
 
 		float deltaInertia = Time.Delta / GetInertia();

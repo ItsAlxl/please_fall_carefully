@@ -300,12 +300,46 @@
           "UseCollisionRules": false
         },
         {
-          "__type": "Sandbox.SphereCollider",
-          "__guid": "26572cfc-c295-439a-aebd-7b61730dfe66",
-          "Center": "0,0,16",
-          "IsTrigger": true,
-          "Radius": 64,
-          "Static": false
+          "__type": "PlayerController",
+          "__guid": "6d009d26-38c1-4e97-8577-6ab565941b14",
+          "AirInertia": 0.5,
+          "FeelerCount": 16,
+          "FeelerLength": 50,
+          "FlyInertia": 1.5,
+          "FlySpeed": 3750,
+          "FlyTime": 0.75,
+          "GroundInertia": 0.1,
+          "MaxFallSpeed": -3000,
+          "RunSpeed": 150
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "4ba717cb-87fe-495d-af56-c225be61f07d",
+          "Flags": 0,
+          "Name": "Feeler",
+          "Position": "0,0,16",
+          "Scale": "1,1,0.25",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.HullCollider",
+              "__guid": "d82fea2a-6ebb-4d4f-bdcd-d956b9ae9847",
+              "BoxSize": "50,50,50",
+              "Center": "0,0,0",
+              "Height": 64,
+              "IsTrigger": true,
+              "Radius": 80,
+              "Radius2": 0,
+              "Slices": 16,
+              "Static": false,
+              "Type": "Cylinder"
+            },
+            {
+              "__type": "Feeler",
+              "__guid": "80d6f604-5daa-4479-8ba6-b681fdc286cc"
+            }
+          ]
         }
       ]
     },
