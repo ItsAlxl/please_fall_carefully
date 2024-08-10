@@ -1,9 +1,7 @@
-using System;
-
 [Group( "CareFall" )]
-[Title( "Faller Controller" )]
+[Title( "Player" )]
 [Icon( "paragliding" )]
-public sealed class PlayerController : Component
+public sealed class Player : Component
 {
 	[Property] public float RunSpeed { get; set; } = 150.0f;
 	[Property] public float FlySpeed { get; set; } = 3750.0f;
@@ -12,20 +10,30 @@ public sealed class PlayerController : Component
 	[Property] public float FlyInertia { get; set; } = 1.5f;
 	[Property] public float MaxFallSpeed { get; set; } = -3000.0f;
 	[Property] public float FlyTime { get; set; } = 0.75f;
-	[Property] public int FeelerCount { get; set; } = 16;
-	[Property] public float FeelerLength { get; set; } = 50.0f;
 
 	[Sync] public Angles EyeAngles { get; set; }
 	[Sync] public Vector3 WishVelocity { get; set; }
 	[RequireComponent] CharacterController CharacterController { get; set; }
 
+	public float Speed = 0.0f;
+
 	public float EyeHeight = 48;
+
+	protected override void OnAwake()
+	{
+		PFC.Game.ScoreBumps = 0;
+		PFC.Game.ScoreScrapes = 0.0f;
+	}
 
 	protected override void OnUpdate()
 	{
 		if ( !IsProxy )
 		{
-			MouseInput();
+			var e = EyeAngles + Input.AnalogLook;
+			e.pitch = e.pitch.Clamp( -90, 90 );
+			e.roll = 0.0f;
+			EyeAngles = e;
+
 			Transform.Rotation = new Angles( 0, EyeAngles.yaw, 0 );
 		}
 	}
@@ -37,23 +45,6 @@ public sealed class PlayerController : Component
 		MovementInput();
 	}
 
-	private void MouseInput()
-	{
-		var e = EyeAngles;
-		e += Input.AnalogLook;
-		e.pitch = e.pitch.Clamp( -90, 90 );
-		e.roll = 0.0f;
-		EyeAngles = e;
-	}
-
-	float CurrentMoveSpeed
-	{
-		get
-		{
-			return IsFlying() ? FlySpeed : RunSpeed;
-		}
-	}
-
 	RealTimeSince lastGrounded;
 	RealTimeSince lastJump;
 
@@ -63,7 +54,7 @@ public sealed class PlayerController : Component
 		return inertia < 0.09f ? 0.1f : inertia;
 	}
 
-	bool IsFlying()
+	public bool IsFlying()
 	{
 		return lastGrounded > FlyTime;
 	}
@@ -87,7 +78,7 @@ public sealed class PlayerController : Component
 		if ( !WishVelocity.IsNearlyZero() )
 		{
 			WishVelocity = new Angles( 0, EyeAngles.yaw, 0 ).ToRotation() * WishVelocity;
-			WishVelocity = WishVelocity.WithZ( 0 ).ClampLength( 1 ) * CurrentMoveSpeed;
+			WishVelocity = WishVelocity.WithZ( 0 ).ClampLength( 1 ) * (IsFlying() ? FlySpeed : RunSpeed);
 		}
 		WishVelocity = ((WishVelocity - cc.Velocity) * deltaInertia).WithZ( 0 );
 
@@ -106,6 +97,7 @@ public sealed class PlayerController : Component
 		}
 		cc.Velocity += WishVelocity;
 		cc.Move();
+		Speed = cc.Velocity.Length;
 
 		if ( cc.IsOnGround )
 		{
@@ -113,26 +105,22 @@ public sealed class PlayerController : Component
 			lastGrounded = 0;
 		}
 
-		if ( Transform.Position.z < -1000 )
+		if ( Transform.Position.z < -10000 )
 		{
-			CharacterController.MoveTo( Transform.Position.WithZ( 10000 ), false );
+			Transform.Position = Transform.Position.WithZ( 10000 );
 		}
-	}
-
-	private void UpdateCamera()
-	{
-		var camera = Scene.GetAllComponents<CameraComponent>().FirstOrDefault( x => x.IsMainCamera );
-		if ( camera is null ) return;
-
-		camera.Transform.Position = Transform.Position + (Vector3.Up * EyeHeight);
-		camera.Transform.Rotation = EyeAngles;
-		camera.FieldOfView = Preferences.FieldOfView;
 	}
 
 	protected override void OnPreRender()
 	{
 		if ( IsProxy )
 			return;
-		UpdateCamera();
+
+		var camera = Scene.GetAllComponents<CameraComponent>().FirstOrDefault( x => x.IsMainCamera );
+		if ( camera is null ) return;
+
+		camera.Transform.Position = Transform.Position + (Vector3.Up * EyeHeight);
+		camera.Transform.Rotation = EyeAngles;
+		camera.FieldOfView = Preferences.FieldOfView;
 	}
 }

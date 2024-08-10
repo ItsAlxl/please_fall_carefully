@@ -1,0 +1,21 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div class="title">BUMPS @(GetBumps())</div>
+	<div class="title" style="bottom: 128px;">SCRAPES @(GetScrapes())</div>
+</root>
+
+@code
+{
+	public int GetBumps() {
+		return PFC.Game.ScoreBumps;
+	}
+
+	public int GetScrapes() {
+		return (int)PFC.Game.ScoreScrapes;
+	}
+
+	protected override int BuildHash() => System.HashCode.Combine( GetBumps(), GetScrapes() );
+}
