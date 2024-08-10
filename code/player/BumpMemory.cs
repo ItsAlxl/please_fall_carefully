@@ -27,19 +27,18 @@ public sealed class BumpMemory : Component
 		private Color GetTintedColor( float r, float g, float b )
 		{
 			return new Color(
-				original.r + (r - original.r) * TINT_STR,
-				original.g + (g - original.g) * TINT_STR,
-				original.b + (b - original.b) * TINT_STR
+				original.r + ((r - original.r) * TINT_STR),
+				original.g + ((g - original.g) * TINT_STR),
+				original.b + ((b - original.b) * TINT_STR)
 			);
 		}
 	}
 
-	private Dictionary<ModelRenderer, BMData> data = new( 1 );
+	private readonly Dictionary<ModelRenderer, BMData> data = new( 1 );
 
 	protected override void OnAwake()
 	{
-		var ms = GameObject.Components.GetAll<ModelRenderer>();
-		foreach ( var m in ms )
+		foreach ( var m in GameObject.Components.GetAll<ModelRenderer>() )
 		{
 			data[m] = new BMData( m.Tint );
 		}

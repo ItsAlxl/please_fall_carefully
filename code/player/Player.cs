@@ -1,7 +1,7 @@
 using System;
 
 [Group( "CareFall" )]
-[Title( "Player" )]
+[Title( "Flyer" )]
 [Icon( "paragliding" )]
 public sealed class Player : Component, Component.ITriggerListener
 {
