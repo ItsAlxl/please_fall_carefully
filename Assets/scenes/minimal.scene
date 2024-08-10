@@ -22,8 +22,8 @@
           "RenderTags": "",
           "TargetEye": "None",
           "Viewport": "0,0,1,1",
-          "ZFar": 10000,
-          "ZNear": 10
+          "ZFar": 50000,
+          "ZNear": 20
         },
         {
           "__type": "Sandbox.Bloom",
