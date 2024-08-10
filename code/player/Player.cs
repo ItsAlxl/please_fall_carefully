@@ -1,7 +1,9 @@
+using System;
+
 [Group( "CareFall" )]
 [Title( "Player" )]
 [Icon( "paragliding" )]
-public sealed class Player : Component
+public sealed class Player : Component, Component.ITriggerListener
 {
 	[Property] public float RunSpeed { get; set; } = 150.0f;
 	[Property] public float FlySpeed { get; set; } = 3750.0f;
@@ -9,7 +11,7 @@ public sealed class Player : Component
 	[Property] public float AirInertia { get; set; } = 0.5f;
 	[Property] public float FlyInertia { get; set; } = 1.5f;
 	[Property] public float MaxFallSpeed { get; set; } = -3000.0f;
-	[Property] public float FlyTime { get; set; } = 0.75f;
+	[Property] public float FlyTime { get; set; } = 1.0f;
 
 	[Sync] public Angles EyeAngles { get; set; }
 	[Sync] public Vector3 WishVelocity { get; set; }
@@ -19,10 +21,53 @@ public sealed class Player : Component
 
 	public float EyeHeight = 48;
 
+	private int scrapeCount = 0;
+
+	private void TeleportTo(Vector3 to) {
+		Transform.Position = to;
+		Transform.ClearInterpolation();
+	}
+
 	protected override void OnAwake()
 	{
 		PFC.Game.ScoreBumps = 0;
 		PFC.Game.ScoreScrapes = 0.0f;
+	}
+
+	void ITriggerListener.OnTriggerEnter( Collider other )
+	{
+		scrapeCount++;
+		if ( IsFlying() )
+		{
+			var go = other.GameObject;
+			var tags = go.Tags;
+			BumpMemory bumpMem;
+			if ( tags.Has( "pfc-bumped" ) )
+			{
+				bumpMem = go.Components.Get<BumpMemory>();
+			}
+			else
+			{
+				bumpMem = go.Components.Create<BumpMemory>();
+				PFC.Game.ScoreBumps++;
+			}
+			bumpMem.StartScrape();
+		}
+	}
+
+	void ITriggerListener.OnTriggerExit( Collider other )
+	{
+		scrapeCount--;
+
+		if ( other.GameObject.Tags.Has( "pfc-bumped" ) )
+		{
+			other.GameObject.Components.Get<BumpMemory>().EndScrape();
+		}
+	}
+
+	public bool IsScraping()
+	{
+		return scrapeCount > 0;
 	}
 
 	protected override void OnUpdate()
@@ -43,6 +88,10 @@ public sealed class Player : Component
 		if ( IsProxy )
 			return;
 		MovementInput();
+		if ( IsScraping() && IsFlying() )
+		{
+			PFC.Game.ScoreScrapes += Time.Delta * (float)Math.Pow( Speed, 1.5 ) * 0.0001f;
+		}
 	}
 
 	RealTimeSince lastGrounded;
@@ -107,7 +156,7 @@ public sealed class Player : Component
 
 		if ( Transform.Position.z < -10000 )
 		{
-			Transform.Position = Transform.Position.WithZ( 10000 );
+			TeleportTo(Transform.Position.WithZ( 10000 ));
 		}
 	}
 

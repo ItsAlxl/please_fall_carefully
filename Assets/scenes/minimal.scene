@@ -1,5 +1,5 @@
 {
-  "__guid": "c04b70ed-82e8-437d-890e-873d77dbc050",
+  "__guid": "497f4257-bd06-4d76-8132-f248a982cc8a",
   "GameObjects": [
     {
       "__guid": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
@@ -394,6 +394,7 @@
       "Position": "-86.5872,18.02847,10555.56",
       "Enabled": true,
       "NetworkMode": 1,
+      "NetworkInterpolation": false,
       "Components": [
         {
           "__type": "Sandbox.CharacterController",
@@ -408,6 +409,19 @@
           "UseCollisionRules": false
         },
         {
+          "__type": "Sandbox.HullCollider",
+          "__guid": "66be9cea-8206-4988-96a3-1f958fddf707",
+          "BoxSize": "50,50,50",
+          "Center": "0,0,16",
+          "Height": 50,
+          "IsTrigger": true,
+          "Radius": 200,
+          "Radius2": 0,
+          "Slices": 16,
+          "Static": false,
+          "Type": "Cylinder"
+        },
+        {
           "__type": "Player",
           "__guid": "3324243c-7be0-4e2f-a58b-acb85a63148d",
           "AirInertia": 0.5,
@@ -417,31 +431,6 @@
           "GroundInertia": 0.1,
           "MaxFallSpeed": -3000,
           "RunSpeed": 150
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "4ba717cb-87fe-495d-af56-c225be61f07d",
-          "Flags": 0,
-          "Name": "Feeler",
-          "Position": "0,0,16",
-          "Scale": "1,1,0.25",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.HullCollider",
-              "__guid": "d82fea2a-6ebb-4d4f-bdcd-d956b9ae9847",
-              "BoxSize": "50,50,50",
-              "Center": "0,0,0",
-              "Height": 200,
-              "IsTrigger": true,
-              "Radius": 200,
-              "Radius2": 0,
-              "Slices": 16,
-              "Static": false,
-              "Type": "Cylinder"
-            }
-          ]
         }
       ]
     },
@@ -465,7 +454,7 @@
         {
           "__guid": "40dcda0a-1d0d-4bba-a9b7-5453bbb10c29",
           "Flags": 0,
-          "Name": "Object",
+          "Name": "HUD",
           "Position": "0,0,0",
           "Enabled": true,
           "Components": [
