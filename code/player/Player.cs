@@ -28,7 +28,7 @@ public sealed class Player : Component, Component.ITriggerListener
 	public int ScoreBumps = 0;
 	public float ScoreScrapes = 0.0f;
 
-	private Mixer mixerScore = Mixer.FindMixerByName( "Scoring" );
+	private readonly Mixer mixerScore = Mixer.FindMixerByName( "Scoring" );
 	private SoundHandle scrapeSound = null;
 
 	private RealTimeSince lastGrounded;

@@ -17,11 +17,22 @@
 	</div>
 	<div class="hud-dead @(IsAlive() ? "hidden" : "")">
 		<label class="rip">YOU HAVE PERISHED</label>
+		<div class="score-tally">
+
+			<label class="score-label">SCRAPES: @(GetScrapes())</label>
+			<label class="score-label">BUMPS (x25): @(GetBumps())</label>
+			<label class="score-label">---</label>
+			<label class="score-label">FINAL SCORE: @(25 * GetBumps() + GetScrapes())</label>
+			<label class="score-label"></label>
+			<label class="score-label">PRESS '@(restartAct?.KeyboardCode.ToUpper())' TO RESTART</label>
+		</div>
 	</div>
 </root>
 
 @code
 {
+	private InputAction restartAct = Input.GetActions().FirstOrDefault( x => x.Name == "restart" );
+
 	public int GetBumps()
 	{
 		return CareFall.Game.plr?.ScoreBumps ?? 0;

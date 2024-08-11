@@ -39,6 +39,12 @@ HUD {
 		margin-bottom: -10px;
 	}
 
+	.score-tally {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
 	.rip {
 		font-size: 128px;
 	}
