@@ -10,7 +10,7 @@
         {
           "__type": "Sandbox.CameraComponent",
           "__guid": "cf3cbf96-22b6-4be4-a5d0-672a96c17f9f",
-          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "BackgroundColor": "0.50233,0.50233,0.50233,1",
           "ClearFlags": "All",
           "FieldOfView": 60,
           "IsMainCamera": true,
@@ -65,12 +65,6 @@
           "Intensity": 8,
           "Quality": "High",
           "Radius": 32
-        },
-        {
-          "__type": "Sandbox.AmbientLight",
-          "__guid": "e35567f7-31e6-47cc-8be1-796f8a303acc",
-          "__enabled": false,
-          "Color": "0.5,0.5,0.5,1"
         }
       ],
       "Children": [
@@ -121,7 +115,7 @@
           "Components": [
             {
               "__type": "HUD",
-              "__guid": "228dbf02-e348-42e7-a8a4-8ffc126dd881"
+              "__guid": "f16c527e-ddd5-406f-8dda-3342a82d0dc2"
             }
           ]
         }
@@ -131,7 +125,6 @@
       "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
       "Flags": 0,
       "Name": "SunA",
-      "Position": "0,0,50000",
       "Rotation": "-0.09010279,0.4613887,0.1691659,0.8662476",
       "Tags": "light_directional,light",
       "Enabled": true,
@@ -151,7 +144,6 @@
       "__guid": "91ecd172-0c48-4a7c-bbcd-ab6ab1a52cc1",
       "Flags": 0,
       "Name": "SunB",
-      "Position": "0,0,50000",
       "Rotation": "0.4653862,0.3097869,-0.6901955,0.4594323",
       "Tags": "light_directional,light",
       "Enabled": true,
@@ -660,7 +652,7 @@
           "__guid": "755b9607-ab17-4369-a3c2-e8ecb487ce0a",
           "Flags": 0,
           "Name": "Cube (5)",
-          "Position": "-512.6539,3241.251,-100689.6",
+          "Position": "16218.66,11826.74,-100689.6",
           "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
           "Scale": "20,20,222.2999",
           "Enabled": true,

@@ -19,10 +19,9 @@
 		<label class="rip">YOU HAVE PERISHED</label>
 		<div class="score-tally">
 
-			<label class="score-label">SCRAPES: @(GetScrapes())</label>
-			<label class="score-label">BUMPS (x25): @(GetBumps())</label>
-			<label class="score-label">---</label>
-			<label class="score-label">FINAL SCORE: @(25 * GetBumps() + GetScrapes())</label>
+			<label class="score-label">SCRAPES: @(GetScrapes()) x1</label>
+			<label class="score-label">BUMPS: @(GetBumps()) x@(CareFall.BUMP_SCORE_AMT)</label>
+			<label class="score-label">FINAL SCORE: @(CareFall.BUMP_SCORE_AMT * GetBumps() + GetScrapes())</label>
 			<label class="score-label"></label>
 			<label class="score-label">PRESS '@(restartAct?.KeyboardCode.ToUpper())' TO RESTART</label>
 		</div>
