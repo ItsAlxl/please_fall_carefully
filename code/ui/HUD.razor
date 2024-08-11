@@ -3,7 +3,7 @@
 @inherits PanelComponent
 
 <root>
-	<div id="hud-alive" class="view @(IsDead() ? "hidden" : "")">
+	<div class="hud-alive @(IsAlive() ? "" : "hidden")">
 		<div class="score-container">
 			<div class="score-box" style="text-align: right;">
 				<label class="score-label">BUMPS</label>
@@ -15,8 +15,8 @@
 			</div>
 		</div>
 	</div>
-	<div id="hud-dead" class="view @(IsDead() ? "" : "hidden")">
-		<div class="rip">YOU HAVE PERISHED</div>
+	<div class="hud-dead @(IsAlive() ? "hidden" : "")">
+		<label class="rip">YOU HAVE PERISHED</label>
 	</div>
 </root>
 
@@ -32,10 +32,10 @@
 		return (int)(PFC.Game.plr?.ScoreScrapes ?? 0);
 	}
 
-	public bool IsDead()
+	public bool IsAlive()
 	{
-		return false;
+		return PFC.Game.plr?.Alive ?? false;
 	}
 
-	protected override int BuildHash() => System.HashCode.Combine(GetBumps(), GetScrapes(), IsDead());
+	protected override int BuildHash() => System.HashCode.Combine(GetBumps(), GetScrapes(), IsAlive());
 }

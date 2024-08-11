@@ -1,4 +1,5 @@
 using System;
+using Sandbox.Audio;
 
 [Group( "CareFall" )]
 [Title( "Flyer" )]
@@ -12,6 +13,7 @@ public sealed class Player : Component, Component.ITriggerListener
 	[Property] public float FlyInertia { get; set; } = 1.5f;
 	[Property] public float MaxFallSpeed { get; set; } = -3000.0f;
 	[Property] public float FlyTime { get; set; } = 1.0f;
+	[Property] public float LethalDeccelSq { get; set; } = 1750000.0f;
 
 	[Sync] public Angles EyeAngles { get; set; }
 	[Sync] public Vector3 WishVelocity { get; set; }
@@ -20,12 +22,17 @@ public sealed class Player : Component, Component.ITriggerListener
 	public float EyeHeight = 48;
 
 	public float Speed = 0.0f;
+	public bool Alive = true;
 
 	private int scrapeCount = 0;
 	public int ScoreBumps = 0;
 	public float ScoreScrapes = 0.0f;
 
+	private Mixer mixerScore = Mixer.FindMixerByName( "Scoring" );
 	private SoundHandle scrapeSound = null;
+
+	private RealTimeSince lastGrounded;
+	private RealTimeSince lastJump;
 
 	private void TeleportTo( Vector3 to )
 	{
@@ -40,39 +47,47 @@ public sealed class Player : Component, Component.ITriggerListener
 
 	void ITriggerListener.OnTriggerEnter( Collider other )
 	{
-		scrapeCount++;
-		if ( IsFlying() )
+		var go = other.GameObject;
+		var tags = go.Tags;
+		if ( !tags.Has( "pfc-ignore" ) )
 		{
-			var go = other.GameObject;
-			var tags = go.Tags;
-			BumpMemory bumpMem;
-			if ( tags.Has( "pfc-bumped" ) )
+			scrapeCount++;
+			if ( IsFlying() )
 			{
-				bumpMem = go.Components.Get<BumpMemory>();
+				BumpMemory bumpMem;
+				if ( tags.Has( "pfc-bumped" ) )
+				{
+					bumpMem = go.Components.Get<BumpMemory>();
+				}
+				else
+				{
+					bumpMem = go.Components.Create<BumpMemory>();
+					ScoreBumps++;
+					Sound.Play( "score_bump", mixerScore );
+				}
+				bumpMem.StartScrape();
 			}
-			else
-			{
-				bumpMem = go.Components.Create<BumpMemory>();
-				ScoreBumps++;
-				Sound.Play("score_bump");
-			}
-			bumpMem.StartScrape();
 		}
 	}
 
 	void ITriggerListener.OnTriggerExit( Collider other )
 	{
-		scrapeCount--;
-
-		if ( other.GameObject.Tags.Has( "pfc-bumped" ) )
+		var go = other.GameObject;
+		var tags = go.Tags;
+		if ( !tags.Has( "pfc-ignore" ) )
 		{
-			other.GameObject.Components.Get<BumpMemory>().EndScrape();
+			scrapeCount--;
+
+			if ( tags.Has( "pfc-bumped" ) )
+			{
+				go.Components.Get<BumpMemory>().EndScrape();
+			}
 		}
 	}
 
 	public bool IsScraping()
 	{
-		return scrapeCount > 0 && IsFlying();
+		return Alive && scrapeCount > 0 && IsFlying();
 	}
 
 	protected override void OnUpdate()
@@ -98,18 +113,15 @@ public sealed class Player : Component, Component.ITriggerListener
 			if ( scrapeSound?.IsStopped != false )
 			{
 				scrapeSound?.Dispose();
-				scrapeSound = Sound.Play( "score_scrape" );
+				scrapeSound = Sound.Play( "score_scrape", mixerScore );
 			}
 			ScoreScrapes += Time.Delta * (float)Math.Pow( Speed, 1.5 ) * 0.0001f;
 		}
 		else
 		{
-			scrapeSound.Stop();
+			scrapeSound?.Stop();
 		}
 	}
-
-	RealTimeSince lastGrounded;
-	RealTimeSince lastJump;
 
 	float GetInertia()
 	{
@@ -122,6 +134,19 @@ public sealed class Player : Component, Component.ITriggerListener
 		return lastGrounded > FlyTime;
 	}
 
+	private void Respawn()
+	{
+		TeleportTo( Scene.Directory.FindByName( "PlrStart" ).FirstOrDefault().Transform.Position );
+		CharacterController.Velocity = 0.0f;
+		foreach ( var mem in Scene.GetAllComponents<BumpMemory>() )
+		{
+			mem.MakeUnbumped();
+		}
+		ScoreBumps = 0;
+		ScoreScrapes = 0.0f;
+		Alive = true;
+	}
+
 	private void MovementInput()
 	{
 		if ( CharacterController is null )
@@ -130,7 +155,13 @@ public sealed class Player : Component, Component.ITriggerListener
 
 		float deltaInertia = Time.Delta / GetInertia();
 
-		WishVelocity = Input.AnalogMove;
+		WishVelocity = Alive ? Input.AnalogMove : Vector3.Zero;
+
+		if ( Input.Pressed( "restart" ) )
+		{
+			Respawn();
+			return;
+		}
 
 		if ( lastGrounded < 0.2f && lastJump > 0.3f && Input.Pressed( "jump" ) )
 		{
@@ -158,8 +189,14 @@ public sealed class Player : Component, Component.ITriggerListener
 				cc.Velocity = cc.Velocity.WithZ( MaxFallSpeed );
 			}
 		}
+
 		cc.Velocity += WishVelocity;
+		Vector3 prevVel = cc.Velocity;
 		cc.Move();
+		if ( prevVel.DistanceSquared( cc.Velocity ) >= LethalDeccelSq )
+		{
+			Alive = false;
+		}
 		Speed = cc.Velocity.Length;
 
 		if ( cc.IsOnGround )
