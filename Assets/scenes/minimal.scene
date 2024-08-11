@@ -395,14 +395,14 @@
       "__guid": "b09de5ab-a03e-449a-9041-5778e4870459",
       "Flags": 0,
       "Name": "PlrStart",
-      "Position": "-86.5872,18.02847,10536.59",
+      "Position": "-86.5872,219.5906,10536.59",
       "Enabled": true
     },
     {
       "__guid": "30164a84-1f06-4077-b407-ec7b38310a1f",
       "Flags": 0,
       "Name": "Player",
-      "Position": "-86.5872,18.02847,10536.59",
+      "Position": "-86.5872,219.5906,10536.59",
       "Enabled": true,
       "NetworkMode": 1,
       "NetworkInterpolation": false,
@@ -436,11 +436,12 @@
           "__type": "Player",
           "__guid": "3324243c-7be0-4e2f-a58b-acb85a63148d",
           "AirInertia": 0.5,
+          "FlyBounciness": 0.65,
           "FlyInertia": 1.5,
           "FlySpeed": 3750,
-          "FlyTime": 0.75,
+          "FlyTime": 1,
           "GroundInertia": 0.1,
-          "LethalDeccelSq": 1750000,
+          "LethalDeccelSq": 5000000,
           "MaxFallSpeed": -3000,
           "RunSpeed": 150
         }

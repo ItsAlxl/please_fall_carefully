@@ -11,16 +11,19 @@ public sealed class Player : Component, Component.ITriggerListener
 	[Property] public float GroundInertia { get; set; } = 0.1f;
 	[Property] public float AirInertia { get; set; } = 0.5f;
 	[Property] public float FlyInertia { get; set; } = 1.5f;
+	[Property] public float FlyBounciness { get; set; } = 1.5f;
 	[Property] public float MaxFallSpeed { get; set; } = -3000.0f;
 	[Property] public float FlyTime { get; set; } = 1.0f;
-	[Property] public float LethalDeccelSq { get; set; } = 1750000.0f;
+	[Property] public float LethalDeccelSq { get; set; } = 5000000.0f;
 
 	[Sync] public Angles EyeAngles { get; set; }
 	[Sync] public Vector3 WishVelocity { get; set; }
 	[RequireComponent] CharacterController CharacterController { get; set; }
 
 	public float EyeHeight = 48;
+	private float RunBounciness = 0.0f;
 
+	public bool Flying = false;
 	public float Speed = 0.0f;
 	public bool Alive = true;
 
@@ -43,6 +46,7 @@ public sealed class Player : Component, Component.ITriggerListener
 	protected override void OnAwake()
 	{
 		CareFall.Game.plr = this;
+		RunBounciness = CharacterController.Bounciness;
 	}
 
 	void ITriggerListener.OnTriggerEnter( Collider other )
@@ -52,7 +56,7 @@ public sealed class Player : Component, Component.ITriggerListener
 		if ( !tags.Has( "pfc-ignore" ) )
 		{
 			scrapeCount++;
-			if ( IsFlying() )
+			if ( Flying )
 			{
 				BumpMemory bumpMem;
 				if ( tags.Has( "pfc-bumped" ) )
@@ -87,7 +91,7 @@ public sealed class Player : Component, Component.ITriggerListener
 
 	public bool IsScraping()
 	{
-		return Alive && scrapeCount > 0 && IsFlying();
+		return Alive && Flying && scrapeCount > 0;
 	}
 
 	protected override void OnUpdate()
@@ -125,13 +129,8 @@ public sealed class Player : Component, Component.ITriggerListener
 
 	float GetInertia()
 	{
-		float inertia = IsFlying() ? FlyInertia : (CharacterController.IsOnGround ? GroundInertia : AirInertia);
+		float inertia = Flying ? FlyInertia : (CharacterController.IsOnGround ? GroundInertia : AirInertia);
 		return inertia < 0.09f ? 0.1f : inertia;
-	}
-
-	public bool IsFlying()
-	{
-		return lastGrounded > FlyTime;
 	}
 
 	private void Respawn()
@@ -172,7 +171,7 @@ public sealed class Player : Component, Component.ITriggerListener
 		if ( !WishVelocity.IsNearlyZero() )
 		{
 			WishVelocity = new Angles( 0, EyeAngles.yaw, 0 ).ToRotation() * WishVelocity;
-			WishVelocity = WishVelocity.WithZ( 0 ).ClampLength( 1 ) * (IsFlying() ? FlySpeed : RunSpeed);
+			WishVelocity = WishVelocity.WithZ( 0 ).ClampLength( 1 ) * (Flying ? FlySpeed : RunSpeed);
 		}
 		WishVelocity = ((WishVelocity - cc.Velocity) * deltaInertia).WithZ( 0 );
 
@@ -201,8 +200,15 @@ public sealed class Player : Component, Component.ITriggerListener
 
 		if ( cc.IsOnGround )
 		{
-			cc.Velocity = cc.Velocity.WithZ( 0 );
 			lastGrounded = 0;
+			cc.Velocity = cc.Velocity.WithZ( 0 );
+			cc.Bounciness = RunBounciness;
+			Flying = false;
+		}
+		else if ( !Flying && lastGrounded > FlyTime )
+		{
+			cc.Bounciness = FlyBounciness;
+			Flying = true;
 		}
 
 		if ( Transform.Position.z < -10000 )
