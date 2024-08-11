@@ -123,7 +123,7 @@ public sealed class Player : Component, Component.ITriggerListener
 				scrapeSound?.Dispose();
 				scrapeSound = Sound.Play( "score_scrape", mixerScore );
 			}
-			ScoreScrapes += Time.Delta * (float)Math.Pow( Speed, 1.5 ) * 0.0001f;
+			ScoreScrapes += Time.Delta * (float)Math.Pow( Speed, 1.5 ) * 0.00015f;
 		}
 		else
 		{
@@ -223,15 +223,18 @@ public sealed class Player : Component, Component.ITriggerListener
 			Alive = false;
 		}
 
-		if ( cc.IsOnGround )
+		if ( !Flying || !Alive )
 		{
-			lastGrounded = 0;
-			cc.Velocity = cc.Velocity.WithZ( 0 );
-			EndFlight();
-		}
-		else if ( !Flying && lastGrounded > FlyTime )
-		{
-			BeginFlight();
+			if ( cc.IsOnGround )
+			{
+				lastGrounded = 0;
+				cc.Velocity = cc.Velocity.WithZ( 0 );
+				EndFlight();
+			}
+			else if ( lastGrounded > FlyTime )
+			{
+				BeginFlight();
+			}
 		}
 
 		if ( Transform.Position.z < -VerticalBound )

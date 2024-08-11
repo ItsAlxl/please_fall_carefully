@@ -5,6 +5,7 @@ HUD {
 	font-weight: bold;
 	font-family: Poppins;
 	color: #fff;
+	text-shadow: -3px 3px 0 #000;
 
 	.hud-alive {
 		width: 100%;
@@ -20,6 +21,7 @@ HUD {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		background-color: #35000080;
 	}
 
 	.score-container {

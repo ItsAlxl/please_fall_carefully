@@ -25,35 +25,6 @@
           "ZNear": 20
         },
         {
-          "__type": "Sandbox.Bloom",
-          "__guid": "d73ef723-c888-41d4-802e-f797c79318be",
-          "BloomColor": {
-            "color": [
-              {
-                "c": "1,1,1,1"
-              },
-              {
-                "t": 1,
-                "c": "1,1,1,1"
-              }
-            ],
-            "alpha": []
-          },
-          "BloomCurve": [
-            {
-              "y": 0.5
-            },
-            {
-              "x": 1,
-              "y": 1
-            }
-          ],
-          "Mode": "Additive",
-          "Strength": 1,
-          "Threshold": 1,
-          "ThresholdWidth": 0.5
-        },
-        {
           "__type": "Sandbox.Sharpen",
           "__guid": "0bffee5e-19f2-41c4-88f9-faefbcce6bf4",
           "Scale": 0.2
@@ -196,7 +167,7 @@
           "__type": "Player",
           "__guid": "3324243c-7be0-4e2f-a58b-acb85a63148d",
           "AirInertia": 0.5,
-          "DVelSqKill": 5000000,
+          "DVelSqKill": 3000000,
           "DVelSqSmack": 100000,
           "FlyBounciness": 0.75,
           "FlyInertia": 1.5,
@@ -621,58 +592,117 @@
           ]
         },
         {
-          "__guid": "481704dc-da77-4419-aa3f-3bbdde953e46",
+          "__guid": "436b86df-39ad-428c-b16e-20d246979502",
           "Flags": 0,
-          "Name": "Cube (4)",
-          "Position": "849.1929,182.5489,-96846.67",
-          "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
-          "Scale": "20,20,20",
+          "Name": "Obstacles",
+          "Position": "0,0,0",
           "Enabled": true,
-          "Components": [
+          "Children": [
             {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "77c16bc4-2807-4315-93c5-4f85d3a798c5",
-              "BodyGroups": 18446744073709551615,
-              "MaterialOverride": "materials/default.vmat",
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
+              "__guid": "481704dc-da77-4419-aa3f-3bbdde953e46",
+              "Flags": 0,
+              "Name": "Cube (4)",
+              "Position": "849.1929,182.5489,-96846.67",
+              "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
+              "Scale": "20,20,20",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "77c16bc4-2807-4315-93c5-4f85d3a798c5",
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": "materials/default.vmat",
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "Sandbox.BoxCollider",
+                  "__guid": "3f797820-9712-4cdb-8e20-24a832cc8529",
+                  "Center": "0,0,0",
+                  "IsTrigger": false,
+                  "Scale": "50,50,50",
+                  "Static": false
+                }
+              ]
             },
             {
-              "__type": "Sandbox.BoxCollider",
-              "__guid": "3f797820-9712-4cdb-8e20-24a832cc8529",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "50,50,50",
-              "Static": false
-            }
-          ]
-        },
-        {
-          "__guid": "755b9607-ab17-4369-a3c2-e8ecb487ce0a",
-          "Flags": 0,
-          "Name": "Cube (5)",
-          "Position": "16218.66,11826.74,-100689.6",
-          "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
-          "Scale": "20,20,222.2999",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "c1232231-48e8-42e5-9743-928ef843b9b9",
-              "BodyGroups": 18446744073709551615,
-              "MaterialOverride": "mobo.vmat",
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
+              "__guid": "755b9607-ab17-4369-a3c2-e8ecb487ce0a",
+              "Flags": 0,
+              "Name": "Cube (5)",
+              "Position": "-31.09076,-773.2916,-112955.7",
+              "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
+              "Scale": "20,20,222.2999",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "c1232231-48e8-42e5-9743-928ef843b9b9",
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": "materials/default.vmat",
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "Sandbox.BoxCollider",
+                  "__guid": "f0068b65-4f9e-4d3b-b60b-e4462b6cde08",
+                  "Center": "0,0,0",
+                  "IsTrigger": false,
+                  "Scale": "50,50,50",
+                  "Static": false
+                }
+              ]
             },
             {
-              "__type": "Sandbox.BoxCollider",
-              "__guid": "f0068b65-4f9e-4d3b-b60b-e4462b6cde08",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "50,50,50",
-              "Static": false
+              "__guid": "46ee2841-4b47-4c35-ac66-4b82f0514fce",
+              "Flags": 0,
+              "Name": "capacitor",
+              "Position": "699.8203,-241.2419,-2500",
+              "Rotation": "0.5,-0.5,-0.5,0.5",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "e9067a31-11e7-4a12-96e0-a1e0d53ae3aa",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/capacitor.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "Sandbox.ModelCollider",
+                  "__guid": "cb8e69cc-8098-4833-bdab-454e89e8c62e",
+                  "IsTrigger": false,
+                  "Model": "models/capacitor.vmdl",
+                  "Static": true
+                }
+              ]
+            },
+            {
+              "__guid": "bc181811-8340-47f1-bb5b-313ff62e24b2",
+              "Flags": 0,
+              "Name": "Cube",
+              "Position": "455.923,0.0003465685,-2162.75",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "624b05cd-71c0-4055-a3a7-a241f6ce726b",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "Sandbox.BoxCollider",
+                  "__guid": "c0fb4335-362a-42e3-9891-416f8df31adc",
+                  "Center": "0,0,0",
+                  "IsTrigger": false,
+                  "Scale": "50,50,50",
+                  "Static": false
+                }
+              ]
             }
           ]
         }
