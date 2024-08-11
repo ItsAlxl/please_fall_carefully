@@ -5,7 +5,7 @@
   "Decibels": 70,
   "SelectionMode": "Random",
   "Sounds": [
-    "sounds/score_scrape.vsnd"
+    "sounds/score/score_scrape.vsnd"
   ],
   "Occlusion": true,
   "AirAbsorption": true,

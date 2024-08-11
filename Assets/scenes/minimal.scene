@@ -436,12 +436,13 @@
           "__type": "Player",
           "__guid": "3324243c-7be0-4e2f-a58b-acb85a63148d",
           "AirInertia": 0.5,
-          "FlyBounciness": 0.65,
+          "dVelSqKill": 6000000,
+          "dVelSqSmack": 100000,
+          "FlyBounciness": 0.75,
           "FlyInertia": 1.5,
           "FlySpeed": 3750,
           "FlyTime": 1,
           "GroundInertia": 0.1,
-          "LethalDeccelSq": 5000000,
           "MaxFallSpeed": -3000,
           "RunSpeed": 150
         }

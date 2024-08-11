@@ -14,7 +14,8 @@ public sealed class Player : Component, Component.ITriggerListener
 	[Property] public float FlyBounciness { get; set; } = 1.5f;
 	[Property] public float MaxFallSpeed { get; set; } = -3000.0f;
 	[Property] public float FlyTime { get; set; } = 1.0f;
-	[Property] public float LethalDeccelSq { get; set; } = 5000000.0f;
+	[Property] public float dVelSqSmack { get; set; } = 100000.0f;
+	[Property] public float dVelSqKill { get; set; } = 5000000.0f;
 
 	[Sync] public Angles EyeAngles { get; set; }
 	[Sync] public Vector3 WishVelocity { get; set; }
@@ -192,11 +193,17 @@ public sealed class Player : Component, Component.ITriggerListener
 		cc.Velocity += WishVelocity;
 		Vector3 prevVel = cc.Velocity;
 		cc.Move();
-		if ( prevVel.DistanceSquared( cc.Velocity ) >= LethalDeccelSq )
+		Speed = cc.Velocity.Length;
+
+		float dVelSq = prevVel.DistanceSquared( cc.Velocity );
+		if ( dVelSq >= dVelSqSmack )
+		{
+			Sound.Play( "smack" );
+		}
+		if ( dVelSq >= dVelSqKill )
 		{
 			Alive = false;
 		}
-		Speed = cc.Velocity.Length;
 
 		if ( cc.IsOnGround )
 		{
