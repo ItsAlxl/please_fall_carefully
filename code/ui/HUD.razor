@@ -3,19 +3,39 @@
 @inherits PanelComponent
 
 <root>
-	<div class="title">BUMPS @(GetBumps())</div>
-	<div class="title" style="bottom: 128px;">SCRAPES @(GetScrapes())</div>
+	<div id="hud-alive" class="view @(IsDead() ? "hidden" : "")">
+		<div class="score-container">
+			<div class="score-box" style="text-align: right;">
+				<label class="score-label">BUMPS</label>
+				<label class="score-number">@(GetBumps())</label>
+			</div>
+			<div class="score-box" style="text-align: left;">
+				<label class="score-label">SCRAPES</label>
+				<label class="score-number">@(GetScrapes())</label>
+			</div>
+		</div>
+	</div>
+	<div id="hud-dead" class="view @(IsDead() ? "" : "hidden")">
+		<div class="rip">YOU HAVE PERISHED</div>
+	</div>
 </root>
 
 @code
 {
-	public int GetBumps() {
-		return PFC.Game.ScoreBumps;
+	public int GetBumps()
+	{
+		return PFC.Game.plr?.ScoreBumps ?? 0;
 	}
 
-	public int GetScrapes() {
-		return (int)PFC.Game.ScoreScrapes;
+	public int GetScrapes()
+	{
+		return (int)(PFC.Game.plr?.ScoreScrapes ?? 0);
 	}
 
-	protected override int BuildHash() => System.HashCode.Combine( GetBumps(), GetScrapes() );
+	public bool IsDead()
+	{
+		return false;
+	}
+
+	protected override int BuildHash() => System.HashCode.Combine(GetBumps(), GetScrapes(), IsDead());
 }

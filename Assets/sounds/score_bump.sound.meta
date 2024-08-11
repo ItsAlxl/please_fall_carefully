@@ -1,0 +1,19 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "score_bump",
+      "Type": "sound",
+      "Org": "local",
+      "Ident": "score_bump",
+      "Schema": 0,
+      "IncludeSourceFiles": true,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "Metadata": {
+        "SingleAssetSource": "sounds/score_bump.sound"
+      }
+    }
+  }
+}

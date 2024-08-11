@@ -8,6 +8,5 @@ public sealed class PFC
 
 	public static PFC Game { get { return lazy.Value; } }
 
-	public int ScoreBumps;
-	public float ScoreScrapes;
+	public Player plr;
 }

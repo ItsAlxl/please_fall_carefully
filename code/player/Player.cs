@@ -17,21 +17,25 @@ public sealed class Player : Component, Component.ITriggerListener
 	[Sync] public Vector3 WishVelocity { get; set; }
 	[RequireComponent] CharacterController CharacterController { get; set; }
 
-	public float Speed = 0.0f;
-
 	public float EyeHeight = 48;
 
-	private int scrapeCount = 0;
+	public float Speed = 0.0f;
 
-	private void TeleportTo(Vector3 to) {
+	private int scrapeCount = 0;
+	public int ScoreBumps = 0;
+	public float ScoreScrapes = 0.0f;
+
+	private SoundHandle scrapeSound = null;
+
+	private void TeleportTo( Vector3 to )
+	{
 		Transform.Position = to;
 		Transform.ClearInterpolation();
 	}
 
 	protected override void OnAwake()
 	{
-		PFC.Game.ScoreBumps = 0;
-		PFC.Game.ScoreScrapes = 0.0f;
+		PFC.Game.plr = this;
 	}
 
 	void ITriggerListener.OnTriggerEnter( Collider other )
@@ -49,7 +53,8 @@ public sealed class Player : Component, Component.ITriggerListener
 			else
 			{
 				bumpMem = go.Components.Create<BumpMemory>();
-				PFC.Game.ScoreBumps++;
+				ScoreBumps++;
+				Sound.Play("score_bump");
 			}
 			bumpMem.StartScrape();
 		}
@@ -67,7 +72,7 @@ public sealed class Player : Component, Component.ITriggerListener
 
 	public bool IsScraping()
 	{
-		return scrapeCount > 0;
+		return scrapeCount > 0 && IsFlying();
 	}
 
 	protected override void OnUpdate()
@@ -88,9 +93,18 @@ public sealed class Player : Component, Component.ITriggerListener
 		if ( IsProxy )
 			return;
 		MovementInput();
-		if ( IsScraping() && IsFlying() )
+		if ( IsScraping() )
 		{
-			PFC.Game.ScoreScrapes += Time.Delta * (float)Math.Pow( Speed, 1.5 ) * 0.0001f;
+			if ( scrapeSound?.IsStopped != false )
+			{
+				scrapeSound?.Dispose();
+				scrapeSound = Sound.Play( "score_scrape" );
+			}
+			ScoreScrapes += Time.Delta * (float)Math.Pow( Speed, 1.5 ) * 0.0001f;
+		}
+		else
+		{
+			scrapeSound.Stop();
 		}
 	}
 
@@ -156,7 +170,7 @@ public sealed class Player : Component, Component.ITriggerListener
 
 		if ( Transform.Position.z < -10000 )
 		{
-			TeleportTo(Transform.Position.WithZ( 10000 ));
+			TeleportTo( Transform.Position.WithZ( 10000 ) );
 		}
 	}
 
