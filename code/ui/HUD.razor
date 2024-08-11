@@ -3,7 +3,7 @@
 @inherits PanelComponent
 
 <root>
-	<div class="hud-alive @(IsAlive() ? "" : "hidden")">
+	<div class="hud-alive @(IsAlive() && IsFlying() ? "" : "hidden")">
 		<div class="score-container">
 			<div class="score-box" style="text-align: right;">
 				<label class="score-label">BUMPS</label>
@@ -48,5 +48,10 @@
 		return CareFall.Game.plr?.Alive ?? false;
 	}
 
-	protected override int BuildHash() => System.HashCode.Combine(GetBumps(), GetScrapes(), IsAlive());
+	public bool IsFlying()
+	{
+		return CareFall.Game.plr?.Flying ?? false;
+	}
+
+	protected override int BuildHash() => System.HashCode.Combine(GetBumps(), GetScrapes(), IsAlive(), IsFlying());
 }

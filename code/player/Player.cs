@@ -16,6 +16,7 @@ public sealed class Player : Component, Component.ITriggerListener
 	[Property] public float FlyTime { get; set; } = 1.0f;
 	[Property] public float DVelSqSmack { get; set; } = 100000.0f;
 	[Property] public float DVelSqKill { get; set; } = 5000000.0f;
+	[Property] public float VerticalBound { get; set; } = 100000.0f;
 
 	[Sync] public Angles EyeAngles { get; set; }
 	[Sync] public Vector3 WishVelocity { get; set; }
@@ -49,6 +50,7 @@ public sealed class Player : Component, Component.ITriggerListener
 	{
 		CareFall.Game.plr = this;
 		RunBounciness = CharacterController.Bounciness;
+		Respawn();
 	}
 
 	void ITriggerListener.OnTriggerEnter( Collider other )
@@ -146,6 +148,8 @@ public sealed class Player : Component, Component.ITriggerListener
 		ScoreBumps = 0;
 		ScoreScrapes = 0.0f;
 		Alive = true;
+		lastGrounded = 0;
+		EyeAngles = Angles.Zero;
 		EndFlight();
 	}
 
@@ -230,9 +234,9 @@ public sealed class Player : Component, Component.ITriggerListener
 			BeginFlight();
 		}
 
-		if ( Transform.Position.z < -10000.0f )
+		if ( Transform.Position.z < -VerticalBound )
 		{
-			TeleportTo( Transform.Position.WithZ( 10000.0f ) );
+			TeleportTo( Transform.Position.WithZ( VerticalBound ) );
 		}
 	}
 
