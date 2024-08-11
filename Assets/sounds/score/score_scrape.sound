@@ -1,17 +1,17 @@
 {
-  "UI": false,
-  "Volume": "1.00,1.00,0",
+  "UI": true,
+  "Volume": "0.25,1.00,0",
   "Pitch": "1.00,1.00,0",
   "Decibels": 70,
-  "SelectionMode": "Random",
+  "SelectionMode": "Forward",
   "Sounds": [
     "sounds/score/score_scrape.vsnd"
   ],
-  "Occlusion": true,
-  "AirAbsorption": true,
-  "Transmission": true,
+  "Occlusion": false,
+  "AirAbsorption": false,
+  "Transmission": false,
   "OcclusionRadius": 64,
-  "DistanceAttenuation": true,
+  "DistanceAttenuation": false,
   "__references": [],
   "__version": 0
 }

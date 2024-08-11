@@ -14,8 +14,8 @@ public sealed class Player : Component, Component.ITriggerListener
 	[Property] public float FlyBounciness { get; set; } = 1.5f;
 	[Property] public float MaxFallSpeed { get; set; } = -3000.0f;
 	[Property] public float FlyTime { get; set; } = 1.0f;
-	[Property] public float dVelSqSmack { get; set; } = 100000.0f;
-	[Property] public float dVelSqKill { get; set; } = 5000000.0f;
+	[Property] public float DVelSqSmack { get; set; } = 100000.0f;
+	[Property] public float DVelSqKill { get; set; } = 5000000.0f;
 
 	[Sync] public Angles EyeAngles { get; set; }
 	[Sync] public Vector3 WishVelocity { get; set; }
@@ -146,6 +146,19 @@ public sealed class Player : Component, Component.ITriggerListener
 		ScoreBumps = 0;
 		ScoreScrapes = 0.0f;
 		Alive = true;
+		EndFlight();
+	}
+
+	private void EndFlight()
+	{
+		CharacterController.Bounciness = RunBounciness;
+		Flying = false;
+	}
+
+	private void BeginFlight()
+	{
+		CharacterController.Bounciness = FlyBounciness;
+		Flying = true;
 	}
 
 	private void MovementInput()
@@ -197,11 +210,11 @@ public sealed class Player : Component, Component.ITriggerListener
 		Speed = cc.Velocity.Length;
 
 		float dVelSq = prevVel.DistanceSquared( cc.Velocity );
-		if ( dVelSq >= dVelSqSmack )
+		if ( dVelSq >= DVelSqSmack )
 		{
 			Sound.Play( "smack", mixerSmack );
 		}
-		if ( dVelSq >= dVelSqKill )
+		if ( Alive && dVelSq >= DVelSqKill )
 		{
 			Alive = false;
 		}
@@ -210,18 +223,16 @@ public sealed class Player : Component, Component.ITriggerListener
 		{
 			lastGrounded = 0;
 			cc.Velocity = cc.Velocity.WithZ( 0 );
-			cc.Bounciness = RunBounciness;
-			Flying = false;
+			EndFlight();
 		}
 		else if ( !Flying && lastGrounded > FlyTime )
 		{
-			cc.Bounciness = FlyBounciness;
-			Flying = true;
+			BeginFlight();
 		}
 
-		if ( Transform.Position.z < -10000 )
+		if ( Transform.Position.z < -10000.0f )
 		{
-			TeleportTo( Transform.Position.WithZ( 10000 ) );
+			TeleportTo( Transform.Position.WithZ( 10000.0f ) );
 		}
 	}
 
