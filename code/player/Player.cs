@@ -33,6 +33,7 @@ public sealed class Player : Component, Component.ITriggerListener
 	public float ScoreScrapes = 0.0f;
 
 	private readonly Mixer mixerScore = Mixer.FindMixerByName( "Scoring" );
+	private readonly Mixer mixerSmack = Mixer.FindMixerByName( "Impacts" );
 	private SoundHandle scrapeSound = null;
 
 	private RealTimeSince lastGrounded;
@@ -198,7 +199,7 @@ public sealed class Player : Component, Component.ITriggerListener
 		float dVelSq = prevVel.DistanceSquared( cc.Velocity );
 		if ( dVelSq >= dVelSqSmack )
 		{
-			Sound.Play( "smack" );
+			Sound.Play( "smack", mixerSmack );
 		}
 		if ( dVelSq >= dVelSqKill )
 		{

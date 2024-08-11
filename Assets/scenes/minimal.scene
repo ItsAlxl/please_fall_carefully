@@ -436,7 +436,7 @@
           "__type": "Player",
           "__guid": "3324243c-7be0-4e2f-a58b-acb85a63148d",
           "AirInertia": 0.5,
-          "dVelSqKill": 6000000,
+          "dVelSqKill": 7500000,
           "dVelSqSmack": 100000,
           "FlyBounciness": 0.75,
           "FlyInertia": 1.5,
