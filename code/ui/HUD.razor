@@ -24,17 +24,17 @@
 {
 	public int GetBumps()
 	{
-		return PFC.Game.plr?.ScoreBumps ?? 0;
+		return CareFall.Game.plr?.ScoreBumps ?? 0;
 	}
 
 	public int GetScrapes()
 	{
-		return (int)(PFC.Game.plr?.ScoreScrapes ?? 0);
+		return (int)(CareFall.Game.plr?.ScoreScrapes ?? 0);
 	}
 
 	public bool IsAlive()
 	{
-		return PFC.Game.plr?.Alive ?? false;
+		return CareFall.Game.plr?.Alive ?? false;
 	}
 
 	protected override int BuildHash() => System.HashCode.Combine(GetBumps(), GetScrapes(), IsAlive());

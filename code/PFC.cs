@@ -1,11 +1,11 @@
 using System;
 
-public sealed class PFC
+public sealed class CareFall
 {
-	private PFC() { }
-	private static readonly Lazy<PFC> lazy = new( () => new PFC() );
+	private CareFall() { }
+	private static readonly Lazy<CareFall> lazy = new( () => new CareFall() );
 
-	public static PFC Game { get { return lazy.Value; } }
+	public static CareFall Game { get { return lazy.Value; } }
 
 	public Player plr;
 }

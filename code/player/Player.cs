@@ -42,7 +42,7 @@ public sealed class Player : Component, Component.ITriggerListener
 
 	protected override void OnAwake()
 	{
-		PFC.Game.plr = this;
+		CareFall.Game.plr = this;
 	}
 
 	void ITriggerListener.OnTriggerEnter( Collider other )
