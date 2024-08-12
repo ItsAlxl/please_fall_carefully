@@ -10,7 +10,7 @@
         {
           "__type": "Sandbox.CameraComponent",
           "__guid": "cf3cbf96-22b6-4be4-a5d0-672a96c17f9f",
-          "BackgroundColor": "0.50233,0.50233,0.50233,1",
+          "BackgroundColor": "0.0239,0.07907,0.057,1",
           "ClearFlags": "All",
           "FieldOfView": 60,
           "IsMainCamera": true,
@@ -717,6 +717,17 @@
               "Rotation": "-0.5,0.5,0.5,0.5",
               "Enabled": true,
               "__Prefab": "prefabs/motherboard/ramstick.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "afcbcaee-0351-463c-b914-31258723d51d",
+              "Flags": 0,
+              "Name": "heatsink",
+              "Position": "0,-703.8652,-4204.832",
+              "Rotation": "-0.7071067,0,0,0.7071068",
+              "Scale": "0.75,0.75,0.75",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/heatsink.prefab",
               "__PrefabVariables": {}
             }
           ]

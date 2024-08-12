@@ -1,0 +1,54 @@
+{
+  "RootObject": {
+    "__guid": "afcbcaee-0351-463c-b914-31258723d51d",
+    "Flags": 0,
+    "Name": "heatsink",
+    "Position": "0,0,0",
+    "Scale": "0.75,0.75,0.75",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "3b04defa-2a4e-48d8-a056-1081fe55fcd7",
+        "BodyGroups": 18446744073709551615,
+        "Model": "models/heatsink/heatsink.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "bff2ef27-1fc6-498c-a866-98d4dea34c80",
+        "IsTrigger": false,
+        "Model": "models/heatsink/heatsink.vmdl",
+        "Static": true
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "336811d8-73cb-45e3-9f97-c839afccb471",
+        "IsTrigger": false,
+        "Model": "models/heatsink/heatsink_blade0.vmdl",
+        "Static": true
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "3e874950-ffe8-4f2c-b9f6-f494f0bc355c",
+        "IsTrigger": false,
+        "Model": "models/heatsink/heatsink_blade1.vmdl",
+        "Static": true
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "2456ba25-95fd-4dc9-83a4-1ac57a66b2b7",
+        "IsTrigger": false,
+        "Model": "models/heatsink/heatsink_blade2.vmdl",
+        "Static": true
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}
