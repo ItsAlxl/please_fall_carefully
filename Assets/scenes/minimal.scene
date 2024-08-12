@@ -1,5 +1,5 @@
 {
-  "__guid": "356462f2-23b2-41fb-a024-90d3abab33e4",
+  "__guid": "7ef234af-2d60-4fb7-a6e7-0f7e5f8b5e01",
   "GameObjects": [
     {
       "__guid": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
@@ -266,7 +266,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "06e58eca-3034-4c06-b9d1-b8a09953857d",
                   "BodyGroups": 18446744073709551615,
-                  "MaterialOverride": "materials/default.vmat",
+                  "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
                   "Tint": "0.27137,0.34822,0.45581,1"
@@ -294,7 +294,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "5a58ee73-ba45-4021-8917-ed1fdb884201",
                   "BodyGroups": 18446744073709551615,
-                  "MaterialOverride": "materials/default.vmat",
+                  "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
                   "Tint": "0.27137,0.34822,0.45581,1"
@@ -322,7 +322,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "61587191-43b5-427e-908c-45e7519245e3",
                   "BodyGroups": 18446744073709551615,
-                  "MaterialOverride": "materials/default.vmat",
+                  "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
                   "Tint": "0.27137,0.34822,0.45581,1"
@@ -350,7 +350,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "773885e1-ca43-49fc-a339-1394e4320ff9",
                   "BodyGroups": 18446744073709551615,
-                  "MaterialOverride": "materials/default.vmat",
+                  "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
                   "Tint": "0.27137,0.34822,0.45581,1"
@@ -378,7 +378,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "0dfc0827-3c68-4190-a2ef-cac7a846dccd",
                   "BodyGroups": 18446744073709551615,
-                  "MaterialOverride": "materials/default.vmat",
+                  "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
                   "Tint": "0.27137,0.34822,0.45581,1"
@@ -406,7 +406,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "a6ccacb9-8856-40bb-ab4e-5f81f1c2b2f2",
                   "BodyGroups": 18446744073709551615,
-                  "MaterialOverride": "materials/default.vmat",
+                  "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
                   "Tint": "0.27137,0.34822,0.45581,1"
@@ -434,7 +434,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "a66f4df2-54f3-48fc-867e-a64b6714cc3e",
                   "BodyGroups": 18446744073709551615,
-                  "MaterialOverride": "materials/default.vmat",
+                  "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
                   "Tint": "0.27137,0.34822,0.45581,1"
@@ -462,7 +462,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "19fbcc89-5f26-4b0f-b977-1fcd9a0199a0",
                   "BodyGroups": 18446744073709551615,
-                  "MaterialOverride": "materials/default.vmat",
+                  "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
                   "Tint": "0.27137,0.34822,0.45581,1"
@@ -490,7 +490,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "223d3aae-f6fe-41c9-aa7f-e2bb06ce27cb",
                   "BodyGroups": 18446744073709551615,
-                  "MaterialOverride": "materials/default.vmat",
+                  "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
                   "Tint": "0.27137,0.34822,0.45581,1"
@@ -518,7 +518,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "d618822b-f52a-4e43-bcad-5feec900dce2",
                   "BodyGroups": 18446744073709551615,
-                  "MaterialOverride": "materials/default.vmat",
+                  "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
                   "Tint": "0.27137,0.34822,0.45581,1"
@@ -546,7 +546,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "e1ab9caf-899f-4518-ba96-e801162b3747",
                   "BodyGroups": 18446744073709551615,
-                  "MaterialOverride": "materials/default.vmat",
+                  "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
                   "Tint": "0.27137,0.34822,0.45581,1"
@@ -574,7 +574,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "1e041d4b-187b-4e08-b933-b951f967a3a8",
                   "BodyGroups": 18446744073709551615,
-                  "MaterialOverride": "materials/default.vmat",
+                  "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
                   "Tint": "0.27137,0.34822,0.45581,1"
@@ -676,6 +676,17 @@
               "__PrefabVariables": {}
             },
             {
+              "__guid": "c618443b-750b-4ce6-a781-7c733d8e2b41",
+              "Flags": 0,
+              "Name": "cpu",
+              "Position": "282.0293,65.30597,-6149.922",
+              "Rotation": "0.000000111097,0.00000005250216,-0.7044507,0.7097527",
+              "Scale": "0.5687237,0.5687237,0.5687237",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/cpu.prefab",
+              "__PrefabVariables": {}
+            },
+            {
               "__guid": "fa98192c-4b9c-4c57-910b-c051a351c00f",
               "Flags": 0,
               "Name": "inductor_hoop",
@@ -718,17 +729,6 @@
           ]
         }
       ]
-    },
-    {
-      "__guid": "c618443b-750b-4ce6-a781-7c733d8e2b41",
-      "Flags": 0,
-      "Name": "cpu",
-      "Position": "282.0293,65.30597,43850.08",
-      "Rotation": "0.000000111097,0.00000005250216,-0.7044507,0.7097527",
-      "Scale": "0.5687237,0.5687237,0.5687237",
-      "Enabled": true,
-      "__Prefab": "prefabs/motherboard/cpu.prefab",
-      "__PrefabVariables": {}
     }
   ],
   "SceneProperties": {
