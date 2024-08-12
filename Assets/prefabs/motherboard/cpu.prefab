@@ -1,0 +1,47 @@
+{
+  "RootObject": {
+    "__guid": "711047cb-8619-4360-9426-978c61f5f8d4",
+    "Flags": 0,
+    "Name": "cpu",
+    "Position": "0,0,0",
+    "Scale": "0.75,0.75,0.75",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "c298de7e-6c04-4823-b7d1-965a81e21b0f",
+        "BodyGroups": 18446744073709551615,
+        "Model": "models/cpu/cpu.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "e8a79bbe-0483-40c5-82f5-301a145e0ca4",
+        "IsTrigger": false,
+        "Model": "models/cpu/cpu.vmdl",
+        "Static": true
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "eebeea13-b69c-4280-b6ba-0af0cd9eb3f5",
+        "IsTrigger": false,
+        "Model": "models/cpu/cpu_pins0.vmdl",
+        "Static": true
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "57175303-a44f-4cf6-a44a-14f6a96ad59f",
+        "IsTrigger": false,
+        "Model": "models/cpu/cpu_pins1.vmdl",
+        "Static": true
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

@@ -1,0 +1,34 @@
+{
+  "RootObject": {
+    "__guid": "53e411de-cc95-4758-a165-ca9f6b446df7",
+    "Flags": 0,
+    "Name": "mobo",
+    "Scale": "0.7,0.7,0.7",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "cc7d9b8c-653e-4dcf-b592-0165a363902d",
+        "BodyGroups": 18446744073709551615,
+        "Model": "models/mobo/mobo.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "8757f7ba-b511-444a-b2f3-6edb2b8c9c58",
+        "IsTrigger": false,
+        "Model": "models/mobo/mobo.vmdl",
+        "Static": true
+      }
+    ],
+    "Children": [],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}
