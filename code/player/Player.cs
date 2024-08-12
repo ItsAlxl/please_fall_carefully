@@ -55,31 +55,37 @@ public sealed class Player : Component, Component.ITriggerListener
 
 	void ITriggerListener.OnTriggerEnter( Collider col )
 	{
-		var go = col.GameObject;
-		var tags = go.Tags;
-		if ( Flying && !tags.Has( "pfc-ignore" ) )
+		if ( Alive )
 		{
-			FallObstacle obstacle = go.Components.GetOrCreate<FallObstacle>();
-			if ( !tags.Has( "pfc-bumped" ) )
+			var go = col.GameObject;
+			var tags = go.Tags;
+			if ( Flying && !tags.Has( "pfc-ignore" ) )
 			{
-				ScoreBumps++;
-				Sound.Play( "score_bump", mixerScore );
-			}
+				FallObstacle obstacle = go.Components.GetOrCreate<FallObstacle>();
+				if ( !tags.Has( "pfc-bumped" ) )
+				{
+					ScoreBumps++;
+					Sound.Play( "score_bump", mixerScore );
+				}
 
-			if ( obstacle.StartScrape( col ) )
-			{
-				scrapeCount++;
+				if ( obstacle.StartScrape( col ) )
+				{
+					scrapeCount++;
+				}
 			}
 		}
 	}
 
 	void ITriggerListener.OnTriggerExit( Collider col )
 	{
-		var go = col.GameObject;
-		var tags = go.Tags;
-		if ( !tags.Has( "pfc-ignore" ) && tags.Has( "pfc-bumped" ) && go.Components.Get<FallObstacle>().EndScrape( col ) )
+		if ( Alive )
 		{
-			scrapeCount--;
+			var go = col.GameObject;
+			var tags = go.Tags;
+			if ( !tags.Has( "pfc-ignore" ) && tags.Has( "pfc-bumped" ) && go.Components.Get<FallObstacle>().EndScrape( col ) )
+			{
+				scrapeCount--;
+			}
 		}
 	}
 
