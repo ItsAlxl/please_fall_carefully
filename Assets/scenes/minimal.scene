@@ -106,7 +106,7 @@
           "FogMode": "Enabled",
           "FogStrength": 1,
           "LightColor": "1,1,1,1",
-          "Shadows": true,
+          "Shadows": false,
           "SkyColor": "0.35349,0.35349,0.35349,1"
         }
       ]
@@ -670,7 +670,6 @@
               "Name": "capacitor2",
               "Position": "-207.1156,-699.8204,-2646.262",
               "Rotation": "-0.4999999,0.5,0.5,0.4999999",
-              "Scale": "7.5,1,1",
               "Enabled": true,
               "__Prefab": "prefabs/motherboard/capacitor2.prefab",
               "__PrefabVariables": {}
