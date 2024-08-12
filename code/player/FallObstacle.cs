@@ -94,12 +94,16 @@ public sealed class FallObstacle : Component
 		return endScrape;
 	}
 
-	public void MakeUnbumped()
+	public void Restore()
 	{
 		GameObject.Tags.Remove( "pfc-bumped" );
 		foreach ( var kvp in model_data )
 		{
 			kvp.Key.Tint = kvp.Value.original;
+		}
+		foreach ( var kvp in col_data )
+		{
+			kvp.Value.scraping = false;
 		}
 	}
 }

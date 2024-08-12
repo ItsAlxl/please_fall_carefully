@@ -133,8 +133,9 @@ public sealed class Player : Component, Component.ITriggerListener
 		CharacterController.Velocity = 0.0f;
 		foreach ( var obstacle in Scene.GetAllComponents<FallObstacle>() )
 		{
-			obstacle.MakeUnbumped();
+			obstacle.Restore();
 		}
+		scrapeCount = 0;
 		ScoreBumps = 0;
 		ScoreScrapes = 0.0f;
 		Alive = true;
