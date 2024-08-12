@@ -118,7 +118,7 @@ public sealed class Player : Component, Component.ITriggerListener
 				scrapeSound?.Dispose();
 				scrapeSound = Sound.Play( "score_scrape", mixerScore );
 			}
-			ScoreScrapes += Time.Delta * (float)Math.Pow( Speed, 1.5 ) * 0.00015f;
+			ScoreScrapes += Time.Delta * (float)Math.Pow( Speed, 1.5 ) * 0.0002f;
 		}
 		else
 		{
