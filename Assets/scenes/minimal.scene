@@ -655,6 +655,16 @@
               ]
             },
             {
+              "__guid": "fa98192c-4b9c-4c57-910b-c051a351c00f",
+              "Flags": 0,
+              "Name": "inductor_hoop",
+              "Position": "346.8216,700.0095,-1668.727",
+              "Rotation": "0.00000002980232,0.7071066,-0.7071066,0.00000002980232",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/inductor_hoop.prefab",
+              "__PrefabVariables": {}
+            },
+            {
               "__guid": "3b26e70c-eacc-4236-9266-384a271a94c6",
               "Flags": 0,
               "Name": "capacitor",
