@@ -62,18 +62,13 @@ public sealed class Player : Component, Component.ITriggerListener
 			scrapeCount++;
 			if ( Flying )
 			{
-				BumpMemory bumpMem;
-				if ( tags.Has( "pfc-bumped" ) )
+				FallObstacle obstacle = go.Components.GetOrCreate<FallObstacle>();
+				if ( !tags.Has( "pfc-bumped" ) )
 				{
-					bumpMem = go.Components.Get<BumpMemory>();
-				}
-				else
-				{
-					bumpMem = go.Components.Create<BumpMemory>();
 					ScoreBumps++;
 					Sound.Play( "score_bump", mixerScore );
 				}
-				bumpMem.StartScrape();
+				obstacle.StartScrape();
 			}
 		}
 	}
@@ -88,7 +83,7 @@ public sealed class Player : Component, Component.ITriggerListener
 
 			if ( tags.Has( "pfc-bumped" ) )
 			{
-				go.Components.Get<BumpMemory>().EndScrape();
+				go.Components.Get<FallObstacle>().EndScrape();
 			}
 		}
 	}
@@ -141,9 +136,9 @@ public sealed class Player : Component, Component.ITriggerListener
 	{
 		TeleportTo( Scene.Directory.FindByName( "PlrStart" ).FirstOrDefault().Transform.Position );
 		CharacterController.Velocity = 0.0f;
-		foreach ( var mem in Scene.GetAllComponents<BumpMemory>() )
+		foreach ( var obstacle in Scene.GetAllComponents<FallObstacle>() )
 		{
-			mem.MakeUnbumped();
+			obstacle.MakeUnbumped();
 		}
 		ScoreBumps = 0;
 		ScoreScrapes = 0.0f;

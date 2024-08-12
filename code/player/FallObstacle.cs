@@ -1,7 +1,7 @@
 [Group( "CareFall" )]
-[Title( "(don't use in editor) Bump Memory" )]
+[Title( "(don't use in editor) Fall Obstacle" )]
 [Icon( "disabled_by_default" )]
-public sealed class BumpMemory : Component
+public sealed class FallObstacle : Component
 {
 	const float BUMP_R = 0.0f;
 	const float BUMP_G = 0.0f;
