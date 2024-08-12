@@ -673,16 +673,20 @@
               "Enabled": true,
               "__Prefab": "prefabs/motherboard/capacitor2.prefab",
               "__PrefabVariables": {}
+            },
+            {
+              "__guid": "9fa64a39-e766-43b1-bf3a-ff12c92c136a",
+              "Flags": 0,
+              "Name": "ramstick",
+              "Position": "353.9171,-700,-2922.648",
+              "Rotation": "-0.5,0.5,0.5,0.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/ramstick.prefab",
+              "__PrefabVariables": {}
             }
           ]
         }
       ]
-    },
-    {
-      "__guid": "8bf1965d-a12a-482d-9345-e370f4b5bdd6",
-      "Flags": 0,
-      "Name": "GameObject",
-      "Enabled": true
     }
   ],
   "SceneProperties": {
