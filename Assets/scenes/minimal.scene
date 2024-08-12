@@ -622,7 +622,7 @@
                   "Center": "0,0,0",
                   "IsTrigger": false,
                   "Scale": "50,50,50",
-                  "Static": false
+                  "Static": true
                 }
               ]
             },
@@ -630,7 +630,7 @@
               "__guid": "755b9607-ab17-4369-a3c2-e8ecb487ce0a",
               "Flags": 0,
               "Name": "Cube (5)",
-              "Position": "-31.09076,-773.2916,-112955.7",
+              "Position": "-542.6033,793.7892,-7235.203",
               "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
               "Scale": "20,20,222.2999",
               "Enabled": true,
@@ -650,63 +650,40 @@
                   "Center": "0,0,0",
                   "IsTrigger": false,
                   "Scale": "50,50,50",
-                  "Static": false
-                }
-              ]
-            },
-            {
-              "__guid": "46ee2841-4b47-4c35-ac66-4b82f0514fce",
-              "Flags": 0,
-              "Name": "capacitor",
-              "Position": "699.8203,-241.2419,-2500",
-              "Rotation": "0.5,-0.5,-0.5,0.5",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "e9067a31-11e7-4a12-96e0-a1e0d53ae3aa",
-                  "BodyGroups": 18446744073709551615,
-                  "Model": "models/capacitor.vmdl",
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                },
-                {
-                  "__type": "Sandbox.ModelCollider",
-                  "__guid": "cb8e69cc-8098-4833-bdab-454e89e8c62e",
-                  "IsTrigger": false,
-                  "Model": "models/capacitor.vmdl",
                   "Static": true
                 }
               ]
             },
             {
-              "__guid": "bc181811-8340-47f1-bb5b-313ff62e24b2",
+              "__guid": "3b26e70c-eacc-4236-9266-384a271a94c6",
               "Flags": 0,
-              "Name": "Cube",
-              "Position": "455.923,0.0003465685,-2162.75",
+              "Name": "capacitor",
+              "Position": "699.82,336.709,-3088.09",
+              "Rotation": "0.5,-0.5,-0.5,0.5",
               "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "624b05cd-71c0-4055-a3a7-a241f6ce726b",
-                  "BodyGroups": 18446744073709551615,
-                  "Model": "models/dev/box.vmdl",
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                },
-                {
-                  "__type": "Sandbox.BoxCollider",
-                  "__guid": "c0fb4335-362a-42e3-9891-416f8df31adc",
-                  "Center": "0,0,0",
-                  "IsTrigger": false,
-                  "Scale": "50,50,50",
-                  "Static": false
-                }
-              ]
+              "__Prefab": "prefabs/motherboard/capacitor1.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "2343e1a9-e6b2-4386-9f11-7805ff0e620c",
+              "Flags": 0,
+              "Name": "capacitor2",
+              "Position": "-207.1156,-699.8204,-2646.262",
+              "Rotation": "-0.4999999,0.5,0.5,0.4999999",
+              "Scale": "7.5,1,1",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/capacitor2.prefab",
+              "__PrefabVariables": {}
             }
           ]
         }
       ]
+    },
+    {
+      "__guid": "8bf1965d-a12a-482d-9345-e370f4b5bdd6",
+      "Flags": 0,
+      "Name": "GameObject",
+      "Enabled": true
     }
   ],
   "SceneProperties": {

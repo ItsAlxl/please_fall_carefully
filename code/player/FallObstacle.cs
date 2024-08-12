@@ -1,3 +1,5 @@
+using System.Reflection.Metadata.Ecma335;
+
 [Group( "CareFall" )]
 [Title( "(don't use in editor) Fall Obstacle" )]
 [Icon( "disabled_by_default" )]
@@ -11,13 +13,13 @@ public sealed class FallObstacle : Component
 	const float SCRAPE_B = 1.0f;
 	const float TINT_STR = 0.5f;
 
-	private class BMData
+	private class ModelData
 	{
 		public Color original;
 		public Color scraping;
 		public Color bumped;
 
-		public BMData( Color original_tint )
+		public ModelData( Color original_tint )
 		{
 			original = original_tint;
 			scraping = GetTintedColor( SCRAPE_R, SCRAPE_G, SCRAPE_B );
@@ -34,37 +36,68 @@ public sealed class FallObstacle : Component
 		}
 	}
 
-	private readonly Dictionary<ModelRenderer, BMData> data = new( 1 );
+	private class ColliderData
+	{
+		public bool scraping = false;
+	}
+
+	private readonly Dictionary<ModelRenderer, ModelData> model_data = new( 1 );
+	private readonly Dictionary<Collider, ColliderData> col_data = new( 1 );
 
 	protected override void OnAwake()
 	{
 		foreach ( var m in GameObject.Components.GetAll<ModelRenderer>() )
 		{
-			data[m] = new BMData( m.Tint );
+			model_data[m] = new ModelData( m.Tint );
+		}
+		foreach ( var c in GameObject.Components.GetAll<Collider>() )
+		{
+			col_data[c] = new ColliderData();
 		}
 	}
 
-	public void StartScrape()
+	public bool IsScraping()
+	{
+		return col_data.Any( kvp => kvp.Value.scraping );
+	}
+
+	public bool StartScrape( Collider col )
 	{
 		GameObject.Tags.Add( "pfc-bumped" );
-		foreach ( var kvp in data )
+
+		bool newScrape = !IsScraping();
+		col_data[col].scraping = true;
+
+		if ( newScrape )
 		{
-			kvp.Key.Tint = kvp.Value.scraping;
+			foreach ( var kvp in model_data )
+			{
+				kvp.Key.Tint = kvp.Value.scraping;
+			}
 		}
+		return newScrape;
 	}
 
-	public void EndScrape()
+	public bool EndScrape( Collider col )
 	{
-		foreach ( var kvp in data )
+		bool endScrape = IsScraping();
+		col_data[col].scraping = false;
+		endScrape = endScrape && !IsScraping();
+
+		if ( endScrape )
 		{
-			kvp.Key.Tint = kvp.Value.bumped;
+			foreach ( var kvp in model_data )
+			{
+				kvp.Key.Tint = kvp.Value.bumped;
+			}
 		}
+		return endScrape;
 	}
 
 	public void MakeUnbumped()
 	{
 		GameObject.Tags.Remove( "pfc-bumped" );
-		foreach ( var kvp in data )
+		foreach ( var kvp in model_data )
 		{
 			kvp.Key.Tint = kvp.Value.original;
 		}

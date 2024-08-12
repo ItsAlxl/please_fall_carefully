@@ -23,7 +23,7 @@
 				[
 					{
 						_class = "RenderMeshFile"
-						filename = "models/capacitor.fbx"
+						filename = "models/capacitor1/capacitor1.fbx"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
 						import_scale = 1.0
@@ -48,7 +48,7 @@
 				[
 					{
 						_class = "PhysicsHullFile"
-						name = "capacitor"
+						name = "capacitor1"
 						parent_bone = ""
 						surface_prop = "default"
 						collision_tags = "solid"
@@ -58,18 +58,21 @@
 						align_origin_x_type = "None"
 						align_origin_y_type = "None"
 						align_origin_z_type = "None"
-						filename = "models/capacitor.fbx"
+						filename = "models/capacitor1/capacitor1.fbx"
 						import_scale = 1.0
 						faceMergeAngle = 10.0
 						maxHullVertices = 0
-						import_mode = "HullPerElement"
-						optimization_algorithm = "QEM"
+						import_mode = "SingleHull"
+						optimization_algorithm = "IFR"
 						import_filter = 
 						{
-							exclude_by_default = false
+							exclude_by_default = true
 							exception_list = 
 							[
-								"Cylinder_001",
+								"_tmphull_210",
+								"_tmphull_267_001",
+								"_tmphull_471",
+								"_tmphull_888",
 							]
 						}
 					},

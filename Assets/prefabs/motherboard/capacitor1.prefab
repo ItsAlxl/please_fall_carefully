@@ -1,0 +1,54 @@
+{
+  "RootObject": {
+    "__guid": "3b26e70c-eacc-4236-9266-384a271a94c6",
+    "Flags": 0,
+    "Name": "capacitor",
+    "Position": "699.82,336.709,-3088.09",
+    "Rotation": "0.5,-0.5,-0.5,0.5",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "4b915e6c-83af-4ce3-bd0b-d4d617b9c633",
+        "BodyGroups": 18446744073709551615,
+        "Model": "models/capacitor1/capacitor1.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "499171a6-5c57-41b1-b7fa-abbaa836669b",
+        "IsTrigger": false,
+        "Model": "models/capacitor1/capacitor1.vmdl",
+        "Static": true
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "ce4fce35-4a34-4574-9440-df281b08aa2a",
+        "IsTrigger": false,
+        "Model": "models/capacitor1/capacitor1_bottom.vmdl",
+        "Static": true
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "c30ce05d-c17c-42e0-8c43-2f993f244765",
+        "IsTrigger": false,
+        "Model": "models/capacitor1/capacitor1_leg0.vmdl",
+        "Static": true
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "5796eb14-8644-4bb2-b050-a0ba7fc4d60d",
+        "IsTrigger": false,
+        "Model": "models/capacitor1/capacitor1_leg1.vmdl",
+        "Static": true
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}
