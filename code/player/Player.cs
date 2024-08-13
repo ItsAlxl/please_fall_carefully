@@ -7,7 +7,7 @@ using Sandbox.Audio;
 public sealed class Player : Component, Component.ITriggerListener
 {
 	[Property] public float RunSpeed { get; set; } = 150.0f;
-	[Property] public float FlySpeed { get; set; } = 3750.0f;
+	[Property] public float FlySpeed { get; set; } = 4250.0f;
 	[Property] public float GroundInertia { get; set; } = 0.1f;
 	[Property] public float AirInertia { get; set; } = 0.5f;
 	[Property] public float FlyInertia { get; set; } = 1.5f;

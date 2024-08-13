@@ -171,7 +171,7 @@
           "DVelSqSmack": 100000,
           "FlyBounciness": 0.75,
           "FlyInertia": 1.5,
-          "FlySpeed": 3750,
+          "FlySpeed": 4250,
           "FlyTime": 1,
           "GroundInertia": 0.1,
           "MaxFallSpeed": -5000,
@@ -276,7 +276,7 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "1,1,1,1"
+                  "Tint": "0.50233,0.50233,0.50233,1"
                 }
               ]
             },
@@ -296,7 +296,7 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "1,1,1,1"
+                  "Tint": "0.50233,0.50233,0.50233,1"
                 }
               ]
             },
@@ -316,7 +316,7 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "1,1,1,1"
+                  "Tint": "0.50233,0.50233,0.50233,1"
                 }
               ]
             },
@@ -336,7 +336,7 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "1,1,1,1"
+                  "Tint": "0.50233,0.50233,0.50233,1"
                 }
               ]
             },
@@ -357,7 +357,7 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "1,1,1,1"
+                  "Tint": "0.50233,0.50233,0.50233,1"
                 }
               ]
             },
@@ -377,7 +377,7 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "1,1,1,1"
+                  "Tint": "0.50233,0.50233,0.50233,1"
                 },
                 {
                   "__type": "Sandbox.BoxCollider",
@@ -405,7 +405,7 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "1,1,1,1"
+                  "Tint": "0.50233,0.50233,0.50233,1"
                 },
                 {
                   "__type": "Sandbox.BoxCollider",
@@ -433,7 +433,7 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "1,1,1,1"
+                  "Tint": "0.50233,0.50233,0.50233,1"
                 },
                 {
                   "__type": "Sandbox.BoxCollider",
@@ -461,7 +461,7 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "1,1,1,1"
+                  "Tint": "0.50233,0.50233,0.50233,1"
                 },
                 {
                   "__type": "Sandbox.BoxCollider",
@@ -489,7 +489,7 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "1,1,1,1"
+                  "Tint": "0.50233,0.50233,0.50233,1"
                 },
                 {
                   "__type": "Sandbox.BoxCollider",
@@ -517,7 +517,7 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "1,1,1,1"
+                  "Tint": "0.50233,0.50233,0.50233,1"
                 },
                 {
                   "__type": "Sandbox.BoxCollider",
@@ -545,7 +545,7 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "1,1,1,1"
+                  "Tint": "0.50233,0.50233,0.50233,1"
                 },
                 {
                   "__type": "Sandbox.BoxCollider",
@@ -573,123 +573,11 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "1,1,1,1"
+                  "Tint": "0.50233,0.50233,0.50233,1"
                 },
                 {
                   "__type": "Sandbox.BoxCollider",
                   "__guid": "44835b28-1adf-4569-91a5-af8dabe9d55b",
-                  "Center": "0,0,0",
-                  "IsTrigger": false,
-                  "Scale": "50,50,50",
-                  "Static": false
-                }
-              ]
-            },
-            {
-              "__guid": "810184a7-2ced-443d-b288-da402bde6638",
-              "Flags": 0,
-              "Name": "Wall0",
-              "Position": "0,-750,-125000",
-              "Scale": "30,2,1000",
-              "Tags": "pfc-ignore",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "223d3aae-f6fe-41c9-aa7f-e2bb06ce27cb",
-                  "BodyGroups": 18446744073709551615,
-                  "MaterialOverride": "materials/circuit/walls.vmat",
-                  "Model": "models/dev/box.vmdl",
-                  "RenderType": "Off",
-                  "Tint": "1,1,1,1"
-                },
-                {
-                  "__type": "Sandbox.BoxCollider",
-                  "__guid": "ff32ae33-592e-4fef-bd71-46ce9e0481e6",
-                  "Center": "0,0,0",
-                  "IsTrigger": false,
-                  "Scale": "50,50,50",
-                  "Static": false
-                }
-              ]
-            },
-            {
-              "__guid": "41b107b9-5cc7-4d47-9c6f-042e19987534",
-              "Flags": 0,
-              "Name": "Wall1",
-              "Position": "0,750,-125000",
-              "Scale": "30,2,1000",
-              "Tags": "pfc-ignore",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "d618822b-f52a-4e43-bcad-5feec900dce2",
-                  "BodyGroups": 18446744073709551615,
-                  "MaterialOverride": "materials/circuit/walls.vmat",
-                  "Model": "models/dev/box.vmdl",
-                  "RenderType": "Off",
-                  "Tint": "1,1,1,1"
-                },
-                {
-                  "__type": "Sandbox.BoxCollider",
-                  "__guid": "666284f7-2bb7-4f0d-9947-f01cb209bd47",
-                  "Center": "0,0,0",
-                  "IsTrigger": false,
-                  "Scale": "50,50,50",
-                  "Static": false
-                }
-              ]
-            },
-            {
-              "__guid": "0cb73f30-eba9-44a5-a1f2-4d987848e9af",
-              "Flags": 0,
-              "Name": "Wall2",
-              "Position": "750,0,-125000",
-              "Scale": "2,30,1000",
-              "Tags": "pfc-ignore",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "e1ab9caf-899f-4518-ba96-e801162b3747",
-                  "BodyGroups": 18446744073709551615,
-                  "MaterialOverride": "materials/circuit/walls.vmat",
-                  "Model": "models/dev/box.vmdl",
-                  "RenderType": "Off",
-                  "Tint": "1,1,1,1"
-                },
-                {
-                  "__type": "Sandbox.BoxCollider",
-                  "__guid": "9145d37c-a67e-437d-ad1e-ccf2472e395e",
-                  "Center": "0,0,0",
-                  "IsTrigger": false,
-                  "Scale": "50,50,50",
-                  "Static": false
-                }
-              ]
-            },
-            {
-              "__guid": "f35874c1-3de1-41e1-8bda-d495917d5e61",
-              "Flags": 0,
-              "Name": "Wall3",
-              "Position": "-750,0,-125000",
-              "Scale": "2,30,1000",
-              "Tags": "pfc-ignore",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "1e041d4b-187b-4e08-b933-b951f967a3a8",
-                  "BodyGroups": 18446744073709551615,
-                  "MaterialOverride": "materials/circuit/walls.vmat",
-                  "Model": "models/dev/box.vmdl",
-                  "RenderType": "Off",
-                  "Tint": "1,1,1,1"
-                },
-                {
-                  "__type": "Sandbox.BoxCollider",
-                  "__guid": "aa80c41a-0f9a-4fee-9566-63ac917fdb04",
                   "Center": "0,0,0",
                   "IsTrigger": false,
                   "Scale": "50,50,50",
@@ -707,153 +595,774 @@
           "Enabled": true,
           "Children": [
             {
-              "__guid": "481704dc-da77-4419-aa3f-3bbdde953e46",
-              "Flags": 0,
-              "Name": "Cube (4)",
-              "Position": "849.1929,182.5489,-96846.67",
-              "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
-              "Scale": "20,20,20",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "77c16bc4-2807-4315-93c5-4f85d3a798c5",
-                  "BodyGroups": 18446744073709551615,
-                  "MaterialOverride": "materials/default.vmat",
-                  "Model": "models/dev/box.vmdl",
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                },
-                {
-                  "__type": "Sandbox.BoxCollider",
-                  "__guid": "3f797820-9712-4cdb-8e20-24a832cc8529",
-                  "Center": "0,0,0",
-                  "IsTrigger": false,
-                  "Scale": "50,50,50",
-                  "Static": true
-                }
-              ]
-            },
-            {
-              "__guid": "755b9607-ab17-4369-a3c2-e8ecb487ce0a",
-              "Flags": 0,
-              "Name": "Cube (5)",
-              "Position": "-822.6876,1185.811,-7235.203",
-              "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
-              "Scale": "20,20,222.2999",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "c1232231-48e8-42e5-9743-928ef843b9b9",
-                  "BodyGroups": 18446744073709551615,
-                  "MaterialOverride": "materials/default.vmat",
-                  "Model": "models/dev/box.vmdl",
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                },
-                {
-                  "__type": "Sandbox.BoxCollider",
-                  "__guid": "f0068b65-4f9e-4d3b-b60b-e4462b6cde08",
-                  "Center": "0,0,0",
-                  "IsTrigger": false,
-                  "Scale": "50,50,50",
-                  "Static": true
-                }
-              ]
-            },
-            {
-              "__guid": "a498b694-4dfa-4f14-af8c-1928570fb9a6",
-              "Flags": 0,
-              "Name": "mobo",
-              "Position": "-1.033102,177.135,-6149.672",
-              "Rotation": "-0.7071068,0,0.7071068,0",
-              "Scale": "0.7,0.7,0.7",
-              "Enabled": true,
-              "__Prefab": "prefabs/motherboard/mobo.prefab",
-              "__PrefabVariables": {}
-            },
-            {
-              "__guid": "c618443b-750b-4ce6-a781-7c733d8e2b41",
-              "Flags": 0,
-              "Name": "cpu",
-              "Position": "282.0293,65.30597,-6149.922",
-              "Rotation": "0.000000111097,0.00000005250216,-0.7044507,0.7097527",
-              "Scale": "0.5687237,0.5687237,0.5687237",
-              "Enabled": true,
-              "__Prefab": "prefabs/motherboard/cpu.prefab",
-              "__PrefabVariables": {}
-            },
-            {
-              "__guid": "22361057-a470-41b7-a11b-59299920b4e3",
+              "__guid": "ebe60a4d-7763-4340-8a6a-446c811ca3ce",
               "Flags": 0,
               "Name": "ic",
-              "Position": "-19.18718,-699.0499,-3366.961",
-              "Rotation": "-0.7071067,0.00000005960464,0.00000005960464,0.7071067",
+              "Position": "31.69461,-699,-2710.852",
+              "Rotation": "-0.5,0.5,0.5,0.5",
               "Enabled": true,
               "__Prefab": "prefabs/motherboard/ic.prefab",
               "__PrefabVariables": {}
             },
             {
-              "__guid": "d104a33f-48c3-4234-a5c9-d640bdeec63b",
+              "__guid": "e82afd55-b440-49ef-b291-e90b3f884a47",
+              "Flags": 0,
+              "Name": "cable_serpent",
+              "Position": "-56.21233,364.0029,-4284.379",
+              "Rotation": "-0.00000005960464,0,0.9999999,0",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/cable_serpent.prefab",
+              "__PrefabVariables": {
+                "Tint": "0.63721,0.01645,0.00593,1"
+              }
+            },
+            {
+              "__guid": "6ea8920d-64ec-46b1-bd0e-7eb871cbc792",
+              "Flags": 0,
+              "Name": "cable_serpent (1)",
+              "Position": "-56.21233,268.3699,-4401.77",
+              "Rotation": "-0.00000005960464,0,0.9999999,0",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/cable_serpent.prefab",
+              "__PrefabVariables": {
+                "Tint": "0,0.17907,0.76744,1"
+              }
+            },
+            {
+              "__guid": "8df78bdf-65a0-4263-a3b7-b41a8c3dd6a5",
+              "Flags": 0,
+              "Name": "cable_serpent (2)",
+              "Position": "-56.21233,158.5927,-4503.07",
+              "Rotation": "-0.00000005960464,0,0.9999999,0",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/cable_serpent.prefab",
+              "__PrefabVariables": {
+                "Tint": "0.0919,0.82326,0.0919,1"
+              }
+            },
+            {
+              "__guid": "a2bb1ce2-a372-44da-b9b1-f131efad20f7",
               "Flags": 0,
               "Name": "cpu",
-              "Position": "-700,56.11241,-2883.352",
-              "Rotation": "0,0.7071068,0,0.7071068",
+              "Position": "40.52562,-699.9992,-4099.262",
+              "Rotation": "-0.5,0.5,0.5,0.5",
+              "Scale": "0.75,0.75,0.75",
               "Enabled": true,
               "__Prefab": "prefabs/motherboard/cpu.prefab",
               "__PrefabVariables": {}
             },
             {
-              "__guid": "fa98192c-4b9c-4c57-910b-c051a351c00f",
+              "__guid": "0d8c7b30-5965-43a4-8f35-08da3a7434dd",
+              "Flags": 0,
+              "Name": "ramstick",
+              "Position": "-704.8063,149.589,-7635.57",
+              "Rotation": "0.00000006651834,0.7071068,-0.00000006651834,0.7071068",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/ramstick.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "a4c39db2-5ad5-4713-9539-bcab533da3bd",
+              "Flags": 0,
+              "Name": "capacitor2",
+              "Position": "-704.8026,-333.2563,-7112",
+              "Rotation": "0.5,0.5,0.4999999,0.5000001",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/capacitor2.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "54fa439f-7a65-4779-9a79-844f07d89a42",
+              "Flags": 0,
+              "Name": "capacitor",
+              "Position": "-704.8063,568.2365,-7885.48",
+              "Rotation": "0.00000006651834,0.7071068,-0.00000006651834,0.7071068",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/capacitor1.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "cf5289dd-cfd8-4158-b208-644cf0845276",
+              "Flags": 0,
+              "Name": "capacitor2 (1)",
+              "Position": "-704.8066,379.0079,-8861.551",
+              "Rotation": "-0.6532816,0.2705981,-0.6532815,0.270598",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/capacitor2.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "57f0cc0d-8199-4bf3-8029-52529a77064a",
+              "Flags": 0,
+              "Name": "capacitor (1)",
+              "Position": "-704.7988,-314.6444,-7745.57",
+              "Rotation": "-0.4999999,0.5,-0.5,0.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/capacitor1.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "c3b3232f-d7be-4c0b-ae1b-13ecbe4171fb",
+              "Flags": 0,
+              "Name": "capacitor (2)",
+              "Position": "-704.805,-314.6469,-8036.371",
+              "Rotation": "-0.4999999,0.5,-0.5,0.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/capacitor1.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "69259041-6171-4c26-88bc-f61e74271055",
               "Flags": 0,
               "Name": "inductor_hoop",
-              "Position": "346.8218,700.0159,-2826.949",
+              "Position": "-704.7988,-288.5347,-8538.191",
+              "Rotation": "-0.4999999,0.5,-0.5,0.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/inductor_hoop.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "602517df-c0a2-4587-b50c-1592563bba2a",
+              "Flags": 0,
+              "Name": "heatsink",
+              "Position": "-707.2776,146.1228,-9500",
+              "Rotation": "-0.5,0.5,-0.5,0.5",
+              "Scale": "0.9,1,0.6000003",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/heatsink.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "1127204f-c7d1-4316-beaf-b1e3396671ad",
+              "Flags": 0,
+              "Name": "heatsink (1)",
+              "Position": "-707.2776,146.1228,-9300",
+              "Rotation": "-0.5,0.5,-0.5,0.5",
+              "Scale": "0.9,1,0.6000003",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/heatsink.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "736d0cda-0937-4ba8-bb4a-f5d5b0a89a8a",
+              "Flags": 0,
+              "Name": "heatsink (2)",
+              "Position": "-707.2776,146.1228,-9700",
+              "Rotation": "-0.5,0.5,-0.5,0.5",
+              "Scale": "0.9,1,0.6000003",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/heatsink.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "fab54b53-f7a5-4225-be9e-3762d7386b6a",
+              "Flags": 0,
+              "Name": "cpu (1)",
+              "Position": "699.9699,248.3737,-7922.34",
+              "Rotation": "-0.00000008940697,-0.7071069,0.00000008940697,0.7071069",
+              "Scale": "0.5,0.5,0.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/cpu.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "10406c4e-ea54-4e83-bcf1-4c667a7bb8bf",
+              "Flags": 0,
+              "Name": "ic (1)",
+              "Position": "698.9973,-365.2899,-8885.051",
+              "Rotation": "-0.5,0.5,0.5,-0.5",
+              "Scale": "1,2,1",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/ic.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "95bf6ad1-2b7f-4d05-85d3-7afabbc2f90b",
+              "Flags": 0,
+              "Name": "ic (2)",
+              "Position": "698.9972,-159.5902,-11166.7",
+              "Rotation": "-0.5,0.5,0.5,-0.5",
+              "Scale": "1,2,1",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/ic.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "287101d4-310f-4ca5-ac10-62fedd457add",
+              "Flags": 0,
+              "Name": "ic (3)",
+              "Position": "698.9978,-336.3623,-13539.1",
+              "Rotation": "-0.5,0.5,0.5,-0.5",
+              "Scale": "1,2,1",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/ic.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "2512ec98-a84c-4390-b6f5-caa2027f04df",
+              "Flags": 0,
+              "Name": "cable_bend",
+              "Position": "-184.1028,-191.0968,-7886.469",
+              "Rotation": "-0.00000005960464,0,0.9999999,0.00000007450581",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/cable_bend.prefab",
+              "__PrefabVariables": {
+                "Tint": "0.10698,0.10698,0.10698,1"
+              }
+            },
+            {
+              "__guid": "c784ee2a-b59b-44cb-8f7a-79110f9f0120",
+              "Flags": 0,
+              "Name": "ramstick (1)",
+              "Position": "700.0001,277.0065,-11402.9",
+              "Rotation": "-0.7071068,0,0.7071068,0",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/ramstick.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "d23a3dfa-50c9-44b0-841d-36239882150d",
+              "Flags": 0,
+              "Name": "capacitor (3)",
+              "Position": "-49.8134,-699.9999,-11271.34",
+              "Rotation": "-0.5,0.5,0.5,0.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/capacitor1.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "cd7fe492-657c-49f1-9a03-fed843d4dd1d",
+              "Flags": 0,
+              "Name": "capacitor (4)",
+              "Position": "-409.5248,-700,-11714.24",
+              "Rotation": "-0.5,0.5,0.5,0.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/capacitor1.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "aca9dee4-08b0-4d75-8d88-77389f9efe1f",
+              "Flags": 0,
+              "Name": "capacitor (5)",
+              "Position": "-147.8256,-700,-12374.65",
+              "Rotation": "-0.5,0.5,0.5,0.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/capacitor1.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "a5c4eb91-4952-42bd-87a0-10b9753e9fc4",
+              "Flags": 0,
+              "Name": "cable_sag",
+              "Position": "-38.42833,234.9109,-12762.52",
+              "Rotation": "-0.00000004214685,0.00000004214683,0.258819,0.9659258",
+              "Scale": "1.75,1.75,1.75",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/cable_sag.prefab",
+              "__PrefabVariables": {
+                "Tint": "0.10588,0.10588,0.10588,1"
+              }
+            },
+            {
+              "__guid": "e73dca47-2dd6-499a-9a36-69b0014ce923",
+              "Flags": 0,
+              "Name": "inductor_hoop (1)",
+              "Position": "228.207,-700,-16187.26",
+              "Rotation": "-0.5,0.5,0.5,0.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/inductor_hoop.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "3cf130ff-6c8c-4bed-a558-9fdb6d8bc72f",
+              "Flags": 0,
+              "Name": "inductor_hoop (2)",
+              "Position": "-263.1552,-700,-16187.26",
+              "Rotation": "-0.5,0.5,0.5,0.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/inductor_hoop.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "ae4a7146-c397-480c-9ccd-d4ca1a814245",
+              "Flags": 0,
+              "Name": "inductor_hoop (3)",
+              "Position": "-297.3553,700.0063,-16823.86",
+              "Rotation": "0.00000002980232,0.7071066,-0.7071066,0.00000002980232",
+              "Scale": "2.129853,6.509867,2.129853",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/inductor_hoop.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "f1ccf60e-138e-4c99-8223-6d4427bef3f7",
+              "Flags": 0,
+              "Name": "inductor_hoop (4)",
+              "Position": "500.6917,700.0079,-17040.61",
               "Rotation": "0.00000002980232,0.7071066,-0.7071066,0.00000002980232",
               "Enabled": true,
               "__Prefab": "prefabs/motherboard/inductor_hoop.prefab",
               "__PrefabVariables": {}
             },
             {
-              "__guid": "3b26e70c-eacc-4236-9266-384a271a94c6",
+              "__guid": "232a069c-bccf-4a0e-bf9b-06f343dd0fd0",
               "Flags": 0,
-              "Name": "capacitor",
-              "Position": "699.8196,7.895874,-3631.73",
-              "Rotation": "0.5,-0.5,-0.5,0.5",
+              "Name": "cable_straight",
+              "Position": "-48.06702,-41.57988,-15784.33",
+              "Scale": "1.5,1.5,1.5",
               "Enabled": true,
-              "__Prefab": "prefabs/motherboard/capacitor1.prefab",
+              "__Prefab": "prefabs/motherboard/cable_straight.prefab",
+              "__PrefabVariables": {
+                "Tint": "0.10588,0.10588,0.10588,1"
+              }
+            },
+            {
+              "__guid": "c72d0890-1e99-448a-a01f-9b33b69ee983",
+              "Flags": 0,
+              "Name": "heatsink (3)",
+              "Position": "0,698.9999,-14865.14",
+              "Rotation": "0.5,0.5,-0.5,0.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/heatsink.prefab",
               "__PrefabVariables": {}
             },
             {
-              "__guid": "2343e1a9-e6b2-4386-9f11-7805ff0e620c",
+              "__guid": "55722818-7207-4580-9d28-4231ab94b169",
               "Flags": 0,
-              "Name": "capacitor2",
-              "Position": "-207.1156,-699.8204,-2646.262",
-              "Rotation": "-0.4999999,0.5,0.5,0.4999999",
+              "Name": "heatsink (4)",
+              "Position": "-450,698.9999,-14865.14",
+              "Rotation": "0.5,0.5,-0.5,0.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/heatsink.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "10632f52-ad88-4877-ba2c-0e1b6d40f28e",
+              "Flags": 0,
+              "Name": "heatsink (5)",
+              "Position": "450,698.9999,-14865.14",
+              "Rotation": "0.5,0.5,-0.5,0.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/heatsink.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "a4712866-ae33-48a3-a281-74f40ed2dba4",
+              "Flags": 0,
+              "Name": "capacitor2 (2)",
+              "Position": "464.2163,-459.6947,-17547.75",
+              "Rotation": "0.2705982,-0.6532817,-0.6532812,0.2705979",
+              "Scale": "1.2,1.2,1.2",
               "Enabled": true,
               "__Prefab": "prefabs/motherboard/capacitor2.prefab",
               "__PrefabVariables": {}
             },
             {
-              "__guid": "9fa64a39-e766-43b1-bf3a-ff12c92c136a",
+              "__guid": "a1a405b2-f2db-4cc2-9f93-74730043c01e",
               "Flags": 0,
-              "Name": "ramstick",
-              "Position": "353.9171,-700,-2922.648",
-              "Rotation": "-0.5,0.5,0.5,0.5",
+              "Name": "ramstick (2)",
+              "Position": "-700,0,-18801.28",
+              "Rotation": "0.5,0.5,0.5,0.5",
+              "Scale": "0.7,0.7,0.7",
               "Enabled": true,
               "__Prefab": "prefabs/motherboard/ramstick.prefab",
               "__PrefabVariables": {}
             },
             {
-              "__guid": "afcbcaee-0351-463c-b914-31258723d51d",
+              "__guid": "0b9404b7-66b6-4d6a-929c-6810a5a8fe76",
               "Flags": 0,
-              "Name": "heatsink",
-              "Position": "0,-703.8652,-4204.832",
-              "Rotation": "-0.7071067,0,0,0.7071068",
+              "Name": "ramstick (3)",
+              "Position": "700,0,-18801.28",
+              "Rotation": "0.5,-0.5,-0.5,0.5",
+              "Scale": "0.7,0.7,0.7",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/ramstick.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "12f4284f-e5a7-41c1-9ac1-cf78454ad039",
+              "Flags": 0,
+              "Name": "mobo",
+              "Position": "11.78195,1,-19100.71",
+              "Rotation": "-0.000000000000004440892,0.9999999,0.00000002980232,0.00000004214685",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "6d5df839-d2a5-4eda-bf24-352f6a1b505e",
+              "Flags": 0,
+              "Name": "mobo (2)",
+              "Position": "19.68696,1.000299,-24124.78",
+              "Rotation": "-0.7071066,0.7071068,-0.000000008728893,0.00000005087575",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "3b646a7e-bdae-4f25-9073-d3ff9a0f51b6",
+              "Flags": 0,
+              "Name": "mobo (1)",
+              "Position": "19.68674,1.00015,-21620.81",
+              "Rotation": "-0.3826833,0.9238794,0.00000001140486,0.00000005034347",
+              "Scale": "1,1.35,1.35",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "26af835c-16f0-43bf-a0ff-7b18f5a89e44",
+              "Flags": 0,
+              "Name": "mobo (3)",
+              "Position": "19.68718,1.000463,-26685.74",
+              "Rotation": "-0.9238793,0.3826835,-0.00000002753374,0.00000004366266",
+              "Scale": "1,1.35,1.35",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "e543c0c0-222f-4c53-b239-9dff41e21a66",
+              "Flags": 0,
+              "Name": "mobo (4)",
+              "Position": "-775,1.000198,-30335.65",
+              "Rotation": "-0.5,0.5,0.5,0.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "d20cee2a-c54a-4cce-a77f-a3b9385d2fdf",
+              "Flags": 0,
+              "Name": "mobo (5)",
+              "Position": "775,1.000198,-31629.73",
+              "Rotation": "-0.5,0.5,0.5,0.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "883b42fb-3995-42f2-b754-aae483e38231",
+              "Flags": 0,
+              "Name": "mobo (6)",
+              "Position": "0,600,-34438.09",
+              "Rotation": "-0.7071068,0.00000005960464,0.7071068,0.00000005960464",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "8c221b2e-f1d6-43ab-be12-dd06b5dbd590",
+              "Flags": 0,
+              "Name": "mobo (7)",
+              "Position": "0,-600,-37500",
+              "Rotation": "-0.7071068,0.00000005960464,0.7071068,0.00000005960464",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "12fa6665-778c-492e-9df5-e620da799377",
+              "Flags": 0,
+              "Name": "capacitor (6)",
+              "Position": "-535.8014,-6.810677,-30336.01",
+              "Rotation": "-0.00000008758642,-0.00000008100096,0.6957036,0.7183289",
               "Scale": "0.75,0.75,0.75",
               "Enabled": true,
-              "__Prefab": "prefabs/motherboard/heatsink.prefab",
+              "__Prefab": "prefabs/motherboard/capacitor1.prefab",
               "__PrefabVariables": {}
+            },
+            {
+              "__guid": "611f0302-376a-4a06-b2ef-e20f675fc79c",
+              "Flags": 0,
+              "Name": "capacitor (7)",
+              "Position": "542.716,-536.2457,-31630.09",
+              "Rotation": "-0.00000008940697,0.00000000372529,0.9997493,0.02238987",
+              "Scale": "0.75,0.75,0.75",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/capacitor1.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "651ee89f-d2cb-4c61-843e-ace62505a185",
+              "Flags": 0,
+              "Name": "capacitor (8)",
+              "Position": "-51.44589,-24.76199,-34438.45",
+              "Rotation": "0,-0.00000005960464,0.7768825,-0.6296456",
+              "Scale": "0.75,0.75,0.75",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/capacitor1.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "85cc4486-d156-4216-9882-97d2916625fe",
+              "Flags": 0,
+              "Name": "cpu (2)",
+              "Position": "-332.1577,-368.9937,-37500.36",
+              "Rotation": "0.0000001109691,0.00000005277208,-0.706174,0.7080387",
+              "Scale": "0.4487913,0.4487913,0.4487913",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/cpu.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "005e7e6b-6ecd-44fe-b7e4-7cbc1773d41a",
+              "Flags": 0,
+              "Name": "mobo (8)",
+              "Position": "0.000462884,-850,-42000",
+              "Rotation": "-0.7071068,0.00000005960464,0.7071068,0.00000005960464",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "30af09b2-01fd-4888-9429-177f67bddd51",
+              "Flags": 0,
+              "Name": "mobo (9)",
+              "Position": "0.000462884,810.0935,-42000",
+              "Rotation": "-0.7071068,0.00000005960464,0.7071068,0.00000005960464",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "9a50a42b-6065-4e83-96a9-89d944c983b0",
+              "Flags": 0,
+              "Name": "mobo (10)",
+              "Position": "1084.511,-19.9531,-45500",
+              "Rotation": "-0.5,0.5,0.5,0.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "46ca97f2-46a9-45cd-b7b7-db5d89efabb0",
+              "Flags": 0,
+              "Name": "mobo (11)",
+              "Position": "-575.5827,-19.9534,-45500",
+              "Rotation": "-0.5,0.5,0.5,0.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "b157f455-f9e3-4359-b3a9-1094531fb7fb",
+              "Flags": 0,
+              "Name": "mobo (12)",
+              "Position": "-763.7353,802.5884,-49000",
+              "Rotation": "-0.2705981,0.6532815,0.2705981,0.6532815",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "2e1ac4df-a6f9-437b-b18b-5b5a6027f7ac",
+              "Flags": 0,
+              "Name": "mobo (13)",
+              "Position": "410.1284,-371.2744,-49000",
+              "Rotation": "-0.2705981,0.6532815,0.2705981,0.6532815",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "79d61a68-8996-4949-881b-16b0d8fa8b0a",
+              "Flags": 0,
+              "Name": "mobo (14)",
+              "Position": "397.7166,411.2607,-52500",
+              "Rotation": "-0.6532816,0.270598,0.6532816,0.270598",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "0f96d664-6201-4ef7-aaa0-a82265ee57d9",
+              "Flags": 0,
+              "Name": "mobo (15)",
+              "Position": "-776.1461,-762.603,-52500",
+              "Rotation": "-0.6532816,0.270598,0.6532816,0.270598",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "071bf498-b228-4d99-abfd-a1e8f732c22a",
+              "Flags": 0,
+              "Name": "mobo (16)",
+              "Position": "-312.9542,-759.9285,-54500",
+              "Rotation": "-0.6830127,-0.1830128,0.6830127,-0.1830128",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "1b9978c8-961e-48b2-8837-a5f5c830c07e",
+              "Flags": 0,
+              "Name": "mobo (17)",
+              "Position": "701.4389,984.9984,-57381.17",
+              "Rotation": "-0.7010574,-0.09229607,0.7010574,-0.09229607",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "3f32cab9-9ae4-4d17-99a5-f0ec2084c902",
+              "Flags": 0,
+              "Name": "mobo (18)",
+              "Position": "-934.2459,-665.6859,-57381.17",
+              "Rotation": "-0.7010574,0.09229583,0.7010574,0.09229583",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "21181445-ce8c-47f1-826b-04e09513e6be",
+              "Flags": 0,
+              "Name": "mobo (19)",
+              "Position": "-827.6923,-982.6218,-62000",
+              "Rotation": "-0.5000002,0.5,0.5000002,0.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "ff3ad726-ff40-484d-b7a3-c534c1066c16",
+              "Flags": 0,
+              "Name": "mobo (20)",
+              "Position": "667.6754,-782.9954,-62000",
+              "Rotation": "-0.5000002,0.5,0.5000002,0.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "3eda900c-d365-447e-a41b-79d4854981ff",
+              "Flags": 0,
+              "Name": "mobo (21)",
+              "Position": "-1281.467,765.8297,-62000",
+              "Rotation": "-0.0000001788139,0.7071069,0.0000001788139,0.7071069",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "2adeecb8-79a7-4d0e-a045-fae041273800",
+              "Flags": 0,
+              "Name": "mobo (22)",
+              "Position": "467.0897,1217.547,-62000",
+              "Rotation": "-0.5000002,0.5,0.5000002,0.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "8dbfc6f2-ba91-4e43-badb-98b68e8c7886",
+              "Flags": 0,
+              "Name": "mobo (26)",
+              "Position": "-141.3818,1050.124,-67180.59",
+              "Rotation": "0.2705979,0.6532817,-0.2705979,0.6532817",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "51dae509-97a4-4181-b619-c301a7d7b3a5",
+              "Flags": 0,
+              "Name": "mobo (25)",
+              "Position": "-1056.857,-507.0854,-67180.59",
+              "Rotation": "-0.2705983,0.6532816,0.2705983,0.6532816",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "d88bb8d2-f8d6-4be2-a51b-0900abdd4a7b",
+              "Flags": 0,
+              "Name": "mobo (24)",
+              "Position": "141.6852,-1423.313,-67180.59",
+              "Rotation": "-0.2705983,0.6532816,0.2705983,0.6532816",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "a06e819d-b713-4e8b-964e-04852774eabf",
+              "Flags": 0,
+              "Name": "mobo (23)",
+              "Position": "1414.447,133.1199,-67180.59",
+              "Rotation": "-0.2705983,0.6532816,0.2705983,0.6532816",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/mobo.prefab",
+              "__PrefabVariables": {}
+            },
+            {
+              "__guid": "18ebf664-bb6a-42c1-9ebf-0321ea45b231",
+              "Flags": 0,
+              "Name": "cable_bend (1)",
+              "Position": "225.3928,212.6488,-71863.87",
+              "Rotation": "-0.0000000174578,-0.7071066,0.0000001017515,0.7071067",
+              "Scale": "2.5,2.5,2.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/cable_bend.prefab",
+              "__PrefabVariables": {
+                "Tint": "0.46047,0.46047,0.46047,1"
+              }
+            },
+            {
+              "__guid": "6874f1a9-717d-4c60-b69f-57e11da5209b",
+              "Flags": 0,
+              "Name": "cable_sag (1)",
+              "Position": "224.4038,212.722,-74617.81",
+              "Rotation": "-0.7071068,0,0.7071068,0",
+              "Scale": "2.5,2.5,2.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/cable_sag.prefab",
+              "__PrefabVariables": {
+                "Tint": "0.45882,0.45882,0.45882,1"
+              }
+            },
+            {
+              "__guid": "326c197c-dc6e-4473-8132-b51758926d2e",
+              "Flags": 0,
+              "Name": "cable_straight (1)",
+              "Position": "224.9429,212.3889,-77866.47",
+              "Rotation": "-0.7071068,0,0.7071068,0",
+              "Scale": "4,2.5,2.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/cable_straight.prefab",
+              "__PrefabVariables": {
+                "Tint": "0.45882,0.45882,0.45882,1"
+              }
+            },
+            {
+              "__guid": "de44c289-cc0c-405e-8cff-a3a14969d071",
+              "Flags": 0,
+              "Name": "cable_serpent (3)",
+              "Position": "-177.7475,-33.34091,-81362.71",
+              "Rotation": "0.5,0.5,-0.5,0.5",
+              "Scale": "2.5,2.5,2.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/cable_serpent.prefab",
+              "__PrefabVariables": {
+                "Tint": "0.45882,0.45882,0.45882,1"
+              }
+            },
+            {
+              "__guid": "336d100d-80df-4342-be39-5c0ebb8c865a",
+              "Flags": 0,
+              "Name": "cable_bend (2)",
+              "Position": "-386.7737,-449.3997,-84159.31",
+              "Rotation": "-0.5,0.5,0.5,0.5",
+              "Scale": "2.5,2.5,2.5",
+              "Enabled": true,
+              "__Prefab": "prefabs/motherboard/cable_bend.prefab",
+              "__PrefabVariables": {
+                "Tint": "0.45882,0.45882,0.45882,1"
+              }
             }
           ]
         }
