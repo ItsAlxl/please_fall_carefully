@@ -151,24 +151,12 @@
           "UseCollisionRules": false
         },
         {
-          "__type": "Sandbox.HullCollider",
-          "__guid": "66be9cea-8206-4988-96a3-1f958fddf707",
-          "BoxSize": "50,50,50",
-          "Center": "0,0,16",
-          "Height": 50,
-          "IsTrigger": true,
-          "Radius": 200,
-          "Radius2": 0,
-          "Slices": 16,
-          "Static": false,
-          "Type": "Cylinder"
-        },
-        {
           "__type": "Player",
           "__guid": "3324243c-7be0-4e2f-a58b-acb85a63148d",
           "AirInertia": 0.5,
           "DVelSqKill": 3000000,
           "DVelSqSmack": 100000,
+          "FeelerLength": 200,
           "FlyBounciness": 0.75,
           "FlyInertia": 1.5,
           "FlySpeed": 4250,

@@ -4,8 +4,12 @@ using Sandbox.Audio;
 [Group( "CareFall" )]
 [Title( "Flyer" )]
 [Icon( "paragliding" )]
-public sealed class Player : Component, Component.ITriggerListener
+public sealed class Player : Component
 {
+	const int FEELER_LAYERS = 3;
+	const int FEELERS_PER_LAYER = 16;
+	const int TIGHT_SQUEEZE_COL_THRESHOLD = FEELERS_PER_LAYER / 16;
+
 	[Property] public float RunSpeed { get; set; } = 150.0f;
 	[Property] public float FlySpeed { get; set; } = 4250.0f;
 	[Property] public float GroundInertia { get; set; } = 0.1f;
@@ -17,6 +21,7 @@ public sealed class Player : Component, Component.ITriggerListener
 	[Property] public float DVelSqSmack { get; set; } = 100000.0f;
 	[Property] public float DVelSqKill { get; set; } = 5000000.0f;
 	[Property] public float VerticalBound { get; set; } = 100000.0f;
+	[Property] public float FeelerLength { get; set; } = 200.0f;
 
 	[Sync] public Angles EyeAngles { get; set; }
 	[Sync] public Vector3 WishVelocity { get; set; }
@@ -40,58 +45,66 @@ public sealed class Player : Component, Component.ITriggerListener
 	private RealTimeSince lastGrounded;
 	private RealTimeSince lastJump;
 
-	private void TeleportTo( Vector3 to )
-	{
-		Transform.Position = to;
-		Transform.ClearInterpolation();
-	}
+	private readonly Vector3[] feelerDirs = new Vector3[FEELER_LAYERS * FEELERS_PER_LAYER];
+	private HashSet<Collider> prevCols = new( FEELER_LAYERS * FEELERS_PER_LAYER );
+	private readonly HashSet<Collider> newCols = new( FEELER_LAYERS * FEELERS_PER_LAYER );
 
 	protected override void OnAwake()
 	{
 		CareFall.Game.plr = this;
 		RunBounciness = CharacterController.Bounciness;
+
+		float feelerStep = (float)Math.Tau / FEELERS_PER_LAYER;
+		float layerStep = (float)Math.PI * 0.25f / FEELER_LAYERS;
+		int layerOffset = FEELER_LAYERS / 2;
+		for ( int i = 0; i < feelerDirs.Length; i++ )
+		{
+			float angle = i / FEELER_LAYERS * feelerStep;
+			feelerDirs[i] = new Vector3( (float)Math.Cos( angle ), (float)Math.Sin( angle ), layerStep * ((i % FEELER_LAYERS) - layerOffset) );
+		}
+		Log.Info( TIGHT_SQUEEZE_COL_THRESHOLD );
 		Respawn();
 	}
 
-	void ITriggerListener.OnTriggerEnter( Collider col )
+	private void StartScrape( Collider col )
 	{
-		if ( Alive )
+		var go = col.GameObject;
+		var tags = go.Tags;
+		if ( Flying && !tags.Has( "pfc-ignore" ) )
 		{
-			var go = col.GameObject;
-			var tags = go.Tags;
-			if ( Flying && !tags.Has( "pfc-ignore" ) )
+			FallObstacle obstacle = go.Components.GetOrCreate<FallObstacle>();
+			if ( !tags.Has( "pfc-bumped" ) )
 			{
-				FallObstacle obstacle = go.Components.GetOrCreate<FallObstacle>();
-				if ( !tags.Has( "pfc-bumped" ) )
-				{
-					ScoreBumps++;
-					Sound.Play( "score_bump", mixerScore );
-				}
+				ScoreBumps++;
+				Sound.Play( "score_bump", mixerScore );
+			}
 
-				if ( obstacle.StartScrape( col ) )
-				{
-					scrapeCount++;
-				}
+			if ( obstacle.StartScrape( col ) )
+			{
+				scrapeCount++;
 			}
 		}
 	}
 
-	void ITriggerListener.OnTriggerExit( Collider col )
+	private void EndScrape( Collider col )
 	{
-		if ( Alive )
+		var go = col.GameObject;
+		var tags = go.Tags;
+		if ( !tags.Has( "pfc-ignore" ) && tags.Has( "pfc-bumped" ) && go.Components.Get<FallObstacle>().EndScrape( col ) )
 		{
-			var go = col.GameObject;
-			var tags = go.Tags;
-			if ( !tags.Has( "pfc-ignore" ) && tags.Has( "pfc-bumped" ) && go.Components.Get<FallObstacle>().EndScrape( col ) )
-			{
-				scrapeCount--;
-			}
+			scrapeCount--;
 		}
 	}
 
 	public bool IsScraping()
 	{
 		return Alive && Flying && scrapeCount > 0;
+	}
+
+	private void TeleportTo( Vector3 to )
+	{
+		Transform.Position = to;
+		Transform.ClearInterpolation();
 	}
 
 	protected override void OnUpdate()
@@ -112,14 +125,9 @@ public sealed class Player : Component, Component.ITriggerListener
 		if ( IsProxy )
 			return;
 		MovementInput();
-		if ( IsScraping() )
+		if ( Alive )
 		{
-			if ( scrapeSound?.IsStopped != false )
-			{
-				scrapeSound?.Dispose();
-				scrapeSound = Sound.Play( "score_scrape", mixerScore );
-			}
-			ScoreScrapes += Time.Delta * (float)Math.Pow( Speed, 1.5 ) * 0.0002f;
+			CheckFeelers();
 		}
 		else
 		{
@@ -160,6 +168,54 @@ public sealed class Player : Component, Component.ITriggerListener
 	{
 		CharacterController.Bounciness = FlyBounciness;
 		Flying = true;
+	}
+
+	private void CheckFeelers()
+	{
+		newCols.Clear();
+		int lastHitCol = -1;
+		var startPos = Transform.Position.WithZ( Transform.Position.z + (0.5f * EyeHeight) );
+		for ( int i = 0; i < feelerDirs.Length; i++ )
+		{
+			var result = Scene.Trace.Ray( startPos, startPos + (feelerDirs[i] * FeelerLength) ).Run();
+			/*
+			Gizmo.Draw.Color = result.Hit ? (result.Component is Collider ? Gizmo.Colors.Blue : Gizmo.Colors.Red) : Gizmo.Colors.Green;
+			Gizmo.Draw.Line( result.StartPosition, result.Hit ? result.HitPosition : result.EndPosition );
+			//*/
+			if ( result.Hit && result.Component is Collider col )
+			{
+				newCols.Add( col );
+				lastHitCol = (i / FEELER_LAYERS) <= lastHitCol + TIGHT_SQUEEZE_COL_THRESHOLD ? i : -1;
+			}
+		}
+
+		foreach ( var col in newCols.Except( prevCols ) )
+		{
+			StartScrape( col );
+		}
+		foreach ( var col in prevCols.Except( newCols ) )
+		{
+			EndScrape( col );
+		}
+		prevCols = new( newCols );
+
+		if ( IsScraping() )
+		{
+			if ( lastHitCol > 0 )
+			{
+				Log.Info( "TIGHT SQUEEZE!" );
+			}
+			if ( scrapeSound?.IsStopped != false )
+			{
+				scrapeSound?.Dispose();
+				scrapeSound = Sound.Play( "score_scrape", mixerScore );
+			}
+			ScoreScrapes += Time.Delta * (float)Math.Pow( Speed, 1.5 ) * 0.0002f;
+		}
+		else
+		{
+			scrapeSound?.Stop();
+		}
 	}
 
 	private void MovementInput()
