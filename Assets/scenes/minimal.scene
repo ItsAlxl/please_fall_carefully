@@ -198,7 +198,7 @@
           "__guid": "d2d40ad6-fe1a-4f06-b52c-2e5624dc0e07",
           "Flags": 0,
           "Name": "Title",
-          "Position": "225,0,50",
+          "Position": "225,0,42.5",
           "Rotation": "0,0,1,-0.00000004371139",
           "Enabled": true,
           "Components": [
