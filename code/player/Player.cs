@@ -59,9 +59,9 @@ public sealed class Player : Component
 		CareFall.Game.plr = this;
 		RunBounciness = CharacterController.Bounciness;
 
-		float feelerStep = (float)Math.Tau / FEELERS_PER_LAYER;
-		float layerStep = (float)Math.PI * 0.25f / FEELER_LAYERS;
-		int layerOffset = FEELER_LAYERS / 2;
+		const float feelerStep = (float)Math.Tau / FEELERS_PER_LAYER;
+		const float layerStep = (float)Math.PI * 0.25f / FEELER_LAYERS;
+		const int layerOffset = FEELER_LAYERS / 2;
 		for ( int i = 0; i < feelerDirs.Length; i++ )
 		{
 			float angle = i / FEELER_LAYERS * feelerStep;
@@ -217,10 +217,6 @@ public sealed class Player : Component
 			{
 				Sound.Play( "score_squeeze", mixerScore );
 				ScoreSqueezes++;
-			}
-			else
-			{
-				Log.Info( "cooldown prevented squeeze" );
 			}
 			lastSqueeze = 0;
 		}
