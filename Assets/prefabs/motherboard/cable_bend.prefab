@@ -1,0 +1,66 @@
+{
+  "RootObject": {
+    "__guid": "9d318286-37c0-4143-83c8-02d7bf04467e",
+    "Flags": 0,
+    "Name": "cable_bend",
+    "Scale": "1.5,1.5,1.5",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "9a34df2f-b40f-4ede-a77c-dd438c5a7485",
+        "BodyGroups": 18446744073709551615,
+        "Model": "models/cables/cable_bend.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "0bc639d6-08cb-4f08-85b1-72c836630c5a",
+        "IsTrigger": false,
+        "Model": "models/cables/cable_bend.vmdl",
+        "Static": true
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "67d317d8-4666-4709-9a17-f02cdb6dc2ee",
+        "IsTrigger": false,
+        "Model": "models/cables/cable_bend_p0.vmdl",
+        "Static": true
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "50971795-a545-4e5a-99ed-dd270146f561",
+        "IsTrigger": false,
+        "Model": "models/cables/cable_bend_p1.vmdl",
+        "Static": true
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "814fedde-8cfe-4999-9205-9dd9c305897f",
+        "IsTrigger": false,
+        "Model": "models/cables/cable_bend_p2.vmdl",
+        "Static": true
+      }
+    ],
+    "Children": [],
+    "__variables": [
+      {
+        "Id": "Tint",
+        "Title": "Tint",
+        "Targets": [
+          {
+            "Id": "9a34df2f-b40f-4ede-a77c-dd438c5a7485",
+            "Property": "Tint"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

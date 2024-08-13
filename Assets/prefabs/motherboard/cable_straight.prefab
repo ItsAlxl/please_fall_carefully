@@ -1,0 +1,45 @@
+{
+  "RootObject": {
+    "__guid": "8a8fe291-92e1-4a51-9c05-d468acaad061",
+    "Flags": 0,
+    "Name": "cable_straight",
+    "Scale": "1.5,1.5,1.5",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "8a05793d-fffc-458d-8357-5eaec00e55ca",
+        "BodyGroups": 18446744073709551615,
+        "Model": "models/cables/cable_straight.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "0bc639d6-08cb-4f08-85b1-72c836630c5a",
+        "IsTrigger": false,
+        "Model": "models/cables/cable_straight.vmdl",
+        "Static": true
+      }
+    ],
+    "Children": [],
+    "__variables": [
+      {
+        "Id": "Tint",
+        "Title": "Tint",
+        "Targets": [
+          {
+            "Id": "8a05793d-fffc-458d-8357-5eaec00e55ca",
+            "Property": "Tint"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

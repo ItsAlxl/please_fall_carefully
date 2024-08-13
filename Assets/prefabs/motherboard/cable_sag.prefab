@@ -1,0 +1,59 @@
+{
+  "RootObject": {
+    "__guid": "0f8f40eb-2787-4611-a8e1-d5da35af6588",
+    "Flags": 0,
+    "Name": "cable_sag",
+    "Scale": "1.5,1.5,1.5",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "eaa58c58-7a8b-4198-9dfc-2849577ce7a4",
+        "BodyGroups": 18446744073709551615,
+        "Model": "models/cables/cable_sag.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "0bc639d6-08cb-4f08-85b1-72c836630c5a",
+        "IsTrigger": false,
+        "Model": "models/cables/cable_sag.vmdl",
+        "Static": true
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "eeb9d3ca-ac27-4ea3-86d6-c07838e1ec3f",
+        "IsTrigger": false,
+        "Model": "models/cables/cable_sag_p0.vmdl",
+        "Static": true
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "8352e2db-c516-46d9-950b-e4198be6380b",
+        "IsTrigger": false,
+        "Model": "models/cables/cable_sag_p1.vmdl",
+        "Static": true
+      }
+    ],
+    "Children": [],
+    "__variables": [
+      {
+        "Id": "Tint",
+        "Title": "Tint",
+        "Targets": [
+          {
+            "Id": "eaa58c58-7a8b-4198-9dfc-2849577ce7a4",
+            "Property": "Tint"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}
