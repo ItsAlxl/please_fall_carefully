@@ -3,7 +3,17 @@
 @inherits PanelComponent
 
 <root>
-	<div class="hud-alive @(IsAlive() && IsFlying() ? "" : "hidden")">
+	<div class="hud-grounded @(IsAlive() && !IsFlying() ? "" : "hidden")">
+		<div class="score-container">
+			<div class="score-hint" style="text-align: right; align-items: flex-end;">
+				<label class="score-label">Get a BUMP for each new obstacle you get close to.</label>
+			</div>
+			<div class="score-hint" style="text-align: left;">
+				<label class="score-label">Continuously get SCRAPES by staying close to obstacles.</label>
+			</div>
+		</div>
+	</div>
+	<div class="hud-flying @(IsAlive() && IsFlying() ? "" : "hidden")">
 		<div class="score-container">
 			<div class="score-box" style="text-align: right;">
 				<label class="score-label">BUMPS</label>
