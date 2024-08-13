@@ -7,7 +7,8 @@ public sealed class CareFall
 
 	public static CareFall Game { get { return lazy.Value; } }
 
-	public const int BUMP_SCORE_AMT = 10;
+	public const int SCORE_BUMP_AMT = 10;
+	public const int SCORE_SQUEEZE_AMT = 100;
 
 	public Player plr;
 }

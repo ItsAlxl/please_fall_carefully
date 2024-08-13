@@ -3,48 +3,57 @@
 @inherits PanelComponent
 
 <root>
-	<div class="hud-grounded @(IsAlive() && !IsFlying() ? "" : "hidden")">
-		<div class="score-container">
-			<div class="score-hint" style="text-align: right; align-items: flex-end;">
-				<label class="score-label">Get a BUMP for each new obstacle you get close to.</label>
-			</div>
-			<div class="score-hint" style="text-align: left;">
-				<label class="score-label">Continuously get SCRAPES by staying close to obstacles.</label>
-			</div>
+	<div class="hud-alive @(IsAlive() ? "" : "hidden")">
+		<div class="score-container @(IsFlying() ? "hidden" : "")">
+			<label class="score-hint">Get a BUMP for each new obstacle you get close to.</label>
+			<label class="score-hint">Be fully &amp; tightly surrounded for a SQUEEZE.</label>
+			<label class="score-hint">Continuously get SCRAPES by staying close to obstacles.</label>
 		</div>
-	</div>
-	<div class="hud-flying @(IsAlive() && IsFlying() ? "" : "hidden")">
-		<div class="score-container">
-			<div class="score-box" style="text-align: right;">
-				<label class="score-label">BUMPS</label>
+		<div class="score-container @(IsFlying() ? "" : "hidden")">
+			<div class="score-box">
 				<label class="score-number">@(GetBumps())</label>
+				<label class="score-label">BUMPS</label>
 			</div>
-			<div class="score-box" style="text-align: left;">
-				<label class="score-label">SCRAPES</label>
+			<div class="score-box">
+				<label class="score-number">@(GetSqueezes())</label>
+				<label class="score-label">SQUEEZES</label>
+			</div>
+			<div class="score-box">
 				<label class="score-number">@(GetScrapes())</label>
+				<label class="score-label">SCRAPES</label>
 			</div>
 		</div>
 	</div>
 	<div class="hud-dead @(IsAlive() ? "hidden" : "")">
 		<label class="rip">YOU HAVE PERISHED</label>
 		<div class="score-tally">
-
-			<label class="score-label">SCRAPES: @(GetScrapes()) x1</label>
-			<label class="score-label">BUMPS: @(GetBumps()) x@(CareFall.BUMP_SCORE_AMT)</label>
-			<label class="score-label">FINAL SCORE: @(CareFall.BUMP_SCORE_AMT * GetBumps() + GetScrapes())</label>
-			<label class="score-label"></label>
-			<label class="score-label">PRESS '@(restartAct?.KeyboardCode.ToUpper())' TO RESTART</label>
+			<label class="score-tuple">SCRAPES: @(GetScrapes()) x1</label>
+			<label class="score-tuple">BUMPS: @(GetBumps()) x@(CareFall.SCORE_BUMP_AMT)</label>
+			<label class="score-tuple">SQUEEZES: @(GetSqueezes()) x@(CareFall.SCORE_SQUEEZE_AMT)</label>
+			<label class="score-tuple">FINAL SCORE: @(GetScore())</label>
+			<label class="score-tuple"></label>
+			<label class="score-tuple">PRESS '@(restartAct?.KeyboardCode.ToUpper())' TO RESTART</label>
 		</div>
 	</div>
 </root>
 
 @code
 {
-	private InputAction restartAct = Input.GetActions().FirstOrDefault( x => x.Name == "restart" );
+	private InputAction restartAct = Input.GetActions().FirstOrDefault(x => x.Name == "restart");
+
+	public int GetScore()
+	{
+		return (CareFall.SCORE_SQUEEZE_AMT * GetSqueezes()) + (CareFall.SCORE_BUMP_AMT * GetBumps()) + GetScrapes();
+	}
 
 	public int GetBumps()
 	{
 		return CareFall.Game.plr?.ScoreBumps ?? 0;
+	}
+
+	public int GetSqueezes()
+	{
+		return CareFall.Game.plr?.ScoreSqueezes ?? 0;
 	}
 
 	public int GetScrapes()
@@ -62,5 +71,6 @@
 		return CareFall.Game.plr?.Flying ?? false;
 	}
 
-	protected override int BuildHash() => System.HashCode.Combine(GetBumps(), GetScrapes(), IsAlive(), IsFlying());
+	protected override int BuildHash() => System.HashCode.Combine(GetBumps(), GetSqueezes(), GetScrapes(), IsAlive(),
+	IsFlying());
 }

@@ -8,7 +8,9 @@ public sealed class Player : Component
 {
 	const int FEELER_LAYERS = 3;
 	const int FEELERS_PER_LAYER = 16;
-	const int TIGHT_SQUEEZE_COL_THRESHOLD = FEELERS_PER_LAYER / 16;
+	const int SQUEEZE_COL_THRESHOLD = FEELERS_PER_LAYER / 16;
+	const int SQUEEZE_MAX_THRESHOLD = FEELERS_PER_LAYER - SQUEEZE_COL_THRESHOLD - 1;
+	const float SQUEEZE_COOLDOWN = 0.15f;
 
 	[Property] public float RunSpeed { get; set; } = 150.0f;
 	[Property] public float FlySpeed { get; set; } = 4250.0f;
@@ -35,8 +37,10 @@ public sealed class Player : Component
 	public bool Alive = true;
 
 	private int scrapeCount = 0;
+	private bool squeezing = false;
 	public int ScoreBumps = 0;
 	public float ScoreScrapes = 0.0f;
+	public int ScoreSqueezes = 0;
 
 	private readonly Mixer mixerScore = Mixer.FindMixerByName( "Scoring" );
 	private readonly Mixer mixerSmack = Mixer.FindMixerByName( "Impacts" );
@@ -44,6 +48,7 @@ public sealed class Player : Component
 
 	private RealTimeSince lastGrounded;
 	private RealTimeSince lastJump;
+	private RealTimeSince lastSqueeze;
 
 	private readonly Vector3[] feelerDirs = new Vector3[FEELER_LAYERS * FEELERS_PER_LAYER];
 	private HashSet<Collider> prevCols = new( FEELER_LAYERS * FEELERS_PER_LAYER );
@@ -62,7 +67,6 @@ public sealed class Player : Component
 			float angle = i / FEELER_LAYERS * feelerStep;
 			feelerDirs[i] = new Vector3( (float)Math.Cos( angle ), (float)Math.Sin( angle ), layerStep * ((i % FEELER_LAYERS) - layerOffset) );
 		}
-		Log.Info( TIGHT_SQUEEZE_COL_THRESHOLD );
 		Respawn();
 	}
 
@@ -149,9 +153,14 @@ public sealed class Player : Component
 		{
 			obstacle.Restore();
 		}
+
 		scrapeCount = 0;
+		squeezing = false;
+
 		ScoreBumps = 0;
 		ScoreScrapes = 0.0f;
+		ScoreSqueezes = 0;
+
 		Alive = true;
 		lastGrounded = 0;
 		EyeAngles = Angles.Zero;
@@ -174,6 +183,7 @@ public sealed class Player : Component
 	{
 		newCols.Clear();
 		int lastHitCol = -1;
+
 		var startPos = Transform.Position.WithZ( Transform.Position.z + (0.5f * EyeHeight) );
 		for ( int i = 0; i < feelerDirs.Length; i++ )
 		{
@@ -185,7 +195,8 @@ public sealed class Player : Component
 			if ( result.Hit && result.Component is Collider col )
 			{
 				newCols.Add( col );
-				lastHitCol = (i / FEELER_LAYERS) <= lastHitCol + TIGHT_SQUEEZE_COL_THRESHOLD ? i : -1;
+				int iCol = i / FEELER_LAYERS;
+				lastHitCol = (iCol <= lastHitCol + SQUEEZE_COL_THRESHOLD) ? iCol : -1;
 			}
 		}
 
@@ -199,12 +210,23 @@ public sealed class Player : Component
 		}
 		prevCols = new( newCols );
 
+		squeezing = IsScraping() && lastHitCol > SQUEEZE_MAX_THRESHOLD;
+		if ( squeezing )
+		{
+			if ( lastSqueeze > SQUEEZE_COOLDOWN )
+			{
+				Sound.Play( "score_squeeze", mixerScore );
+				ScoreSqueezes++;
+			}
+			else
+			{
+				Log.Info( "cooldown prevented squeeze" );
+			}
+			lastSqueeze = 0;
+		}
+
 		if ( IsScraping() )
 		{
-			if ( lastHitCol > 0 )
-			{
-				Log.Info( "TIGHT SQUEEZE!" );
-			}
 			if ( scrapeSound?.IsStopped != false )
 			{
 				scrapeSound?.Dispose();

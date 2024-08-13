@@ -86,7 +86,7 @@
           "Components": [
             {
               "__type": "HUD",
-              "__guid": "9227d5b3-2866-4e0d-a927-ed207e518ff5"
+              "__guid": "a1dd0001-d542-4470-b064-8838d4f2230b"
             }
           ]
         }
@@ -1213,6 +1213,7 @@
               "Name": "mobo (19)",
               "Position": "-827.6923,-982.6218,-62000",
               "Rotation": "-0.5000002,0.5,0.5000002,0.5",
+              "Scale": "2,1,1",
               "Enabled": true,
               "__Prefab": "prefabs/motherboard/mobo.prefab",
               "__PrefabVariables": {}
@@ -1223,6 +1224,7 @@
               "Name": "mobo (20)",
               "Position": "667.6754,-782.9954,-62000",
               "Rotation": "-0.5000002,0.5,0.5000002,0.5",
+              "Scale": "2,1,1",
               "Enabled": true,
               "__Prefab": "prefabs/motherboard/mobo.prefab",
               "__PrefabVariables": {}
@@ -1233,6 +1235,7 @@
               "Name": "mobo (21)",
               "Position": "-1281.467,765.8297,-62000",
               "Rotation": "-0.0000001788139,0.7071069,0.0000001788139,0.7071069",
+              "Scale": "2,1,1",
               "Enabled": true,
               "__Prefab": "prefabs/motherboard/mobo.prefab",
               "__PrefabVariables": {}
@@ -1243,6 +1246,7 @@
               "Name": "mobo (22)",
               "Position": "467.0897,1217.547,-62000",
               "Rotation": "-0.5000002,0.5,0.5000002,0.5",
+              "Scale": "2,1,1",
               "Enabled": true,
               "__Prefab": "prefabs/motherboard/mobo.prefab",
               "__PrefabVariables": {}
@@ -1253,6 +1257,7 @@
               "Name": "mobo (26)",
               "Position": "-141.3818,1050.124,-67180.59",
               "Rotation": "0.2705979,0.6532817,-0.2705979,0.6532817",
+              "Scale": "2,1,1",
               "Enabled": true,
               "__Prefab": "prefabs/motherboard/mobo.prefab",
               "__PrefabVariables": {}
@@ -1263,6 +1268,7 @@
               "Name": "mobo (25)",
               "Position": "-1056.857,-507.0854,-67180.59",
               "Rotation": "-0.2705983,0.6532816,0.2705983,0.6532816",
+              "Scale": "2,1,1",
               "Enabled": true,
               "__Prefab": "prefabs/motherboard/mobo.prefab",
               "__PrefabVariables": {}
@@ -1273,6 +1279,7 @@
               "Name": "mobo (24)",
               "Position": "141.6852,-1423.313,-67180.59",
               "Rotation": "-0.2705983,0.6532816,0.2705983,0.6532816",
+              "Scale": "2,1,1",
               "Enabled": true,
               "__Prefab": "prefabs/motherboard/mobo.prefab",
               "__PrefabVariables": {}
@@ -1283,6 +1290,7 @@
               "Name": "mobo (23)",
               "Position": "1414.447,133.1199,-67180.59",
               "Rotation": "-0.2705983,0.6532816,0.2705983,0.6532816",
+              "Scale": "2,1,1",
               "Enabled": true,
               "__Prefab": "prefabs/motherboard/mobo.prefab",
               "__PrefabVariables": {}
