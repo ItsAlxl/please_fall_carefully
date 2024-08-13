@@ -198,7 +198,7 @@
           "__guid": "d2d40ad6-fe1a-4f06-b52c-2e5624dc0e07",
           "Flags": 0,
           "Name": "Title",
-          "Position": "175,0,25",
+          "Position": "225,0,50",
           "Rotation": "0,0,1,-0.00000004371139",
           "Enabled": true,
           "Components": [
@@ -215,6 +215,30 @@
             {
               "__type": "Title",
               "__guid": "6e4e5ad4-5ec5-41c4-a0eb-cf2e7c17a948"
+            }
+          ]
+        },
+        {
+          "__guid": "b1975fa7-d93c-4039-a925-6048d9acb9ad",
+          "Flags": 0,
+          "Name": "Credits",
+          "Position": "-200,0,55",
+          "Rotation": "0,0,0.00000005960464,-0.9999999",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "ed56ee39-64fa-4954-85d6-fdadf75023db",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 0,
+              "LookAtCamera": false,
+              "PanelSize": "3500,2000",
+              "RenderScale": 4,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "Credits",
+              "__guid": "3e52f5f7-7feb-447e-8205-40a0d4ddb9ac"
             }
           ]
         },
@@ -239,8 +263,8 @@
             {
               "__guid": "c697d939-c669-4e5f-b60d-fa84df0f18aa",
               "Flags": 0,
-              "Name": "Wall0",
-              "Position": "0,-750,-25000",
+              "Name": "Roof0",
+              "Position": "0,-750,25000",
               "Scale": "30,2,1000",
               "Tags": "pfc-ignore",
               "Enabled": true,
@@ -252,11 +276,112 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "0.27137,0.34822,0.45581,1"
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "f59f0c19-767f-4ef4-842d-33da9afe8d07",
+              "Flags": 0,
+              "Name": "Roof1",
+              "Position": "0,750,25000",
+              "Scale": "30,2,1000",
+              "Tags": "pfc-ignore",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "3531662b-7dd6-496e-ba7b-f0e065bf3034",
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": "materials/circuit/walls.vmat",
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "Off",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "fc39b497-8516-4279-870b-51a697501f5e",
+              "Flags": 0,
+              "Name": "Roof2",
+              "Position": "750,0,25000",
+              "Scale": "2,30,1000",
+              "Tags": "pfc-ignore",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "cbffffaa-00f0-4e02-bbf7-1ea71e14dab9",
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": "materials/circuit/walls.vmat",
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "Off",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "4b90868d-9c1c-47d8-92ce-e0cda22d7524",
+              "Flags": 0,
+              "Name": "Roof3",
+              "Position": "-750,0,25000",
+              "Scale": "2,30,1000",
+              "Tags": "pfc-ignore",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "00a8d243-50e5-493e-bf7d-e6cff4ac5e12",
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": "materials/circuit/walls.vmat",
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "Off",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "b52140e5-65a6-4ed7-9c9b-18b70a1a4a89",
+              "Flags": 0,
+              "Name": "Roof4",
+              "Position": "0.00008124951,0,155",
+              "Rotation": "0,0.7071067,0,0.7071068",
+              "Scale": "2,30,1000",
+              "Tags": "pfc-ignore",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "dca1ab50-c9dc-40ec-9366-6123e6f8b756",
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": "materials/circuit/walls.vmat",
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "Off",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "d800e9f9-b1d0-41d4-8d12-874b544186cf",
+              "Flags": 0,
+              "Name": "Wall0",
+              "Position": "0,-750,-25000",
+              "Scale": "30,2,1000",
+              "Tags": "pfc-ignore",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "167182f5-a3c8-4203-832c-8f7774ed7abd",
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": "materials/circuit/walls.vmat",
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "Off",
+                  "Tint": "1,1,1,1"
                 },
                 {
                   "__type": "Sandbox.BoxCollider",
-                  "__guid": "d47156de-c072-4c6d-abcf-5efa276b0e01",
+                  "__guid": "6edea25b-0261-49da-8285-28635e723afa",
                   "Center": "0,0,0",
                   "IsTrigger": false,
                   "Scale": "50,50,50",
@@ -280,7 +405,7 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "0.27137,0.34822,0.45581,1"
+                  "Tint": "1,1,1,1"
                 },
                 {
                   "__type": "Sandbox.BoxCollider",
@@ -308,7 +433,7 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "0.27137,0.34822,0.45581,1"
+                  "Tint": "1,1,1,1"
                 },
                 {
                   "__type": "Sandbox.BoxCollider",
@@ -336,7 +461,7 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "0.27137,0.34822,0.45581,1"
+                  "Tint": "1,1,1,1"
                 },
                 {
                   "__type": "Sandbox.BoxCollider",
@@ -364,7 +489,7 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "0.27137,0.34822,0.45581,1"
+                  "Tint": "1,1,1,1"
                 },
                 {
                   "__type": "Sandbox.BoxCollider",
@@ -392,7 +517,7 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "0.27137,0.34822,0.45581,1"
+                  "Tint": "1,1,1,1"
                 },
                 {
                   "__type": "Sandbox.BoxCollider",
@@ -420,7 +545,7 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "0.27137,0.34822,0.45581,1"
+                  "Tint": "1,1,1,1"
                 },
                 {
                   "__type": "Sandbox.BoxCollider",
@@ -448,7 +573,7 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "0.27137,0.34822,0.45581,1"
+                  "Tint": "1,1,1,1"
                 },
                 {
                   "__type": "Sandbox.BoxCollider",
@@ -476,7 +601,7 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "0.27137,0.34822,0.45581,1"
+                  "Tint": "1,1,1,1"
                 },
                 {
                   "__type": "Sandbox.BoxCollider",
@@ -504,7 +629,7 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "0.27137,0.34822,0.45581,1"
+                  "Tint": "1,1,1,1"
                 },
                 {
                   "__type": "Sandbox.BoxCollider",
@@ -532,7 +657,7 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "0.27137,0.34822,0.45581,1"
+                  "Tint": "1,1,1,1"
                 },
                 {
                   "__type": "Sandbox.BoxCollider",
@@ -560,7 +685,7 @@
                   "MaterialOverride": "materials/circuit/walls.vmat",
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "0.27137,0.34822,0.45581,1"
+                  "Tint": "1,1,1,1"
                 },
                 {
                   "__type": "Sandbox.BoxCollider",
@@ -663,7 +788,7 @@
               "__guid": "22361057-a470-41b7-a11b-59299920b4e3",
               "Flags": 0,
               "Name": "ic",
-              "Position": "-196.647,-699,-1407.148",
+              "Position": "-19.18718,-699.0499,-3366.961",
               "Rotation": "-0.7071067,0.00000005960464,0.00000005960464,0.7071067",
               "Enabled": true,
               "__Prefab": "prefabs/motherboard/ic.prefab",
@@ -683,7 +808,7 @@
               "__guid": "fa98192c-4b9c-4c57-910b-c051a351c00f",
               "Flags": 0,
               "Name": "inductor_hoop",
-              "Position": "346.8216,700.0095,-1668.727",
+              "Position": "346.8218,700.0159,-2826.949",
               "Rotation": "0.00000002980232,0.7071066,-0.7071066,0.00000002980232",
               "Enabled": true,
               "__Prefab": "prefabs/motherboard/inductor_hoop.prefab",
@@ -693,7 +818,7 @@
               "__guid": "3b26e70c-eacc-4236-9266-384a271a94c6",
               "Flags": 0,
               "Name": "capacitor",
-              "Position": "699.82,336.709,-3088.09",
+              "Position": "699.8196,7.895874,-3631.73",
               "Rotation": "0.5,-0.5,-0.5,0.5",
               "Enabled": true,
               "__Prefab": "prefabs/motherboard/capacitor1.prefab",
