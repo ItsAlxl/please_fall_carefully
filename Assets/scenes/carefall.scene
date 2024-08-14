@@ -1299,8 +1299,8 @@
               "__guid": "18ebf664-bb6a-42c1-9ebf-0321ea45b231",
               "Flags": 0,
               "Name": "cable_bend (1)",
-              "Position": "225.3928,212.6488,-71863.87",
-              "Rotation": "-0.0000000174578,-0.7071066,0.0000001017515,0.7071067",
+              "Position": "173.9183,-39.84732,-71863.88",
+              "Rotation": "-0.4999999,-0.4999999,-0.4999998,0.4999999",
               "Scale": "2.5,2.5,2.5",
               "Enabled": true,
               "__Prefab": "prefabs/motherboard/cable_bend.prefab",
@@ -1312,8 +1312,8 @@
               "__guid": "6874f1a9-717d-4c60-b69f-57e11da5209b",
               "Flags": 0,
               "Name": "cable_sag (1)",
-              "Position": "224.4038,212.722,-74617.81",
-              "Rotation": "-0.7071068,0,0.7071068,0",
+              "Position": "173.9915,-38.85925,-74617.81",
+              "Rotation": "-0.5000001,0.5000001,0.4999999,0.4999999",
               "Scale": "2.5,2.5,2.5",
               "Enabled": true,
               "__Prefab": "prefabs/motherboard/cable_sag.prefab",
@@ -1325,8 +1325,8 @@
               "__guid": "326c197c-dc6e-4473-8132-b51758926d2e",
               "Flags": 0,
               "Name": "cable_straight (1)",
-              "Position": "224.9429,212.3889,-77866.47",
-              "Rotation": "-0.7071068,0,0.7071068,0",
+              "Position": "173.6584,-39.39944,-77866.47",
+              "Rotation": "-0.5000001,0.5000001,0.4999999,0.4999999",
               "Scale": "4,2.5,2.5",
               "Enabled": true,
               "__Prefab": "prefabs/motherboard/cable_straight.prefab",
@@ -1338,24 +1338,11 @@
               "__guid": "de44c289-cc0c-405e-8cff-a3a14969d071",
               "Flags": 0,
               "Name": "cable_serpent (3)",
-              "Position": "-177.7475,-33.34091,-81362.71",
-              "Rotation": "0.5,0.5,-0.5,0.5",
+              "Position": "-72.0715,363.2897,-81362.72",
+              "Rotation": "0.7071067,-0.00000008940697,-0.7071067,0.0000001490116",
               "Scale": "2.5,2.5,2.5",
               "Enabled": true,
               "__Prefab": "prefabs/motherboard/cable_serpent.prefab",
-              "__PrefabVariables": {
-                "Tint": "0.45882,0.45882,0.45882,1"
-              }
-            },
-            {
-              "__guid": "336d100d-80df-4342-be39-5c0ebb8c865a",
-              "Flags": 0,
-              "Name": "cable_bend (2)",
-              "Position": "-386.7737,-449.3997,-84159.31",
-              "Rotation": "-0.5,0.5,0.5,0.5",
-              "Scale": "2.5,2.5,2.5",
-              "Enabled": true,
-              "__Prefab": "prefabs/motherboard/cable_bend.prefab",
               "__PrefabVariables": {
                 "Tint": "0.45882,0.45882,0.45882,1"
               }
@@ -1363,6 +1350,84 @@
           ]
         }
       ]
+    },
+    {
+      "__guid": "21a2e369-da8b-4130-a23a-8f2f6ac5429c",
+      "Flags": 0,
+      "Name": "cable_serpent",
+      "Position": "-242.7032,170.6499,-34153.06",
+      "Rotation": "0,0.7071067,0,0.7071067",
+      "Scale": "2.5,2.5,2.5",
+      "Enabled": true,
+      "__Prefab": "prefabs/motherboard/cable_serpent.prefab",
+      "__PrefabVariables": {
+        "Tint": "0.45882,0.45882,0.45882,1"
+      }
+    },
+    {
+      "__guid": "6b9e49cd-7d56-4fba-8c2a-77cd1bb4f3ac",
+      "Flags": 0,
+      "Name": "cable_sag",
+      "Position": "172.4518,-40.16472,-36695.56",
+      "Rotation": "-0.7071068,-0.00000003090862,0.7071068,-0.00000003090862",
+      "Scale": "2.5,2.5,2.5",
+      "Enabled": true,
+      "__Prefab": "prefabs/motherboard/cable_sag.prefab",
+      "__PrefabVariables": {
+        "Tint": "0.45882,0.45882,0.45882,1"
+      }
+    },
+    {
+      "__guid": "a33ac5b9-98b5-4231-a590-2fa81b8ae0b8",
+      "Flags": 0,
+      "Name": "cable_sag (1)",
+      "Position": "172.4445,-40.16472,-39194.8",
+      "Rotation": "0.1830126,-0.6830127,-0.1830126,-0.6830127",
+      "Scale": "2.5,2.5,2.5",
+      "Enabled": true,
+      "__Prefab": "prefabs/motherboard/cable_sag.prefab",
+      "__PrefabVariables": {
+        "Tint": "0.45882,0.45882,0.45882,1"
+      }
+    },
+    {
+      "__guid": "f5923a59-ca60-4807-92ea-87b69c9521d3",
+      "Flags": 0,
+      "Name": "cable_serpent (1)",
+      "Position": "-74.02168,362.6509,-41941.53",
+      "Rotation": "-0.7071068,0,0.7071068,0",
+      "Scale": "2.5,2.5,2.5",
+      "Enabled": true,
+      "__Prefab": "prefabs/motherboard/cable_serpent.prefab",
+      "__PrefabVariables": {
+        "Tint": "0.45882,0.45882,0.45882,1"
+      }
+    },
+    {
+      "__guid": "a1a4b57d-1a1c-40c4-8ef4-de2e5ac93519",
+      "Flags": 0,
+      "Name": "cable_straight",
+      "Position": "-492.6318,573.0045,-44483.64",
+      "Rotation": "0.5,0.5,-0.5,0.5",
+      "Scale": "2.5,2.5,2.5",
+      "Enabled": true,
+      "__Prefab": "prefabs/motherboard/cable_straight.prefab",
+      "__PrefabVariables": {
+        "Tint": "0.45882,0.45882,0.45882,1"
+      }
+    },
+    {
+      "__guid": "404bc372-4f07-49be-ae5e-87536db53a72",
+      "Flags": 0,
+      "Name": "cable_bend",
+      "Position": "-495.4417,573.3032,-47237.69",
+      "Rotation": "0.00000005960464,0.7071066,-0.00000005960464,0.7071066",
+      "Scale": "2.5,2.5,2.5",
+      "Enabled": true,
+      "__Prefab": "prefabs/motherboard/cable_bend.prefab",
+      "__PrefabVariables": {
+        "Tint": "0.45882,0.45882,0.45882,1"
+      }
     }
   ],
   "SceneProperties": {

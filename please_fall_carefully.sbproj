@@ -2,7 +2,7 @@
   "Title": "Please Fall Carefully",
   "Type": "game",
   "Org": "pwegg",
-  "Ident": "please_fall_carefully",
+  "Ident": "carefall",
   "Schema": 1,
   "IncludeSourceFiles": false,
   "Resources": null,
