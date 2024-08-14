@@ -86,7 +86,7 @@
           "Components": [
             {
               "__type": "HUD",
-              "__guid": "a1dd0001-d542-4470-b064-8838d4f2230b"
+              "__guid": "7f573206-b939-461b-85a5-fef36c96ed07"
             }
           ]
         }
@@ -173,6 +173,12 @@
       "Flags": 0,
       "Name": "Stages",
       "Enabled": true,
+      "Components": [
+        {
+          "__type": "StageController",
+          "__guid": "81e06bcd-0680-44c7-b1b8-ca79b4ba33f2"
+        }
+      ],
       "Children": [
         {
           "__guid": "b0a2cec4-0d0c-4cf6-a7ad-6ebf3e5be981",
@@ -180,6 +186,13 @@
           "Name": "Stage0",
           "Position": "0,0,50000",
           "Enabled": true,
+          "Components": [
+            {
+              "__type": "FallStage",
+              "__guid": "69385520-0ae2-46ef-aa80-1b3dd4dc4a09",
+              "SkyColor": "0.02353,0.07843,0.0549,1"
+            }
+          ],
           "Children": [
             {
               "__guid": "cf51d302-9be9-4311-8d86-3626a18acf93",
@@ -393,7 +406,7 @@
                       "Center": "0,0,0",
                       "IsTrigger": false,
                       "Scale": "50,50,50",
-                      "Static": false
+                      "Static": true
                     }
                   ]
                 },
@@ -421,7 +434,7 @@
                       "Center": "0,0,0",
                       "IsTrigger": false,
                       "Scale": "50,50,50",
-                      "Static": false
+                      "Static": true
                     }
                   ]
                 },
@@ -449,7 +462,7 @@
                       "Center": "0,0,0",
                       "IsTrigger": false,
                       "Scale": "50,50,50",
-                      "Static": false
+                      "Static": true
                     }
                   ]
                 },
@@ -477,7 +490,7 @@
                       "Center": "0,0,0",
                       "IsTrigger": false,
                       "Scale": "50,50,50",
-                      "Static": false
+                      "Static": true
                     }
                   ]
                 },
@@ -505,7 +518,7 @@
                       "Center": "0,0,0",
                       "IsTrigger": false,
                       "Scale": "50,50,50",
-                      "Static": false
+                      "Static": true
                     }
                   ]
                 },
@@ -533,7 +546,7 @@
                       "Center": "0,0,0",
                       "IsTrigger": false,
                       "Scale": "50,50,50",
-                      "Static": false
+                      "Static": true
                     }
                   ]
                 },
@@ -561,7 +574,7 @@
                       "Center": "0,0,0",
                       "IsTrigger": false,
                       "Scale": "50,50,50",
-                      "Static": false
+                      "Static": true
                     }
                   ]
                 },
@@ -589,7 +602,7 @@
                       "Center": "0,0,0",
                       "IsTrigger": false,
                       "Scale": "50,50,50",
-                      "Static": false
+                      "Static": true
                     }
                   ]
                 }
@@ -1467,6 +1480,282 @@
                       "__guid": "1f47d5d9-96ed-43be-bc61-3ffb35b78607",
                       "IsTrigger": false,
                       "Model": "models/editor/editor.vmdl",
+                      "Static": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "__guid": "8292e44c-7df9-4cbf-92ec-d910577e56f4",
+          "Flags": 0,
+          "Name": "Stage1",
+          "Position": "0,0,-50000",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "FallStage",
+              "__guid": "31854d41-13d4-4923-9c9b-4091d544ade9",
+              "SkyColor": "0.64186,0.64186,0.64186,1"
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "50807394-e298-4686-a2c7-24c769e57806",
+              "Flags": 0,
+              "Name": "Object",
+              "Position": "0,0,0",
+              "Enabled": true
+            },
+            {
+              "__guid": "00ef8f43-bf09-4684-bc0f-2faeacff2bcf",
+              "Flags": 0,
+              "Name": "EditorFacade",
+              "Position": "0,0,0",
+              "Rotation": "-0.00000004371139,1,-0.00000004371139,0.000000000000001910685",
+              "Scale": "14,14,14",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "a10da884-0767-426e-82c8-a741228a17a7",
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": "materials/circuit/editor.vmat",
+                  "Model": "models/dev/plane.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "6077799a-e97b-4417-8cb4-1526053411fc",
+              "Flags": 0,
+              "Name": "Walls",
+              "Position": "0,0,87.30006",
+              "Enabled": true,
+              "Children": [
+                {
+                  "__guid": "c8a16c46-8907-428a-bb4c-9a242e27695c",
+                  "Flags": 0,
+                  "Name": "Wall0",
+                  "Position": "0,-750,-25088",
+                  "Scale": "30,2,1000",
+                  "Tags": "pfc-ignore",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "d8b0abdb-eeb1-4b0f-8d31-52ccd784f7c3",
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/circuit/capacitor.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.50233,0.50233,0.50233,1"
+                    },
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "c01ec2cd-993d-4d03-97d3-2cfd6b0f4cda",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": true
+                    }
+                  ]
+                },
+                {
+                  "__guid": "f8fcb576-d3a2-4c56-b6f3-5c0a3f081121",
+                  "Flags": 0,
+                  "Name": "Wall1",
+                  "Position": "0,750,-25088",
+                  "Scale": "30,2,1000",
+                  "Tags": "pfc-ignore",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "74a45f33-86c1-41ad-ba41-4c6982beaaee",
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/circuit/capacitor.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.50233,0.50233,0.50233,1"
+                    },
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "3169c1e0-1924-4134-af23-e915ea24ca2f",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": true
+                    }
+                  ]
+                },
+                {
+                  "__guid": "f89be4e7-2b26-465c-ae76-183997301edd",
+                  "Flags": 0,
+                  "Name": "Wall2",
+                  "Position": "750,0,-25088",
+                  "Scale": "2,30,1000",
+                  "Tags": "pfc-ignore",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "f710bb53-e230-4dc3-b30e-462a6274dd6f",
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/circuit/capacitor.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.50233,0.50233,0.50233,1"
+                    },
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "e726e01d-df6f-4042-a984-4608a05b4301",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": true
+                    }
+                  ]
+                },
+                {
+                  "__guid": "71628d72-465b-48c9-ab4c-a9447dc1bdb7",
+                  "Flags": 0,
+                  "Name": "Wall3",
+                  "Position": "-750,0,-25088",
+                  "Scale": "2,30,1000",
+                  "Tags": "pfc-ignore",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "567b7bd0-1942-4776-8b81-876edbb29e18",
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/circuit/capacitor.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.50233,0.50233,0.50233,1"
+                    },
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "2438f984-9165-46d1-9e35-dab43bdf15d6",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": true
+                    }
+                  ]
+                },
+                {
+                  "__guid": "85c6e3de-c43a-485f-b317-f56afa7c2ff3",
+                  "Flags": 0,
+                  "Name": "Wall0",
+                  "Position": "0,-750,-74752",
+                  "Scale": "30,2,1000",
+                  "Tags": "pfc-ignore",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "70f6b65b-8a0f-4e1a-b525-4133a291e50f",
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/circuit/capacitor.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.50233,0.50233,0.50233,1"
+                    },
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "bef4b77c-e898-484f-810e-4581d8c290d8",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": true
+                    }
+                  ]
+                },
+                {
+                  "__guid": "b919cda0-8904-4226-8afb-4f20ebb60ce4",
+                  "Flags": 0,
+                  "Name": "Wall1",
+                  "Position": "0,750,-74752",
+                  "Scale": "30,2,1000",
+                  "Tags": "pfc-ignore",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "4ee3f312-fe27-48de-82a4-8aa5828087ed",
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/circuit/capacitor.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.50233,0.50233,0.50233,1"
+                    },
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "f67af539-234e-44cc-93bb-1f95fb9bbb05",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": true
+                    }
+                  ]
+                },
+                {
+                  "__guid": "1936afdb-29bb-4157-a47f-87f32e71bf23",
+                  "Flags": 0,
+                  "Name": "Wall2",
+                  "Position": "750,0,-74752",
+                  "Scale": "2,30,1000",
+                  "Tags": "pfc-ignore",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "2c960856-2551-4bc0-8e0f-6e4f75837a95",
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/circuit/capacitor.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.50233,0.50233,0.50233,1"
+                    },
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "c607892d-febf-4c48-a6fd-b3b2347a3a1b",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": true
+                    }
+                  ]
+                },
+                {
+                  "__guid": "3a568bd9-db54-43e5-ab0b-82b20f01ef91",
+                  "Flags": 0,
+                  "Name": "Wall3",
+                  "Position": "-750,0,-74752",
+                  "Scale": "2,30,1000",
+                  "Tags": "pfc-ignore",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "c8e084a8-c659-4ce7-b2a2-122b3e3f943c",
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/circuit/capacitor.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.50233,0.50233,0.50233,1"
+                    },
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "0348aa60-0385-4dc2-9a12-2df2f2a1e612",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
                       "Static": true
                     }
                   ]

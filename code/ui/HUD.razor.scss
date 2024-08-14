@@ -26,6 +26,19 @@ HUD {
 		background-color: #35000080;
 	}
 
+	.popup-stage {
+		position: absolute;
+		top: 15%;
+		left: 0%;
+		right: 0%;
+	}
+
+	.popup-stage label {
+		width: 100%;
+		text-align: center;
+		font-size: 80px;
+	}
+
 	.score-container {
 		display: flex;
 		flex-direction: row;

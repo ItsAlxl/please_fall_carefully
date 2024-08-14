@@ -1,5 +1,3 @@
-using System.Reflection.Metadata.Ecma335;
-
 [Group( "CareFall" )]
 [Title( "(don't use in editor) Fall Obstacle" )]
 [Icon( "disabled_by_default" )]

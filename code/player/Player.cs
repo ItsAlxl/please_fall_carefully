@@ -41,6 +41,7 @@ public sealed class Player : Component
 	public int ScoreBumps = 0;
 	public float ScoreScrapes = 0.0f;
 	public int ScoreSqueezes = 0;
+	public int ScoreStages = 0;
 
 	private readonly Mixer mixerScore = Mixer.FindMixerByName( "Scoring" );
 	private readonly Mixer mixerSmack = Mixer.FindMixerByName( "Impacts" );
@@ -49,14 +50,18 @@ public sealed class Player : Component
 	private RealTimeSince lastGrounded;
 	private RealTimeSince lastJump;
 	private RealTimeSince lastSqueeze;
+	public RealTimeSince LastStageCompletion;
 
 	private readonly Vector3[] feelerDirs = new Vector3[FEELER_LAYERS * FEELERS_PER_LAYER];
 	private HashSet<Collider> prevCols = new( FEELER_LAYERS * FEELERS_PER_LAYER );
 	private readonly HashSet<Collider> newCols = new( FEELER_LAYERS * FEELERS_PER_LAYER );
 
+	private CameraComponent Camera;
+
 	protected override void OnAwake()
 	{
 		CareFall.Game.plr = this;
+		Camera = Scene.GetAllComponents<CameraComponent>().FirstOrDefault( x => x.IsMainCamera );
 		RunBounciness = CharacterController.Bounciness;
 
 		const float feelerStep = (float)Math.Tau / FEELERS_PER_LAYER;
@@ -67,7 +72,6 @@ public sealed class Player : Component
 			float angle = i / FEELER_LAYERS * feelerStep;
 			feelerDirs[i] = new Vector3( (float)Math.Cos( angle ), (float)Math.Sin( angle ), layerStep * ((i % FEELER_LAYERS) - layerOffset) );
 		}
-		Respawn();
 	}
 
 	private void StartScrape( Collider col )
@@ -105,7 +109,7 @@ public sealed class Player : Component
 		return Alive && Flying && scrapeCount > 0;
 	}
 
-	private void TeleportTo( Vector3 to )
+	public void TeleportTo( Vector3 to )
 	{
 		Transform.Position = to;
 		Transform.ClearInterpolation();
@@ -145,14 +149,26 @@ public sealed class Player : Component
 		return inertia < 0.09f ? 0.1f : inertia;
 	}
 
-	private void Respawn()
+	public void TakeStageSky( FallStage stage )
+	{
+		Camera.BackgroundColor = stage.SkyColor;
+	}
+
+	public void AdvanceStage( FallStage stage, float AddZ = float.NaN )
+	{
+		ScoreStages++;
+		LastStageCompletion = 0;
+		TakeStageSky(stage);
+		if ( !float.IsNaN( AddZ ) )
+		{
+			TeleportTo( Transform.Position.WithZ( Transform.Position.z + AddZ ) );
+		}
+	}
+
+	public void Respawn()
 	{
 		TeleportTo( Scene.Directory.FindByName( "PlrStart" ).FirstOrDefault().Transform.Position );
-		CharacterController.Velocity = 0.0f;
-		foreach ( var obstacle in Scene.GetAllComponents<FallObstacle>() )
-		{
-			obstacle.Restore();
-		}
+		CharacterController.Velocity = Vector3.Zero;
 
 		scrapeCount = 0;
 		squeezing = false;
@@ -160,6 +176,7 @@ public sealed class Player : Component
 		ScoreBumps = 0;
 		ScoreScrapes = 0.0f;
 		ScoreSqueezes = 0;
+		ScoreStages = 0;
 
 		Alive = true;
 		lastGrounded = 0;
@@ -248,7 +265,7 @@ public sealed class Player : Component
 
 		if ( Input.Pressed( "restart" ) )
 		{
-			Respawn();
+			CareFall.Game.stages.RestartToBeginning();
 			return;
 		}
 
@@ -316,14 +333,10 @@ public sealed class Player : Component
 
 	protected override void OnPreRender()
 	{
-		if ( IsProxy )
+		if ( IsProxy || Camera is null )
 			return;
-
-		var camera = Scene.GetAllComponents<CameraComponent>().FirstOrDefault( x => x.IsMainCamera );
-		if ( camera is null ) return;
-
-		camera.Transform.Position = Transform.Position + (Vector3.Up * EyeHeight);
-		camera.Transform.Rotation = EyeAngles;
-		camera.FieldOfView = Preferences.FieldOfView;
+		Camera.Transform.Position = Transform.Position + (Vector3.Up * EyeHeight);
+		Camera.Transform.Rotation = EyeAngles;
+		Camera.FieldOfView = Preferences.FieldOfView;
 	}
 }

@@ -23,6 +23,10 @@
 				<label class="score-label">SCRAPES</label>
 			</div>
 		</div>
+		
+		<div class="popup-stage @(ShowStageMessage() ? "" : "hidden")">
+			<label class="score-label">STAGE COMPLETE</label>
+		</div>
 	</div>
 	<div class="hud-dead @(IsAlive() ? "hidden" : "")">
 		<label class="rip">YOU HAVE PERISHED</label>
@@ -30,6 +34,7 @@
 			<label class="score-tuple">SCRAPES: @(GetScrapes()) x1</label>
 			<label class="score-tuple">BUMPS: @(GetBumps()) x@(CareFall.SCORE_BUMP_AMT)</label>
 			<label class="score-tuple">SQUEEZES: @(GetSqueezes()) x@(CareFall.SCORE_SQUEEZE_AMT)</label>
+			<label class="score-tuple">STAGES: @(GetStages()) x@(CareFall.SCORE_STAGE_AMT)</label>
 			<label class="score-tuple">FINAL SCORE: @(GetScore())</label>
 			<label class="score-tuple"></label>
 			<label class="score-tuple">PRESS '@(restartAct?.KeyboardCode.ToUpper())' TO RESTART</label>
@@ -43,7 +48,8 @@
 
 	public int GetScore()
 	{
-		return (CareFall.SCORE_SQUEEZE_AMT * GetSqueezes()) + (CareFall.SCORE_BUMP_AMT * GetBumps()) + GetScrapes();
+		return (CareFall.SCORE_STAGE_AMT * GetStages()) + (CareFall.SCORE_SQUEEZE_AMT * GetSqueezes()) +
+		(CareFall.SCORE_BUMP_AMT * GetBumps()) + GetScrapes();
 	}
 
 	public int GetBumps()
@@ -61,6 +67,11 @@
 		return (int)(CareFall.Game.plr?.ScoreScrapes ?? 0);
 	}
 
+	public int GetStages()
+	{
+		return CareFall.Game.plr?.ScoreStages ?? 0;
+	}
+
 	public bool IsAlive()
 	{
 		return CareFall.Game.plr?.Alive ?? false;
@@ -71,6 +82,12 @@
 		return CareFall.Game.plr?.Flying ?? false;
 	}
 
-	protected override int BuildHash() => System.HashCode.Combine(GetBumps(), GetSqueezes(), GetScrapes(), IsAlive(),
+	public bool ShowStageMessage()
+	{
+		return CareFall.Game.plr?.LastStageCompletion < 2.5f && GetStages() > 0;
+	}
+
+	protected override int BuildHash() => System.HashCode.Combine(GetBumps(), GetSqueezes(), GetScrapes(), GetStages(),
+	ShowStageMessage(), IsAlive(),
 	IsFlying());
 }
