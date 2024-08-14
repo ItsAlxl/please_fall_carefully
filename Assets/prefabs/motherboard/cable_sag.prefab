@@ -20,20 +20,6 @@
         "IsTrigger": false,
         "Model": "models/cables/cable_sag.vmdl",
         "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "eeb9d3ca-ac27-4ea3-86d6-c07838e1ec3f",
-        "IsTrigger": false,
-        "Model": "models/cables/cable_sag_p0.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "8352e2db-c516-46d9-950b-e4198be6380b",
-        "IsTrigger": false,
-        "Model": "models/cables/cable_sag_p1.vmdl",
-        "Static": true
       }
     ],
     "Children": [],

@@ -3,7 +3,6 @@
     "__guid": "afcbcaee-0351-463c-b914-31258723d51d",
     "Flags": 0,
     "Name": "heatsink",
-    "Position": "0,0,0",
     "Scale": "0.75,0.75,0.75",
     "Enabled": true,
     "Components": [
@@ -21,29 +20,10 @@
         "IsTrigger": false,
         "Model": "models/heatsink/heatsink.vmdl",
         "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "336811d8-73cb-45e3-9f97-c839afccb471",
-        "IsTrigger": false,
-        "Model": "models/heatsink/heatsink_blade0.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "3e874950-ffe8-4f2c-b9f6-f494f0bc355c",
-        "IsTrigger": false,
-        "Model": "models/heatsink/heatsink_blade1.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "2456ba25-95fd-4dc9-83a4-1ac57a66b2b7",
-        "IsTrigger": false,
-        "Model": "models/heatsink/heatsink_blade2.vmdl",
-        "Static": true
       }
-    ]
+    ],
+    "Children": [],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,

@@ -3,7 +3,6 @@
     "__guid": "8bf1965d-a12a-482d-9345-e370f4b5bdd6",
     "Flags": 0,
     "Name": "ramstick",
-    "Position": "308.1979,-316.1035,0",
     "Enabled": true,
     "Components": [
       {
@@ -20,71 +19,10 @@
         "IsTrigger": false,
         "Model": "models/ram/ram.vmdl",
         "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "cea49f51-c69a-4936-8d55-13d286c426de",
-        "IsTrigger": false,
-        "Model": "models/ram/ram-brace0.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "6104dc66-2adb-4594-a6e3-a2d37da7d877",
-        "IsTrigger": false,
-        "Model": "models/ram/ram-brace1.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "7c4b20dc-3c3b-46c5-a93f-86fd419058e3",
-        "IsTrigger": false,
-        "Model": "models/ram/ram-bracket.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "23e11a3b-e353-4c09-a75f-9dfe87f16993",
-        "IsTrigger": false,
-        "Model": "models/ram/ram-chip0.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "15fa4029-f852-44ad-bdd0-29664d52bde0",
-        "IsTrigger": false,
-        "Model": "models/ram/ram-chip1.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "b7970dd7-8af8-4130-9d03-a0db7a48a26b",
-        "IsTrigger": false,
-        "Model": "models/ram/ram-chip2.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "459ed129-8c5a-4d3a-aec9-d6087374fd2f",
-        "IsTrigger": false,
-        "Model": "models/ram/ram-chip3.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "d7b133ad-894d-4f51-821b-efc3f3504c0f",
-        "IsTrigger": false,
-        "Model": "models/ram/ram-lever0.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "0bea0b02-2543-4a1a-a97f-dc7e7ec84164",
-        "IsTrigger": false,
-        "Model": "models/ram/ram-lever1.vmdl",
-        "Static": true
       }
-    ]
+    ],
+    "Children": [],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,

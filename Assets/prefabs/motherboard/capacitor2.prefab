@@ -19,48 +19,6 @@
         "IsTrigger": false,
         "Model": "models/capacitor2/capacitor2.vmdl",
         "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "d155a921-6d40-4edd-a93a-230760755f20",
-        "IsTrigger": false,
-        "Model": "models/capacitor2/capacitor2_leg0_0.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "7c10a327-ef6c-4825-a2cb-079aee509af5",
-        "IsTrigger": false,
-        "Model": "models/capacitor2/capacitor2_leg0_1.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "f6017c8d-d7e8-495f-b2b5-4a76224b0db9",
-        "IsTrigger": false,
-        "Model": "models/capacitor2/capacitor2_leg0_2.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "04bf3ab5-8ffe-482b-9ce5-dee0ec3d1d3c",
-        "IsTrigger": false,
-        "Model": "models/capacitor2/capacitor2_leg1_0.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "aad83c7e-ee99-409a-806a-6b116b105ef5",
-        "IsTrigger": false,
-        "Model": "models/capacitor2/capacitor2_leg1_1.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "53eca537-89a5-4377-9251-65e639dee2c9",
-        "IsTrigger": false,
-        "Model": "models/capacitor2/capacitor2_leg1_2.vmdl",
-        "Static": true
       }
     ],
     "Children": [],

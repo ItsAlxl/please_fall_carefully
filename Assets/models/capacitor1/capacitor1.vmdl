@@ -62,17 +62,14 @@
 						import_scale = 1.0
 						faceMergeAngle = 10.0
 						maxHullVertices = 0
-						import_mode = "SingleHull"
+						import_mode = "HullPerMesh"
 						optimization_algorithm = "IFR"
 						import_filter = 
 						{
-							exclude_by_default = true
+							exclude_by_default = false
 							exception_list = 
 							[
-								"_tmphull_210",
-								"_tmphull_267_001",
-								"_tmphull_471",
-								"_tmphull_888",
+								"Cylinder_001",
 							]
 						}
 					},

@@ -20,27 +20,6 @@
         "IsTrigger": false,
         "Model": "models/cables/cable_serpent.vmdl",
         "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "8c682c42-3945-4577-b239-9ce4afcddc6f",
-        "IsTrigger": false,
-        "Model": "models/cables/cable_serpent_p0.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "bfa1272b-325b-4d8b-8bdb-eddb3c67c409",
-        "IsTrigger": false,
-        "Model": "models/cables/cable_serpent_p1.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "1b11f42c-61a4-4d3f-b24a-b3a713c4b1d4",
-        "IsTrigger": false,
-        "Model": "models/cables/cable_serpent_p2.vmdl",
-        "Static": true
       }
     ],
     "Children": [],

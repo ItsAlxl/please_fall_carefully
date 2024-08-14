@@ -3,7 +3,6 @@
     "__guid": "0347e29b-8361-4908-9282-50a102d30237",
     "Flags": 0,
     "Name": "ic",
-    "Position": "0,0,0",
     "Enabled": true,
     "Components": [
       {
@@ -20,64 +19,10 @@
         "IsTrigger": false,
         "Model": "models/ic/ic.vmdl",
         "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "e10f17d3-04b1-44a7-bbb0-b1a5df5a37fc",
-        "IsTrigger": false,
-        "Model": "models/ic/ic_leg0.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "0fc16aad-55ee-46df-a575-f8a99633d517",
-        "IsTrigger": false,
-        "Model": "models/ic/ic_leg1.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "11d81d48-8e23-43dc-816d-0cbbf071b480",
-        "IsTrigger": false,
-        "Model": "models/ic/ic_leg2.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "2fe7ea40-4b52-45e5-95c8-2906ca95c0a3",
-        "IsTrigger": false,
-        "Model": "models/ic/ic_leg3.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "1fbc6b08-f907-4f03-9086-32aedb5fdc12",
-        "IsTrigger": false,
-        "Model": "models/ic/ic_leg4.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "1deaa3fa-aaf7-42f7-b7c0-3f55be6a01df",
-        "IsTrigger": false,
-        "Model": "models/ic/ic_leg5.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "3a72fdae-ed02-450c-950e-285ba5aae237",
-        "IsTrigger": false,
-        "Model": "models/ic/ic_leg6.vmdl",
-        "Static": true
-      },
-      {
-        "__type": "Sandbox.ModelCollider",
-        "__guid": "be010f67-3c14-4644-b511-a92e967bc42e",
-        "IsTrigger": false,
-        "Model": "models/ic/ic_leg7.vmdl",
-        "Static": true
       }
-    ]
+    ],
+    "Children": [],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,

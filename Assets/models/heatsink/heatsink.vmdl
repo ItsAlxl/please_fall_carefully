@@ -65,7 +65,7 @@
 						import_scale = 1.0
 						faceMergeAngle = 10.0
 						maxHullVertices = 0
-						import_mode = "SingleHull"
+						import_mode = "HullPerMesh"
 						optimization_algorithm = "IFR"
 						import_filter = 
 						{
@@ -73,6 +73,9 @@
 							exception_list = 
 							[
 								"Base",
+								"Blade_000",
+								"Blade_001",
+								"Blade_002",
 							]
 						}
 					},
