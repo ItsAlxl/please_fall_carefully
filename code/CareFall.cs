@@ -9,7 +9,7 @@ public sealed class CareFall
 
 	public const int SCORE_BUMP_AMT = 10;
 	public const int SCORE_SQUEEZE_AMT = 100;
-	public const int SCORE_STAGE_AMT = 5000;
+	public const int SCORE_STAGE_AMT = 1000;
 
 	public Player plr;
 	public StageController stages;

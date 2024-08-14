@@ -40,7 +40,7 @@ public sealed class StageController : Component
 
 		Transform.Position = Transform.Position.WithZ(prevZ + plr.VerticalBound - stage.Transform.Position.z);
 		Transform.ClearInterpolation();
-		plr.AdvanceStage( stage, Transform.Position.z - prevZ );
+		plr.AdvanceStage( stage, Transform.Position.z - prevZ, currentStage > 0 );
 	}
 
 	public void AdvanceStage()

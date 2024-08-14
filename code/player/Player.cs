@@ -154,14 +154,16 @@ public sealed class Player : Component
 		Camera.BackgroundColor = stage.SkyColor;
 	}
 
-	public void AdvanceStage( FallStage stage, float AddZ = float.NaN )
+	public void AdvanceStage( FallStage stage, float dZ, bool scoring )
 	{
-		ScoreStages++;
-		LastStageCompletion = 0;
-		TakeStageSky(stage);
-		if ( !float.IsNaN( AddZ ) )
+		TakeStageSky( stage );
+		TeleportTo( Transform.Position.WithZ( Transform.Position.z + dZ ) );
+
+		if ( scoring )
 		{
-			TeleportTo( Transform.Position.WithZ( Transform.Position.z + AddZ ) );
+			ScoreStages++;
+			LastStageCompletion = 0;
+			Sound.Play( "score_stage", mixerScore );
 		}
 	}
 
