@@ -1,0 +1,33 @@
+{
+  "RootObject": {
+    "__guid": "c7e9bd46-5184-4503-87dd-09aad97eebf9",
+    "Flags": 0,
+    "Name": "tree7",
+    "Position": "-187.8187,1089.432,-12450.23",
+    "Rotation": "0,0.7071067,0,0.7071068",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "02eeb377-b9b7-4efd-9fdb-11c25a97c3f9",
+        "BodyGroups": 18446744073709551615,
+        "Model": "models/trees/tree7.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "184cf743-d66d-4f86-9514-b17c240af262",
+        "IsTrigger": false,
+        "Model": "models/trees/tree7.vmdl",
+        "Static": true
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

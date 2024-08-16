@@ -1796,7 +1796,7 @@
                   "Flags": 0,
                   "Name": "Wall0",
                   "Position": "508.726,254.0707,-32982.5",
-                  "Scale": "30,2,1000",
+                  "Scale": "29,2,1000",
                   "Tags": "pfc-ignore",
                   "Enabled": true,
                   "Components": [
@@ -1824,7 +1824,7 @@
                   "Flags": 0,
                   "Name": "Wall1",
                   "Position": "508.7255,1745.57,-32982.5",
-                  "Scale": "30,2,1000",
+                  "Scale": "29,2,1000",
                   "Tags": "pfc-ignore",
                   "Enabled": true,
                   "Components": [
@@ -1852,7 +1852,7 @@
                   "Flags": 0,
                   "Name": "Wall3",
                   "Position": "1258.726,995.5705,-32982.5",
-                  "Scale": "2,30,1000",
+                  "Scale": "2,29,1000",
                   "Tags": "pfc-ignore",
                   "Enabled": true,
                   "Components": [
@@ -1908,7 +1908,7 @@
                   "Flags": 0,
                   "Name": "Wall0",
                   "Position": "508.726,254.0707,-82982.5",
-                  "Scale": "30,2,1000",
+                  "Scale": "29,2,1000",
                   "Tags": "pfc-ignore",
                   "Enabled": true,
                   "Components": [
@@ -1936,7 +1936,7 @@
                   "Flags": 0,
                   "Name": "Wall1",
                   "Position": "508.7255,1745.57,-82982.5",
-                  "Scale": "30,2,1000",
+                  "Scale": "29,2,1000",
                   "Tags": "pfc-ignore",
                   "Enabled": true,
                   "Components": [
@@ -1964,7 +1964,7 @@
                   "Flags": 0,
                   "Name": "Wall2",
                   "Position": "1258.726,995.5705,-82982.5",
-                  "Scale": "2,30,1000",
+                  "Scale": "2,29,1000",
                   "Tags": "pfc-ignore",
                   "Enabled": true,
                   "Components": [
@@ -2075,6 +2075,76 @@
                       "Static": true
                     }
                   ]
+                },
+                {
+                  "__guid": "85e2b462-6549-4ada-8c3e-89288b36915c",
+                  "Flags": 0,
+                  "Name": "tree1",
+                  "Position": "-187.8199,1298.091,-8725.184",
+                  "Rotation": "0,0.7071067,0,0.7071068",
+                  "Enabled": true,
+                  "__Prefab": "prefabs/forest/tree1.prefab",
+                  "__PrefabVariables": {}
+                },
+                {
+                  "__guid": "dd9b748a-edbb-4ce7-b44b-f7f69f5be0f8",
+                  "Flags": 0,
+                  "Name": "tree2",
+                  "Position": "-187.8197,806.8044,-9342.043",
+                  "Rotation": "0,0.7071067,0,0.7071068",
+                  "Enabled": true,
+                  "__Prefab": "prefabs/forest/tree2.prefab",
+                  "__PrefabVariables": {}
+                },
+                {
+                  "__guid": "f18a86c6-1f2f-494f-a758-e6e7dcfd065d",
+                  "Flags": 0,
+                  "Name": "tree3",
+                  "Position": "-187.8195,1193.031,-10021.59",
+                  "Rotation": "0,0.7071067,0,0.7071068",
+                  "Enabled": true,
+                  "__Prefab": "prefabs/forest/tree3.prefab",
+                  "__PrefabVariables": {}
+                },
+                {
+                  "__guid": "404377d5-5eea-4e7b-9922-897dacdd8be1",
+                  "Flags": 0,
+                  "Name": "tree4",
+                  "Position": "-187.8193,878.8912,-10652.06",
+                  "Rotation": "0,0.7071067,0,0.7071068",
+                  "Enabled": true,
+                  "__Prefab": "prefabs/forest/tree4.prefab",
+                  "__PrefabVariables": {}
+                },
+                {
+                  "__guid": "1d316c48-47f5-48d2-8346-c08902d0a943",
+                  "Flags": 0,
+                  "Name": "tree5",
+                  "Position": "-187.819,1173.02,-11244.43",
+                  "Rotation": "0,0.7071067,0,0.7071068",
+                  "Enabled": true,
+                  "__Prefab": "prefabs/forest/tree5.prefab",
+                  "__PrefabVariables": {}
+                },
+                {
+                  "__guid": "7444467c-27fa-4b2c-b67a-c6888de36b1a",
+                  "Flags": 0,
+                  "Name": "tree6",
+                  "Position": "-187.8188,1103.998,-11855.65",
+                  "Rotation": "0,0.7071067,0,0.7071068",
+                  "Enabled": true,
+                  "__Prefab": "prefabs/forest/tree6.prefab",
+                  "__PrefabVariables": {}
+                },
+                {
+                  "__guid": "c7e9bd46-5184-4503-87dd-09aad97eebf9",
+                  "Flags": 0,
+                  "Name": "tree7",
+                  "Position": "-187.8187,1089.432,-12450.23",
+                  "Rotation": "0,0.7071067,0,0.7071068",
+                  "Enabled": true,
+                  "__Prefab": "prefabs/forest/tree7.prefab",
+                  "__PrefabVariables": {}
                 }
               ]
             }
