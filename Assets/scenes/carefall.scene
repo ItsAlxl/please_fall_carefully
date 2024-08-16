@@ -1795,8 +1795,8 @@
                   "__guid": "c8a16c46-8907-428a-bb4c-9a242e27695c",
                   "Flags": 0,
                   "Name": "Wall0",
-                  "Position": "508.726,254.0707,-32982.5",
-                  "Scale": "29,2,1000",
+                  "Position": "508.726,254.0707,-24649.19",
+                  "Scale": "29,2,666.667",
                   "Tags": "pfc-ignore",
                   "Enabled": true,
                   "Components": [
@@ -1823,8 +1823,8 @@
                   "__guid": "f8fcb576-d3a2-4c56-b6f3-5c0a3f081121",
                   "Flags": 0,
                   "Name": "Wall1",
-                  "Position": "508.7255,1745.57,-32982.5",
-                  "Scale": "29,2,1000",
+                  "Position": "508.7255,1745.57,-24649.19",
+                  "Scale": "29,2,666.667",
                   "Tags": "pfc-ignore",
                   "Enabled": true,
                   "Components": [
@@ -1851,8 +1851,8 @@
                   "__guid": "71628d72-465b-48c9-ab4c-a9447dc1bdb7",
                   "Flags": 0,
                   "Name": "Wall3",
-                  "Position": "1258.726,995.5705,-32982.5",
-                  "Scale": "2,29,1000",
+                  "Position": "1258.726,995.5705,-24649.19",
+                  "Scale": "2,29,666.667",
                   "Tags": "pfc-ignore",
                   "Enabled": true,
                   "Components": [
@@ -1879,8 +1879,8 @@
                   "__guid": "f89be4e7-2b26-465c-ae76-183997301edd",
                   "Flags": 0,
                   "Name": "Grass",
-                  "Position": "-237.2744,995.5705,-32982.5",
-                  "Scale": "2,30,1000",
+                  "Position": "-237.2744,995.5705,-24649.19",
+                  "Scale": "2,30,666.6667",
                   "Tags": "pfc-ignore",
                   "Enabled": true,
                   "Components": [
@@ -1907,8 +1907,8 @@
                   "__guid": "85c6e3de-c43a-485f-b317-f56afa7c2ff3",
                   "Flags": 0,
                   "Name": "Wall0",
-                  "Position": "508.726,254.0707,-82982.5",
-                  "Scale": "29,2,1000",
+                  "Position": "508.726,254.0707,-74648.83",
+                  "Scale": "29,2,1333.333",
                   "Tags": "pfc-ignore",
                   "Enabled": true,
                   "Components": [
@@ -1916,7 +1916,7 @@
                       "__type": "Sandbox.ModelRenderer",
                       "__guid": "70f6b65b-8a0f-4e1a-b525-4133a291e50f",
                       "BodyGroups": 18446744073709551615,
-                      "MaterialOverride": "materials/forest/sky.vmat",
+                      "MaterialOverride": "materials/forest/sky_2o3.vmat",
                       "Model": "models/dev/box.vmdl",
                       "RenderType": "Off",
                       "Tint": "0.50233,0.50233,0.50233,1"
@@ -1935,8 +1935,8 @@
                   "__guid": "b919cda0-8904-4226-8afb-4f20ebb60ce4",
                   "Flags": 0,
                   "Name": "Wall1",
-                  "Position": "508.7255,1745.57,-82982.5",
-                  "Scale": "29,2,1000",
+                  "Position": "508.7255,1745.57,-74648.83",
+                  "Scale": "29,2,1333.333",
                   "Tags": "pfc-ignore",
                   "Enabled": true,
                   "Components": [
@@ -1944,7 +1944,7 @@
                       "__type": "Sandbox.ModelRenderer",
                       "__guid": "4ee3f312-fe27-48de-82a4-8aa5828087ed",
                       "BodyGroups": 18446744073709551615,
-                      "MaterialOverride": "materials/forest/sky.vmat",
+                      "MaterialOverride": "materials/forest/sky_2o3.vmat",
                       "Model": "models/dev/box.vmdl",
                       "RenderType": "Off",
                       "Tint": "0.50233,0.50233,0.50233,1"
@@ -1963,8 +1963,8 @@
                   "__guid": "3a568bd9-db54-43e5-ab0b-82b20f01ef91",
                   "Flags": 0,
                   "Name": "Wall2",
-                  "Position": "1258.726,995.5705,-82982.5",
-                  "Scale": "2,29,1000",
+                  "Position": "1258.726,995.5705,-74648.83",
+                  "Scale": "2,29,1333.333",
                   "Tags": "pfc-ignore",
                   "Enabled": true,
                   "Components": [
@@ -1972,7 +1972,7 @@
                       "__type": "Sandbox.ModelRenderer",
                       "__guid": "c8e084a8-c659-4ce7-b2a2-122b3e3f943c",
                       "BodyGroups": 18446744073709551615,
-                      "MaterialOverride": "materials/forest/sky.vmat",
+                      "MaterialOverride": "materials/forest/sky_2o3.vmat",
                       "Model": "models/dev/box.vmdl",
                       "RenderType": "Off",
                       "Tint": "0.50233,0.50233,0.50233,1"
@@ -1991,8 +1991,8 @@
                   "__guid": "1936afdb-29bb-4157-a47f-87f32e71bf23",
                   "Flags": 0,
                   "Name": "Wall3",
-                  "Position": "-237.2744,995.5705,-82982.5",
-                  "Scale": "2,30,1000",
+                  "Position": "-237.2744,995.5705,-74648.83",
+                  "Scale": "2,29,1333.333",
                   "Tags": "pfc-ignore",
                   "Enabled": true,
                   "Components": [
@@ -2000,7 +2000,7 @@
                       "__type": "Sandbox.ModelRenderer",
                       "__guid": "2c960856-2551-4bc0-8e0f-6e4f75837a95",
                       "BodyGroups": 18446744073709551615,
-                      "MaterialOverride": "materials/forest/sky.vmat",
+                      "MaterialOverride": "materials/forest/sky_2o3.vmat",
                       "Model": "models/dev/box.vmdl",
                       "RenderType": "Off",
                       "Tint": "0.50233,0.50233,0.50233,1"
