@@ -10,7 +10,7 @@
         {
           "__type": "Sandbox.CameraComponent",
           "__guid": "cf3cbf96-22b6-4be4-a5d0-672a96c17f9f",
-          "BackgroundColor": "0.0239,0.07907,0.057,1",
+          "BackgroundColor": "0,0,0,1",
           "ClearFlags": "All",
           "FieldOfView": 60,
           "IsMainCamera": true,
@@ -195,6 +195,13 @@
           ],
           "Children": [
             {
+              "__guid": "9f02ca12-baee-4555-89d9-20ea15caeb5e",
+              "Flags": 0,
+              "Name": "PlrStart",
+              "Position": "-338.1276,121.5725,-61997.47",
+              "Enabled": true
+            },
+            {
               "__guid": "cf51d302-9be9-4311-8d86-3626a18acf93",
               "Flags": 0,
               "Name": "PlrStart",
@@ -212,7 +219,7 @@
               "__guid": "8128c715-cd80-421d-9c78-cda1f4a6d51c",
               "Flags": 0,
               "Name": "EndStage",
-              "Position": "0,0,-100250",
+              "Position": "0,0,-99737.59",
               "Enabled": true
             },
             {
@@ -1461,8 +1468,8 @@
                 {
                   "__guid": "c6012dbf-53d9-403c-aae6-8e5663ffd484",
                   "Flags": 0,
-                  "Name": "editor",
-                  "Position": "0,0,-99999",
+                  "Name": "editor_facade",
+                  "Position": "0.000006744961,-77.15337,-99999",
                   "Rotation": "-0,0,1,-0.00000004371139",
                   "Scale": "0.705,0.705,1",
                   "Enabled": true,
@@ -1471,7 +1478,7 @@
                       "__type": "Sandbox.ModelRenderer",
                       "__guid": "1313bc91-71a0-4f42-89a4-5217f4bdfbfe",
                       "BodyGroups": 18446744073709551615,
-                      "Model": "models/editor/editor.vmdl",
+                      "Model": "models/editor_facade/editor_facade.vmdl",
                       "RenderType": "On",
                       "Tint": "1,1,1,1"
                     },
@@ -1479,7 +1486,7 @@
                       "__type": "Sandbox.ModelCollider",
                       "__guid": "1f47d5d9-96ed-43be-bc61-3ffb35b78607",
                       "IsTrigger": false,
-                      "Model": "models/editor/editor.vmdl",
+                      "Model": "models/editor_facade/editor_facade.vmdl",
                       "Static": true
                     }
                   ]
@@ -1498,17 +1505,10 @@
             {
               "__type": "FallStage",
               "__guid": "31854d41-13d4-4923-9c9b-4091d544ade9",
-              "SkyColor": "0.64186,0.64186,0.64186,1"
+              "SkyColor": "0.52549,0.71765,0.83529,1"
             }
           ],
           "Children": [
-            {
-              "__guid": "50807394-e298-4686-a2c7-24c769e57806",
-              "Flags": 0,
-              "Name": "Object",
-              "Position": "0,0,0",
-              "Enabled": true
-            },
             {
               "__guid": "00ef8f43-bf09-4684-bc0f-2faeacff2bcf",
               "Flags": 0,
@@ -1530,6 +1530,35 @@
               ]
             },
             {
+              "__guid": "28b45cf5-c422-4537-9aa9-12eb95bf54cb",
+              "Flags": 0,
+              "Name": "OnStart",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "Children": [
+                {
+                  "__guid": "831497ed-7ece-4c3e-9906-37de2dfde577",
+                  "Flags": 0,
+                  "Name": "CabinFacade",
+                  "Position": "281.7005,1301.114,1074.25",
+                  "Rotation": "0,-1,0,0.0000001947072",
+                  "Scale": "48.60001,52.20004,1",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "93f771b6-43e6-43dc-ae29-cd1d616288f4",
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/forest/plaster.vmat",
+                      "Model": "models/dev/plane.vmdl",
+                      "RenderType": "On",
+                      "Tint": "0.38431,0.40784,0.29412,1"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
               "__guid": "6077799a-e97b-4417-8cb4-1526053411fc",
               "Flags": 0,
               "Name": "Walls",
@@ -1537,10 +1566,236 @@
               "Enabled": true,
               "Children": [
                 {
+                  "__guid": "7500dcff-74fd-4a62-820b-2f9416c723b2",
+                  "Flags": 0,
+                  "Name": "CabinFloor",
+                  "Position": "-2130.487,1290.602,-3500",
+                  "Scale": "2,100,180",
+                  "Tags": "pfc-ignore",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "c62c23b5-54f3-43fe-bbd9-144a63d790c6",
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/forest/carpet.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.50233,0.50233,0.50233,1"
+                    },
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "5fa9d067-0115-48dc-a55e-507638482fbf",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": true
+                    }
+                  ]
+                },
+                {
+                  "__guid": "772f95cb-ca25-4d80-8390-935c265fcc01",
+                  "Flags": 0,
+                  "Name": "CabinRoof",
+                  "Position": "2700,1290.602,-3500",
+                  "Scale": "2,100,180",
+                  "Tags": "pfc-ignore",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "b3165729-befc-4b3a-a3c2-ec4295ee2aee",
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/forest/plaster.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.50233,0.50233,0.50233,1"
+                    },
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "e01bf5fb-0cc0-4dba-bf10-76ed3d08b496",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": true
+                    }
+                  ]
+                },
+                {
+                  "__guid": "753128b4-5b4e-4d43-a4bd-cbb0130996da",
+                  "Flags": 0,
+                  "Name": "CabinWindowWall0",
+                  "Position": "285.441,2744.787,-7931.461",
+                  "Scale": "95,42,2",
+                  "Tags": "pfc-ignore",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "72166123-5a74-49f0-a5f7-3895aafe8483",
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/forest/plaster.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.38608,0.4093,0.29317,1"
+                    },
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "95ba212d-8855-41e5-8aff-1b99305892c3",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": true
+                    }
+                  ]
+                },
+                {
+                  "__guid": "9c4c479a-e72d-4a50-b08e-4dabde1d6f74",
+                  "Flags": 0,
+                  "Name": "CabinWindowWall1",
+                  "Position": "285.441,-745.9929,-7931.461",
+                  "Scale": "95,42,2",
+                  "Tags": "pfc-ignore",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "207976d6-6a7d-435b-9920-3c17007bd17f",
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/forest/plaster.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.38608,0.4093,0.29317,1"
+                    },
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "117e63cd-0649-43d7-85f8-d0276858095e",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": true
+                    }
+                  ]
+                },
+                {
+                  "__guid": "c8cbaed0-54a6-4fbe-98bf-9bea605576d8",
+                  "Flags": 0,
+                  "Name": "CabinWindowWall2",
+                  "Position": "-2437.415,999.8733,-7931.461",
+                  "Scale": "90,27.8,2",
+                  "Tags": "pfc-ignore",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "9aafee35-e8f4-482a-ab72-ae0df9b092a8",
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/forest/plaster.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.38608,0.4093,0.29317,1"
+                    },
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "50807277-fb2b-4850-880f-bce43b998c38",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": true
+                    }
+                  ]
+                },
+                {
+                  "__guid": "48db3ae4-c743-4a4e-91f0-286887f564f3",
+                  "Flags": 0,
+                  "Name": "CabinWindowWall3",
+                  "Position": "3458.086,999.8733,-7931.461",
+                  "Scale": "90,27.8,2",
+                  "Tags": "pfc-ignore",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "946462d6-a17a-4400-99cb-c124de235c1d",
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/forest/plaster.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.38608,0.4093,0.29317,1"
+                    },
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "cf15ec8c-3462-4263-bef5-8471743a5813",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": true
+                    }
+                  ]
+                },
+                {
+                  "__guid": "55bbaf2b-d0f1-4d42-b767-aed458a5db11",
+                  "Flags": 0,
+                  "Name": "CabinSide0",
+                  "Position": "287.9187,3832.721,-3500",
+                  "Rotation": "0,0,0.7071067,0.7071068",
+                  "Scale": "2,100,180",
+                  "Tags": "pfc-ignore",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "6cf732fc-542d-413c-84c8-772f781192ac",
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/forest/plaster.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.38608,0.4093,0.29317,1"
+                    },
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "6d6cc624-4d0e-412d-ae10-1c9b1ca9dbd2",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": true
+                    }
+                  ]
+                },
+                {
+                  "__guid": "7db378f7-72e7-4b2a-82a1-8ecd31e52d63",
+                  "Flags": 0,
+                  "Name": "CabinSide1",
+                  "Position": "287.9177,-1256.529,-3500",
+                  "Rotation": "0,0,0.7071067,0.7071068",
+                  "Scale": "2,100,180",
+                  "Tags": "pfc-ignore",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "716413cc-81e9-434b-9994-fec154ddb6cc",
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/forest/plaster.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.38608,0.4093,0.29317,1"
+                    },
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "845a9c00-d315-4635-aa48-f228a2478fc2",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": true
+                    }
+                  ]
+                },
+                {
                   "__guid": "c8a16c46-8907-428a-bb4c-9a242e27695c",
                   "Flags": 0,
                   "Name": "Wall0",
-                  "Position": "0,-750,-25088",
+                  "Position": "508.726,254.0707,-32982.5",
                   "Scale": "30,2,1000",
                   "Tags": "pfc-ignore",
                   "Enabled": true,
@@ -1549,7 +1804,7 @@
                       "__type": "Sandbox.ModelRenderer",
                       "__guid": "d8b0abdb-eeb1-4b0f-8d31-52ccd784f7c3",
                       "BodyGroups": 18446744073709551615,
-                      "MaterialOverride": "materials/circuit/capacitor.vmat",
+                      "MaterialOverride": "materials/forest/sky.vmat",
                       "Model": "models/dev/box.vmdl",
                       "RenderType": "Off",
                       "Tint": "0.50233,0.50233,0.50233,1"
@@ -1568,7 +1823,7 @@
                   "__guid": "f8fcb576-d3a2-4c56-b6f3-5c0a3f081121",
                   "Flags": 0,
                   "Name": "Wall1",
-                  "Position": "0,750,-25088",
+                  "Position": "508.7255,1745.57,-32982.5",
                   "Scale": "30,2,1000",
                   "Tags": "pfc-ignore",
                   "Enabled": true,
@@ -1577,7 +1832,7 @@
                       "__type": "Sandbox.ModelRenderer",
                       "__guid": "74a45f33-86c1-41ad-ba41-4c6982beaaee",
                       "BodyGroups": 18446744073709551615,
-                      "MaterialOverride": "materials/circuit/capacitor.vmat",
+                      "MaterialOverride": "materials/forest/sky.vmat",
                       "Model": "models/dev/box.vmdl",
                       "RenderType": "Off",
                       "Tint": "0.50233,0.50233,0.50233,1"
@@ -1593,38 +1848,10 @@
                   ]
                 },
                 {
-                  "__guid": "f89be4e7-2b26-465c-ae76-183997301edd",
-                  "Flags": 0,
-                  "Name": "Wall2",
-                  "Position": "750,0,-25088",
-                  "Scale": "2,30,1000",
-                  "Tags": "pfc-ignore",
-                  "Enabled": true,
-                  "Components": [
-                    {
-                      "__type": "Sandbox.ModelRenderer",
-                      "__guid": "f710bb53-e230-4dc3-b30e-462a6274dd6f",
-                      "BodyGroups": 18446744073709551615,
-                      "MaterialOverride": "materials/circuit/capacitor.vmat",
-                      "Model": "models/dev/box.vmdl",
-                      "RenderType": "Off",
-                      "Tint": "0.50233,0.50233,0.50233,1"
-                    },
-                    {
-                      "__type": "Sandbox.BoxCollider",
-                      "__guid": "e726e01d-df6f-4042-a984-4608a05b4301",
-                      "Center": "0,0,0",
-                      "IsTrigger": false,
-                      "Scale": "50,50,50",
-                      "Static": true
-                    }
-                  ]
-                },
-                {
                   "__guid": "71628d72-465b-48c9-ab4c-a9447dc1bdb7",
                   "Flags": 0,
                   "Name": "Wall3",
-                  "Position": "-750,0,-25088",
+                  "Position": "1258.726,995.5705,-32982.5",
                   "Scale": "2,30,1000",
                   "Tags": "pfc-ignore",
                   "Enabled": true,
@@ -1633,7 +1860,7 @@
                       "__type": "Sandbox.ModelRenderer",
                       "__guid": "567b7bd0-1942-4776-8b81-876edbb29e18",
                       "BodyGroups": 18446744073709551615,
-                      "MaterialOverride": "materials/circuit/capacitor.vmat",
+                      "MaterialOverride": "materials/forest/sky.vmat",
                       "Model": "models/dev/box.vmdl",
                       "RenderType": "Off",
                       "Tint": "0.50233,0.50233,0.50233,1"
@@ -1649,10 +1876,38 @@
                   ]
                 },
                 {
+                  "__guid": "f89be4e7-2b26-465c-ae76-183997301edd",
+                  "Flags": 0,
+                  "Name": "Grass",
+                  "Position": "-237.2744,995.5705,-32982.5",
+                  "Scale": "2,30,1000",
+                  "Tags": "pfc-ignore",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "f710bb53-e230-4dc3-b30e-462a6274dd6f",
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/forest/grass.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.50233,0.50233,0.50233,1"
+                    },
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "e726e01d-df6f-4042-a984-4608a05b4301",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": true
+                    }
+                  ]
+                },
+                {
                   "__guid": "85c6e3de-c43a-485f-b317-f56afa7c2ff3",
                   "Flags": 0,
                   "Name": "Wall0",
-                  "Position": "0,-750,-74752",
+                  "Position": "508.726,254.0707,-82982.5",
                   "Scale": "30,2,1000",
                   "Tags": "pfc-ignore",
                   "Enabled": true,
@@ -1661,7 +1916,7 @@
                       "__type": "Sandbox.ModelRenderer",
                       "__guid": "70f6b65b-8a0f-4e1a-b525-4133a291e50f",
                       "BodyGroups": 18446744073709551615,
-                      "MaterialOverride": "materials/circuit/capacitor.vmat",
+                      "MaterialOverride": "materials/forest/sky.vmat",
                       "Model": "models/dev/box.vmdl",
                       "RenderType": "Off",
                       "Tint": "0.50233,0.50233,0.50233,1"
@@ -1680,7 +1935,7 @@
                   "__guid": "b919cda0-8904-4226-8afb-4f20ebb60ce4",
                   "Flags": 0,
                   "Name": "Wall1",
-                  "Position": "0,750,-74752",
+                  "Position": "508.7255,1745.57,-82982.5",
                   "Scale": "30,2,1000",
                   "Tags": "pfc-ignore",
                   "Enabled": true,
@@ -1689,7 +1944,7 @@
                       "__type": "Sandbox.ModelRenderer",
                       "__guid": "4ee3f312-fe27-48de-82a4-8aa5828087ed",
                       "BodyGroups": 18446744073709551615,
-                      "MaterialOverride": "materials/circuit/capacitor.vmat",
+                      "MaterialOverride": "materials/forest/sky.vmat",
                       "Model": "models/dev/box.vmdl",
                       "RenderType": "Off",
                       "Tint": "0.50233,0.50233,0.50233,1"
@@ -1705,10 +1960,38 @@
                   ]
                 },
                 {
-                  "__guid": "1936afdb-29bb-4157-a47f-87f32e71bf23",
+                  "__guid": "3a568bd9-db54-43e5-ab0b-82b20f01ef91",
                   "Flags": 0,
                   "Name": "Wall2",
-                  "Position": "750,0,-74752",
+                  "Position": "1258.726,995.5705,-82982.5",
+                  "Scale": "2,30,1000",
+                  "Tags": "pfc-ignore",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "c8e084a8-c659-4ce7-b2a2-122b3e3f943c",
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/forest/sky.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.50233,0.50233,0.50233,1"
+                    },
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "0348aa60-0385-4dc2-9a12-2df2f2a1e612",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": true
+                    }
+                  ]
+                },
+                {
+                  "__guid": "1936afdb-29bb-4157-a47f-87f32e71bf23",
+                  "Flags": 0,
+                  "Name": "Grass",
+                  "Position": "-237.2744,995.5705,-82982.5",
                   "Scale": "2,30,1000",
                   "Tags": "pfc-ignore",
                   "Enabled": true,
@@ -1717,7 +2000,7 @@
                       "__type": "Sandbox.ModelRenderer",
                       "__guid": "2c960856-2551-4bc0-8e0f-6e4f75837a95",
                       "BodyGroups": 18446744073709551615,
-                      "MaterialOverride": "materials/circuit/capacitor.vmat",
+                      "MaterialOverride": "materials/forest/grass.vmat",
                       "Model": "models/dev/box.vmdl",
                       "RenderType": "Off",
                       "Tint": "0.50233,0.50233,0.50233,1"
@@ -1731,31 +2014,64 @@
                       "Static": true
                     }
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "__guid": "bf3599f8-e928-4ccb-9724-7a795ce5d99b",
+              "Flags": 0,
+              "Name": "Obstacles",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "Children": [
                 {
-                  "__guid": "3a568bd9-db54-43e5-ab0b-82b20f01ef91",
+                  "__guid": "1247fb55-4b2d-48b3-895a-c7abc179d2bd",
                   "Flags": 0,
-                  "Name": "Wall3",
-                  "Position": "-750,0,-74752",
-                  "Scale": "2,30,1000",
-                  "Tags": "pfc-ignore",
+                  "Name": "chair",
+                  "Position": "-2079.325,-260.7515,-2297.75",
+                  "Rotation": "-0.4433928,-0.55082,-0.4433928,-0.5508202",
+                  "Scale": "4,4,4",
                   "Enabled": true,
                   "Components": [
                     {
                       "__type": "Sandbox.ModelRenderer",
-                      "__guid": "c8e084a8-c659-4ce7-b2a2-122b3e3f943c",
+                      "__guid": "f2090398-444e-4c5b-a8dc-8a9655d477d2",
                       "BodyGroups": 18446744073709551615,
-                      "MaterialOverride": "materials/circuit/capacitor.vmat",
-                      "Model": "models/dev/box.vmdl",
-                      "RenderType": "Off",
-                      "Tint": "0.50233,0.50233,0.50233,1"
+                      "Model": "models/chair/chair.vmdl",
+                      "RenderType": "On",
+                      "Tint": "1,1,1,1"
                     },
                     {
-                      "__type": "Sandbox.BoxCollider",
-                      "__guid": "0348aa60-0385-4dc2-9a12-2df2f2a1e612",
-                      "Center": "0,0,0",
+                      "__type": "Sandbox.ModelCollider",
+                      "__guid": "51d7ab65-02df-4b35-af10-c69711eb94d8",
                       "IsTrigger": false,
-                      "Scale": "50,50,50",
+                      "Model": "models/chair/chair.vmdl",
+                      "Static": true
+                    }
+                  ]
+                },
+                {
+                  "__guid": "f8ab1a09-1893-4bfa-8454-809208e5f4b1",
+                  "Flags": 0,
+                  "Name": "lamp",
+                  "Position": "-2079.32,1326.635,-5612.043",
+                  "Rotation": "-0.3990523,-0.583744,-0.3990525,-0.5837443",
+                  "Scale": "0.5490447,0.5490447,0.5490447",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "c0ee3c1b-4738-4c57-992b-638cb993a890",
+                      "BodyGroups": 18446744073709551615,
+                      "Model": "models/lamp/lamp.vmdl",
+                      "RenderType": "On",
+                      "Tint": "1,1,1,1"
+                    },
+                    {
+                      "__type": "Sandbox.ModelCollider",
+                      "__guid": "5529c9aa-cf0f-45a8-908f-91d895b3f396",
+                      "IsTrigger": false,
+                      "Model": "models/lamp/lamp.vmdl",
                       "Static": true
                     }
                   ]
