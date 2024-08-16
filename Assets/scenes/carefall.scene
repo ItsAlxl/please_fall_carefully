@@ -1990,7 +1990,7 @@
                 {
                   "__guid": "1936afdb-29bb-4157-a47f-87f32e71bf23",
                   "Flags": 0,
-                  "Name": "Grass",
+                  "Name": "Wall3",
                   "Position": "-237.2744,995.5705,-82982.5",
                   "Scale": "2,30,1000",
                   "Tags": "pfc-ignore",
@@ -2000,7 +2000,7 @@
                       "__type": "Sandbox.ModelRenderer",
                       "__guid": "2c960856-2551-4bc0-8e0f-6e4f75837a95",
                       "BodyGroups": 18446744073709551615,
-                      "MaterialOverride": "materials/forest/grass.vmat",
+                      "MaterialOverride": "materials/forest/sky.vmat",
                       "Model": "models/dev/box.vmdl",
                       "RenderType": "Off",
                       "Tint": "0.50233,0.50233,0.50233,1"
