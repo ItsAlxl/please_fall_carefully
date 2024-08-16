@@ -104,9 +104,14 @@ public sealed class Player : Component
 		}
 	}
 
+	public bool CanScore()
+	{
+		return Alive && Flying;
+	}
+
 	public bool IsScraping()
 	{
-		return Alive && Flying && scrapeCount > 0;
+		return scrapeCount > 0 && CanScore();
 	}
 
 	public void TeleportTo( Vector3 to )
@@ -133,7 +138,7 @@ public sealed class Player : Component
 		if ( IsProxy )
 			return;
 		MovementInput();
-		if ( Alive )
+		if ( CanScore() )
 		{
 			CheckFeelers();
 		}
@@ -159,7 +164,7 @@ public sealed class Player : Component
 		TakeStageSky( stage );
 		TeleportTo( Transform.Position.WithZ( Transform.Position.z + dZ ) );
 
-		if ( scoring )
+		if ( scoring && CanScore() )
 		{
 			ScoreStages++;
 			LastStageCompletion = 0;
