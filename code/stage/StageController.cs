@@ -1,3 +1,5 @@
+using Sandbox.Audio;
+
 [Group( "CareFall" )]
 [Title( "Stage Controller" )]
 [Icon( "import_export" )]
@@ -5,6 +7,8 @@ public sealed class StageController : Component
 {
 	private int currentStage = 0;
 	private readonly List<FallStage> stages = new();
+
+	private readonly Mixer mixerMusic = Mixer.FindMixerByName( "Music" );
 
 	protected override void OnAwake()
 	{
@@ -18,6 +22,8 @@ public sealed class StageController : Component
 			}
 		}
 		RestartToBeginning();
+
+		var music = Sound.Play( "ost-reckoning", mixerMusic );
 	}
 
 	public void RestartToBeginning()
@@ -38,7 +44,7 @@ public sealed class StageController : Component
 		var plr = CareFall.Game.plr;
 		var prevZ = Transform.Position.z;
 
-		Transform.Position = Transform.Position.WithZ(prevZ + plr.VerticalBound - stage.Transform.Position.z);
+		Transform.Position = Transform.Position.WithZ( prevZ + plr.VerticalBound - stage.Transform.Position.z );
 		Transform.ClearInterpolation();
 		plr.AdvanceStage( stage, Transform.Position.z - prevZ, currentStage > 0 );
 	}
@@ -55,9 +61,9 @@ public sealed class StageController : Component
 		var plrRelativeZ = plr.Transform.Position.z - stage.Transform.Position.z;
 		if ( plrRelativeZ < stage.SkyEndZ && currentStage + 1 < stages.Count )
 		{
-			plr.TakeStageSky(stages[currentStage + 1]);
+			plr.TakeStageSky( stages[currentStage + 1] );
 		}
-		if ( plrRelativeZ < stage.StageEndZ)
+		if ( plrRelativeZ < stage.StageEndZ )
 		{
 			AdvanceStage();
 		}
