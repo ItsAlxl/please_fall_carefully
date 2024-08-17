@@ -23,7 +23,7 @@ public sealed class StageController : Component
 		}
 		RestartToBeginning();
 
-		var music = Sound.Play( "ost-reckoning", mixerMusic );
+		Sound.Play( "ost-reckoning", mixerMusic );
 	}
 
 	public void RestartToBeginning()
@@ -47,6 +47,7 @@ public sealed class StageController : Component
 		Transform.Position = Transform.Position.WithZ( prevZ + plr.VerticalBound - stage.Transform.Position.z );
 		Transform.ClearInterpolation();
 		plr.AdvanceStage( stage, Transform.Position.z - prevZ, currentStage > 0 );
+		stage.Begin();
 	}
 
 	public void AdvanceStage()
