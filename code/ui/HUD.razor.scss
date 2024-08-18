@@ -23,7 +23,14 @@ HUD {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+	}
+
+	.loser {
 		background-color: #35000080;
+	}
+
+	.winner {
+		background-color: #00203580;
 	}
 
 	.popup-stage {

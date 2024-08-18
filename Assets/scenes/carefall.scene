@@ -86,7 +86,7 @@
           "Components": [
             {
               "__type": "HUD",
-              "__guid": "7f573206-b939-461b-85a5-fef36c96ed07"
+              "__guid": "f4469225-97e9-4d11-81e0-2469c956660e"
             }
           ]
         }
@@ -197,7 +197,7 @@
             {
               "__guid": "9f02ca12-baee-4555-89d9-20ea15caeb5e",
               "Flags": 0,
-              "Name": "PlrStart",
+              "Name": "PlrStart_dbg",
               "Position": "108.6574,121.5725,-99376.81",
               "Enabled": true
             },
@@ -1528,6 +1528,13 @@
                   "Tint": "1,1,1,1"
                 }
               ]
+            },
+            {
+              "__guid": "12c55a93-99b5-4674-898a-8f66c6f5e8b6",
+              "Flags": 0,
+              "Name": "EndStage",
+              "Position": "0,863.599,-108226.8",
+              "Enabled": true
             },
             {
               "__guid": "28b45cf5-c422-4537-9aa9-12eb95bf54cb",

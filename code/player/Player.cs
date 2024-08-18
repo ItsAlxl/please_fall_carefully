@@ -35,6 +35,7 @@ public sealed class Player : Component
 	public bool Flying = false;
 	public float Speed = 0.0f;
 	public bool Alive = true;
+	public bool FinishedRun = false;
 
 	private int scrapeCount = 0;
 	private bool squeezing = false;
@@ -159,6 +160,13 @@ public sealed class Player : Component
 		Camera.BackgroundColor = stage.SkyColor;
 	}
 
+	private void ScoreStage()
+	{
+		ScoreStages++;
+		LastStageCompletion = 0;
+		Sound.Play( "score_stage", mixerScore );
+	}
+
 	public void AdvanceStage( FallStage stage, float dZ, bool scoring )
 	{
 		TakeStageSky( stage );
@@ -166,9 +174,17 @@ public sealed class Player : Component
 
 		if ( scoring && CanScore() )
 		{
-			ScoreStages++;
-			LastStageCompletion = 0;
-			Sound.Play( "score_stage", mixerScore );
+			ScoreStage();
+		}
+	}
+
+	public void FinishRun()
+	{
+		if ( CanScore() )
+		{
+			ScoreStage();
+			FinishedRun = true;
+			Alive = false;
 		}
 	}
 
@@ -184,6 +200,7 @@ public sealed class Player : Component
 		ScoreScrapes = 0.0f;
 		ScoreSqueezes = 0;
 		ScoreStages = 0;
+		FinishedRun = false;
 
 		Alive = true;
 		lastGrounded = 0;

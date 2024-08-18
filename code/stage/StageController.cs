@@ -38,16 +38,22 @@ public sealed class StageController : Component
 
 	private void BeginStage( int idx )
 	{
-		currentStage = idx;
-
-		var stage = stages[idx];
 		var plr = CareFall.Game.plr;
-		var prevZ = Transform.Position.z;
+		if ( idx < stages.Count )
+		{
+			var stage = stages[idx];
+			var prevZ = Transform.Position.z;
 
-		Transform.Position = Transform.Position.WithZ( prevZ + plr.VerticalBound - stage.Transform.Position.z );
-		Transform.ClearInterpolation();
-		plr.AdvanceStage( stage, Transform.Position.z - prevZ, currentStage > 0 );
-		stage.Begin();
+			Transform.Position = Transform.Position.WithZ( prevZ + plr.VerticalBound - stage.Transform.Position.z );
+			Transform.ClearInterpolation();
+			plr.AdvanceStage( stage, Transform.Position.z - prevZ, idx > 0 );
+			stage.Begin();
+		}
+		else
+		{
+			plr.FinishRun();
+		}
+		currentStage = idx;
 	}
 
 	public void AdvanceStage()
@@ -57,16 +63,19 @@ public sealed class StageController : Component
 
 	protected override void OnFixedUpdate()
 	{
-		var stage = stages[currentStage];
-		var plr = CareFall.Game.plr;
-		var plrRelativeZ = plr.Transform.Position.z - stage.Transform.Position.z;
-		if ( plrRelativeZ < stage.SkyEndZ && currentStage + 1 < stages.Count )
+		if ( currentStage < stages.Count )
 		{
-			plr.TakeStageSky( stages[currentStage + 1] );
-		}
-		if ( plrRelativeZ < stage.StageEndZ )
-		{
-			AdvanceStage();
+			var stage = stages[currentStage];
+			var plr = CareFall.Game.plr;
+			var plrRelativeZ = plr.Transform.Position.z - stage.Transform.Position.z;
+			if ( plrRelativeZ < stage.SkyEndZ && currentStage + 1 < stages.Count )
+			{
+				plr.TakeStageSky( stages[currentStage + 1] );
+			}
+			if ( plrRelativeZ < stage.StageEndZ )
+			{
+				AdvanceStage();
+			}
 		}
 	}
 }

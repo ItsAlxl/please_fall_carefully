@@ -28,8 +28,9 @@
 			<label class="score-label">STAGE COMPLETE</label>
 		</div>
 	</div>
-	<div class="hud-dead @(IsAlive() ? "hidden" : "")">
-		<label class="rip">YOU HAVE PERISHED</label>
+	<div class="hud-dead@((IsAlive() ? " hidden" : "") + (HasFinished() ? " winner" : " loser"))">
+		<label class="rip @(HasFinished() ? "hidden" : "")">YOU HAVE PERISHED</label>
+		<label class="rip @(HasFinished() ? "" : "hidden")">YOU HAVE SURVIVED</label>
 		<div class="score-tally">
 			<label class="score-tuple">SCRAPES: @(GetScrapes()) x1</label>
 			<label class="score-tuple">BUMPS: @(GetBumps()) x@(CareFall.SCORE_BUMP_AMT)</label>
@@ -80,6 +81,11 @@
 	public bool IsFlying()
 	{
 		return CareFall.Game.plr?.Flying ?? false;
+	}
+
+	public bool HasFinished()
+	{
+		return CareFall.Game.plr?.FinishedRun ?? false;
 	}
 
 	public bool ShowStageMessage()
