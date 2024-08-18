@@ -3144,6 +3144,31 @@
                   "Enabled": true,
                   "__Prefab": "prefabs/forest/tree5.prefab",
                   "__PrefabVariables": {}
+                },
+                {
+                  "__guid": "94de57a1-5fae-4b50-9093-186386d85fdf",
+                  "Flags": 0,
+                  "Name": "yggdrasil",
+                  "Position": "510.726,999.8205,-75680.93",
+                  "Rotation": "-0.7071067,0.7071067,0.00000005960464,0.00000005960464",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "15e45ea7-6955-439f-83ee-15a8ad02d5c2",
+                      "BodyGroups": 18446744073709551615,
+                      "Model": "models/trees/yggdrasil.vmdl",
+                      "RenderType": "On",
+                      "Tint": "1,1,1,1"
+                    },
+                    {
+                      "__type": "Sandbox.ModelCollider",
+                      "__guid": "64c06dd9-2c1a-4e50-b541-4626ba328ecb",
+                      "IsTrigger": false,
+                      "Model": "models/trees/yggdrasil.vmdl",
+                      "Static": true
+                    }
+                  ]
                 }
               ]
             }
