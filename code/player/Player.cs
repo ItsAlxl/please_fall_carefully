@@ -348,11 +348,6 @@ public sealed class Player : Component
 				BeginFlight();
 			}
 		}
-
-		if ( Transform.Position.z < -VerticalBound )
-		{
-			TeleportTo( Transform.Position.WithZ( VerticalBound ) );
-		}
 	}
 
 	protected override void OnPreRender()

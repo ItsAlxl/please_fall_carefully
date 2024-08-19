@@ -134,6 +134,7 @@
       "__guid": "30164a84-1f06-4077-b407-ec7b38310a1f",
       "Flags": 0,
       "Name": "Player",
+      "Tags": "light_point,light",
       "Enabled": true,
       "NetworkMode": 1,
       "NetworkInterpolation": false,
@@ -165,6 +166,16 @@
           "MaxFallSpeed": -5000,
           "RunSpeed": 150,
           "VerticalBound": 100000
+        },
+        {
+          "__type": "Sandbox.PointLight",
+          "__guid": "b8c89e2e-7edc-4c63-9af3-228d64f343f8",
+          "Attenuation": 0.1,
+          "FogMode": "Disabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 3200,
+          "Shadows": true
         }
       ]
     },
@@ -195,17 +206,31 @@
           ],
           "Children": [
             {
-              "__guid": "9f02ca12-baee-4555-89d9-20ea15caeb5e",
+              "__guid": "9f3adf3c-9c96-45c3-b660-48da6cf1839e",
               "Flags": 0,
-              "Name": "PlrStart_dbg",
-              "Position": "108.6574,121.5725,-99376.81",
+              "Name": "PlrStart",
+              "Position": "0,0,-100000",
               "Enabled": true
             },
             {
               "__guid": "cf51d302-9be9-4311-8d86-3626a18acf93",
               "Flags": 0,
-              "Name": "PlrStart",
+              "Name": "PlrStart_0",
               "Position": "0,0,5",
+              "Enabled": true
+            },
+            {
+              "__guid": "9bd6981b-d9eb-4b97-8dd9-d0a605310e6c",
+              "Flags": 0,
+              "Name": "PlrStart_1",
+              "Position": "0,0,-100000",
+              "Enabled": true
+            },
+            {
+              "__guid": "4518a0aa-1c1f-42af-a296-300e542cd38c",
+              "Flags": 0,
+              "Name": "PlrStart_2",
+              "Position": "0,0,-207899",
               "Enabled": true
             },
             {
@@ -1533,7 +1558,7 @@
               "__guid": "12c55a93-99b5-4674-898a-8f66c6f5e8b6",
               "Flags": 0,
               "Name": "EndStage",
-              "Position": "0,863.599,-108226.8",
+              "Position": "0,863.599,-117913",
               "Enabled": true
             },
             {
@@ -3176,6 +3201,211 @@
                       "Static": true
                     }
                   ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "__guid": "bb136e78-7b7f-4584-b0af-acb8e2be3b35",
+          "Flags": 0,
+          "Name": "Stage2",
+          "Position": "0,0,-157899.2",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "FallStage",
+              "__guid": "170fdd1f-0291-47ea-b4d1-4cde7a30ef31",
+              "SkyColor": "0.65098,0.4,0.32941,1"
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "d393183e-be71-4545-868e-87b79548e863",
+              "Flags": 0,
+              "Name": "Walls",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "Children": [
+                {
+                  "__guid": "4f23f58f-7b3e-41d6-a5d6-ff3f042249c9",
+                  "Flags": 0,
+                  "Name": "serpent",
+                  "Position": "561.8334,1038.949,-10043.38",
+                  "Rotation": "-0.00000005960464,0,0.9999999,0",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "ac6e1cdb-f9d8-4f16-9b47-ebb87b474db6",
+                      "BodyGroups": 18446744073709551615,
+                      "Model": "models/serpent/serpent.vmdl",
+                      "RenderType": "On",
+                      "Tint": "0.62791,0.62791,0.62791,1"
+                    },
+                    {
+                      "__type": "Sandbox.ModelCollider",
+                      "__guid": "7fd747cd-b21e-47d3-a08d-4a806a289557",
+                      "IsTrigger": false,
+                      "Model": "models/serpent/serpent.vmdl",
+                      "Static": true
+                    },
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "8bd5a30a-93fc-4fc4-a117-99b022e5fc14",
+                      "BodyGroups": 18446744073709551615,
+                      "Model": "models/serpent/head.vmdl",
+                      "RenderType": "On",
+                      "Tint": "0.62791,0.62791,0.62791,1"
+                    },
+                    {
+                      "__type": "Sandbox.ModelCollider",
+                      "__guid": "ea8c9d46-5c83-4c9a-963f-90ad8b58d7a8",
+                      "IsTrigger": false,
+                      "Model": "models/serpent/head.vmdl",
+                      "Static": true
+                    }
+                  ]
+                },
+                {
+                  "__guid": "53ea20af-8241-4bab-b2de-ea19253d0eb5",
+                  "Flags": 0,
+                  "Name": "ice",
+                  "Position": "-2113.897,-1295.296,-10020",
+                  "Scale": "100,100,1",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "25572806-1add-4bdc-a9c7-77f9abcf447a",
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/serpent/ice.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "On",
+                      "Tint": "1,1,1,1"
+                    },
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "98d8aea4-1a30-4bc7-9de0-3e3407223ca9",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": false
+                    }
+                  ]
+                },
+                {
+                  "__guid": "a2064db4-0ab5-4dea-8faa-6f647b12936b",
+                  "Flags": 0,
+                  "Name": "ice",
+                  "Position": "2885.94,-1657.781,-10020",
+                  "Scale": "100,100,1",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "be454284-ac1d-4e5b-9164-ace1840747e2",
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/serpent/ice.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "On",
+                      "Tint": "1,1,1,1"
+                    },
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "3c6067fd-15f1-45de-a3aa-c7a5426c5957",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": false
+                    }
+                  ]
+                },
+                {
+                  "__guid": "42c40d3c-de03-445a-8311-24302f180a0b",
+                  "Flags": 0,
+                  "Name": "ice",
+                  "Position": "3257.473,3339.239,-10020",
+                  "Scale": "100,100,1",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "185e4019-99b6-4b95-8bc6-06e20953d854",
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/serpent/ice.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "On",
+                      "Tint": "1,1,1,1"
+                    },
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "e2fa3a16-783f-4f5d-bb02-c3756f03f4ad",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": false
+                    }
+                  ]
+                },
+                {
+                  "__guid": "57e2de49-7634-4a24-9ad1-da8e23e6726f",
+                  "Flags": 0,
+                  "Name": "ice",
+                  "Position": "-1744.255,3704.898,-10020",
+                  "Scale": "100,100,1",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "6dc28175-ffe8-4b3f-8ac9-bae329a3b253",
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/serpent/ice.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "On",
+                      "Tint": "1,1,1,1"
+                    },
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "9a355dd2-2218-4e3c-94f6-29e9160015b2",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "__guid": "15a93671-6992-4b89-b3b7-89f8b615d5e5",
+              "Flags": 0,
+              "Name": "Obstacles",
+              "Position": "0,0,0",
+              "Enabled": true
+            },
+            {
+              "__guid": "0d82bad3-ea63-45e9-8178-7af56f27048f",
+              "Flags": 0,
+              "Name": "tail_hoop",
+              "Position": "2463.643,-343.3188,-10302.48",
+              "Rotation": "-0.3394293,-0.5405272,0.6203127,0.4558841",
+              "Scale": "3.5,3.5,3.5",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "be125883-3380-4435-9b2b-e564a47ed9bf",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/serpent/tail_hoop.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "Spinner",
+                  "__guid": "9a200d7c-550c-48ed-b2c3-8191adf01e2c",
+                  "RotateAmount": 45,
+                  "RotateAxis": "0,0,1"
                 }
               ]
             }
