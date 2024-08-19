@@ -4,6 +4,7 @@
 public sealed class FallStage : Component
 {
 	[Property] public Color SkyColor { get; set; } = Color.Black;
+	[Property] public bool IsFinish { get; set; } = false;
 
 	public float SkyEndZ = float.NaN;
 	public float StageEndZ = float.NaN;

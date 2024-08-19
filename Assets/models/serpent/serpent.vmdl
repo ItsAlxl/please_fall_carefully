@@ -36,7 +36,7 @@
 							exclude_by_default = true
 							exception_list = 
 							[
-								"Mesh_0",
+								"serpent",
 							]
 						}
 					},
@@ -64,11 +64,10 @@
 						qemError = 0.0
 						import_filter = 
 						{
-							exclude_by_default = false
+							exclude_by_default = true
 							exception_list = 
 							[
-								"Cube_002",
-								"Cube_001",
+								"serpent",
 							]
 						}
 					},

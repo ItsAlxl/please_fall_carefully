@@ -39,19 +39,20 @@ public sealed class StageController : Component
 	private void BeginStage( int idx )
 	{
 		var plr = CareFall.Game.plr;
-		if ( idx < stages.Count )
+		var stage = idx < stages.Count ? stages[idx] : null;
+		if ( stage?.IsFinish != false )
 		{
-			var stage = stages[idx];
+			plr.TakeStageSky( stage );
+			plr.FinishRun();
+		}
+		else
+		{
 			var prevZ = Transform.Position.z;
 
 			Transform.Position = Transform.Position.WithZ( prevZ + plr.VerticalBound - stage.Transform.Position.z );
 			Transform.ClearInterpolation();
 			plr.AdvanceStage( stage, Transform.Position.z - prevZ, idx > 0 );
 			stage.Begin();
-		}
-		else
-		{
-			plr.FinishRun();
 		}
 		currentStage = idx;
 	}

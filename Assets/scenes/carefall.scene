@@ -201,6 +201,7 @@
             {
               "__type": "FallStage",
               "__guid": "69385520-0ae2-46ef-aa80-1b3dd4dc4a09",
+              "IsFinish": false,
               "SkyColor": "0.02353,0.07843,0.0549,1"
             }
           ],
@@ -209,7 +210,7 @@
               "__guid": "9f3adf3c-9c96-45c3-b660-48da6cf1839e",
               "Flags": 0,
               "Name": "PlrStart",
-              "Position": "0,0,-100000",
+              "Position": "0,0,5",
               "Enabled": true
             },
             {
@@ -1530,6 +1531,7 @@
             {
               "__type": "FallStage",
               "__guid": "31854d41-13d4-4923-9c9b-4091d544ade9",
+              "IsFinish": false,
               "SkyColor": "0.52549,0.71765,0.83529,1"
             }
           ],
@@ -3216,10 +3218,25 @@
             {
               "__type": "FallStage",
               "__guid": "170fdd1f-0291-47ea-b4d1-4cde7a30ef31",
+              "IsFinish": false,
               "SkyColor": "0.65098,0.4,0.32941,1"
             }
           ],
           "Children": [
+            {
+              "__guid": "1627e717-1873-4ef9-8ecd-a28311f0d79a",
+              "Flags": 0,
+              "Name": "EndSky",
+              "Position": "2198.469,2006.649,-118153.5",
+              "Enabled": true
+            },
+            {
+              "__guid": "a496ffae-15b2-4127-85df-114a5de061db",
+              "Flags": 0,
+              "Name": "EndStage",
+              "Position": "2198.469,2006.649,-120409.2",
+              "Enabled": true
+            },
             {
               "__guid": "d393183e-be71-4545-868e-87b79548e863",
               "Flags": 0,
@@ -3406,6 +3423,50 @@
                   "__guid": "9a200d7c-550c-48ed-b2c3-8191adf01e2c",
                   "RotateAmount": 45,
                   "RotateAxis": "0,0,1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "__guid": "76801634-f86f-4ed9-a788-bbe74ebc4597",
+          "Flags": 0,
+          "Name": "End",
+          "Position": "4727.93,4423.236,-277565.5",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "FallStage",
+              "__guid": "649edba7-78d0-4f1c-9882-89304afdfa02",
+              "IsFinish": true,
+              "SkyColor": "0.52549,0.71765,0.83529,1"
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "1bfee1df-075d-40e8-a14c-a9aff0907253",
+              "Flags": 0,
+              "Name": "Cube",
+              "Position": "-2570.466,-2367.807,-1361.469",
+              "Scale": "100,100,1",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "d4e97aa6-b5fd-4c02-848d-22ea8c87da18",
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": "materials/forest/varnish.vmat",
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "Sandbox.BoxCollider",
+                  "__guid": "e929e3c7-718d-4b17-ac9a-84c3ae193893",
+                  "Center": "0,0,0",
+                  "IsTrigger": false,
+                  "Scale": "50,50,50",
+                  "Static": false
                 }
               ]
             }
