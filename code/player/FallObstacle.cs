@@ -1,3 +1,5 @@
+using System;
+
 [Group( "CareFall" )]
 [Title( "(don't use in editor) Fall Obstacle" )]
 [Icon( "disabled_by_default" )]
@@ -11,6 +13,11 @@ public sealed class FallObstacle : Component
 	const float SCRAPE_B = 1.0f;
 	const float TINT_STR = 0.5f;
 
+	const float LERP_SPEED_UP = 1.0f;
+	const float LERP_SPEED_DOWN = -4.0f;
+	private float LerpTarget = -1.0f;
+	private float LerpProgress = -1.0f;
+
 	private class ModelData
 	{
 		public Color original;
@@ -22,6 +29,11 @@ public sealed class FallObstacle : Component
 			original = original_tint;
 			scraping = GetTintedColor( SCRAPE_R, SCRAPE_G, SCRAPE_B );
 			bumped = GetTintedColor( BUMP_R, BUMP_G, BUMP_B );
+		}
+
+		public Color GetLerpedColor( float lerp )
+		{
+			return Color.Lerp( scraping, bumped, lerp );
 		}
 
 		private Color GetTintedColor( float r, float g, float b )
@@ -58,6 +70,17 @@ public sealed class FallObstacle : Component
 	{
 		return col_data.Any( kvp => kvp.Value.scraping );
 	}
+	protected override void OnUpdate()
+	{
+		if ( !LerpProgress.AlmostEqual( LerpTarget ) )
+		{
+			LerpProgress = Math.Clamp( LerpProgress + (Time.Delta * (LerpProgress < LerpTarget ? LERP_SPEED_UP : LERP_SPEED_DOWN)), 0.0f, 1.0f );
+			foreach ( var kvp in model_data )
+			{
+				kvp.Key.Tint = kvp.Value.GetLerpedColor( LerpProgress );
+			}
+		}
+	}
 
 	public bool StartScrape( Collider col )
 	{
@@ -65,14 +88,8 @@ public sealed class FallObstacle : Component
 
 		bool newScrape = !IsScraping();
 		col_data[col].scraping = true;
+		LerpTarget = 0.0f;
 
-		if ( newScrape )
-		{
-			foreach ( var kvp in model_data )
-			{
-				kvp.Key.Tint = kvp.Value.scraping;
-			}
-		}
 		return newScrape;
 	}
 
@@ -84,10 +101,7 @@ public sealed class FallObstacle : Component
 
 		if ( endScrape )
 		{
-			foreach ( var kvp in model_data )
-			{
-				kvp.Key.Tint = kvp.Value.bumped;
-			}
+			LerpTarget = 1.0f;
 		}
 		return endScrape;
 	}
@@ -95,6 +109,8 @@ public sealed class FallObstacle : Component
 	public void Restore()
 	{
 		GameObject.Tags.Remove( "pfc-bumped" );
+		LerpProgress = -1.0f;
+		LerpTarget = -1.0f;
 		foreach ( var kvp in model_data )
 		{
 			kvp.Key.Tint = kvp.Value.original;

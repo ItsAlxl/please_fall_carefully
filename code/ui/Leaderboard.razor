@@ -32,7 +32,6 @@
 
 	protected override void OnAwake()
 	{
-		CareFall.Game.leaderboard = this;
 		board.MaxEntries = 10;
 		board.Group = "global";
 
@@ -42,7 +41,7 @@
 
 	public async void UpdateLeaderboard()
 	{
-		if (!fetching)
+		if (!fetching && !Application.IsEditor)
 		{
 			fetching = true;
 			await board.Refresh();

@@ -79,7 +79,7 @@ public sealed class Player : Component
 	{
 		var go = col.GameObject;
 		var tags = go.Tags;
-		if ( Flying && !tags.Has( "pfc-ignore" ) )
+		if ( !tags.Has( "pfc-ignore" ) )
 		{
 			FallObstacle obstacle = go.Components.GetOrCreate<FallObstacle>();
 			if ( !tags.Has( "pfc-bumped" ) )
@@ -99,7 +99,7 @@ public sealed class Player : Component
 	{
 		var go = col.GameObject;
 		var tags = go.Tags;
-		if ( !tags.Has( "pfc-ignore" ) && tags.Has( "pfc-bumped" ) && go.Components.Get<FallObstacle>().EndScrape( col ) )
+		if ( tags.Has( "pfc-bumped" ) && go.Components.Get<FallObstacle>().EndScrape( col ) )
 		{
 			scrapeCount--;
 		}
@@ -190,8 +190,11 @@ public sealed class Player : Component
 	public void Die()
 	{
 		Alive = false;
-		Sandbox.Services.Stats.Increment( FinishedRun ? "wins" : "deaths", 1 );
-		Sandbox.Services.Stats.SetValue( "high-score", GetScore() );
+		if ( !Application.IsEditor )
+		{
+			Sandbox.Services.Stats.Increment( FinishedRun ? "wins" : "deaths", 1 );
+			Sandbox.Services.Stats.SetValue( "high-score", GetScore() );
+		}
 	}
 
 	public void FinishRun()
