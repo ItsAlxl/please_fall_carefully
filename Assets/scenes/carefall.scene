@@ -3651,6 +3651,26 @@
                   "RotateAxis": "0,0,1"
                 }
               ]
+            },
+            {
+              "__guid": "1f8bd588-903a-45c7-afde-21a5e2b81fec",
+              "Flags": 0,
+              "Name": "Point Light",
+              "Position": "560.1025,1020.545,-9505.359",
+              "Tags": "light_point,light",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.PointLight",
+                  "__guid": "918d9479-0002-44e5-9d9c-e4dac38f78c8",
+                  "Attenuation": 0,
+                  "FogMode": "Enabled",
+                  "FogStrength": 1,
+                  "LightColor": "2,2,2,1",
+                  "Radius": 400,
+                  "Shadows": true
+                }
+              ]
             }
           ]
         },
