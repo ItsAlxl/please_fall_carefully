@@ -13,4 +13,12 @@ public sealed class CareFall
 
 	public Player plr;
 	public StageController stages;
+	public PanelComponent leaderboard;
+
+	public delegate void RestartEventHandler();
+	public event RestartEventHandler RestartEvent;
+	public void RaiseRestartEvent()
+	{
+		RestartEvent?.Invoke();
+	}
 }

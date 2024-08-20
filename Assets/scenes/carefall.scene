@@ -262,7 +262,7 @@
                   "HorizontalAlign": "Center",
                   "InteractionRange": 0,
                   "LookAtCamera": false,
-                  "PanelSize": "42000,2000",
+                  "PanelSize": "4500,2000",
                   "RenderScale": 4,
                   "VerticalAlign": "Center"
                 },
@@ -276,7 +276,7 @@
               "__guid": "b1975fa7-d93c-4039-a925-6048d9acb9ad",
               "Flags": 0,
               "Name": "Credits",
-              "Position": "-200,0,55",
+              "Position": "-342.001,0,55",
               "Rotation": "0,0,0.00000005960464,-0.9999999",
               "Enabled": true,
               "Components": [
@@ -286,13 +286,61 @@
                   "HorizontalAlign": "Center",
                   "InteractionRange": 0,
                   "LookAtCamera": false,
-                  "PanelSize": "3500,2000",
+                  "PanelSize": "3200,2000",
                   "RenderScale": 4,
                   "VerticalAlign": "Center"
                 },
                 {
                   "__type": "Credits",
                   "__guid": "3e52f5f7-7feb-447e-8205-40a0d4ddb9ac"
+                }
+              ]
+            },
+            {
+              "__guid": "7a4deb67-cd1d-4b3f-871a-65062fe74474",
+              "Flags": 0,
+              "Name": "Instructions",
+              "Position": "-31.40594,-77.5873,53.17188",
+              "Rotation": "0,0,-0.7071066,-0.7071068",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.WorldPanel",
+                  "__guid": "2dd0a1e3-09bc-4056-8b55-53395bb55830",
+                  "HorizontalAlign": "Center",
+                  "InteractionRange": 0,
+                  "LookAtCamera": false,
+                  "PanelSize": "2500,1500",
+                  "RenderScale": 4,
+                  "VerticalAlign": "Center"
+                },
+                {
+                  "__type": "Instructions",
+                  "__guid": "49b605ec-9905-42bc-86ac-9bab162e6d4a"
+                }
+              ]
+            },
+            {
+              "__guid": "8c2b1bb3-ea32-4338-8704-c068483a6344",
+              "Flags": 0,
+              "Name": "Leaderboard",
+              "Position": "-89.91161,78.60566,53.17188",
+              "Rotation": "0,0,-0.7071069,0.7071065",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.WorldPanel",
+                  "__guid": "871d49d5-e471-4f9f-a386-efe5a55049ce",
+                  "HorizontalAlign": "Center",
+                  "InteractionRange": 0,
+                  "LookAtCamera": false,
+                  "PanelSize": "2500,1750",
+                  "RenderScale": 4,
+                  "VerticalAlign": "Center"
+                },
+                {
+                  "__type": "Leaderboard",
+                  "__guid": "9785d410-31c2-4823-848f-600272b6ebe7"
                 }
               ]
             },

@@ -4,11 +4,6 @@
 
 <root>
 	<div class="hud-alive @(IsAlive() ? "" : "hidden")">
-		<div class="score-container @(IsFlying() ? "hidden" : "")">
-			<label class="score-hint">Get a BUMP for each new obstacle you get close to.</label>
-			<label class="score-hint">Be fully &amp; tightly surrounded for a SQUEEZE.</label>
-			<label class="score-hint">Continuously get SCRAPES by staying close to obstacles.</label>
-		</div>
 		<div class="score-container @(IsFlying() ? "" : "hidden")">
 			<div class="score-box">
 				<label class="score-number">@(GetBumps())</label>
@@ -23,7 +18,7 @@
 				<label class="score-label">SCRAPES</label>
 			</div>
 		</div>
-		
+
 		<div class="popup-stage @(ShowStageMessage() ? "" : "hidden")">
 			<label class="score-label">STAGE COMPLETE</label>
 		</div>
@@ -49,8 +44,7 @@
 
 	public int GetScore()
 	{
-		return (CareFall.SCORE_STAGE_AMT * GetStages()) + (CareFall.SCORE_SQUEEZE_AMT * GetSqueezes()) +
-		(CareFall.SCORE_BUMP_AMT * GetBumps()) + GetScrapes();
+		return CareFall.Game.plr?.GetScore() ?? 0;
 	}
 
 	public int GetBumps()
@@ -93,7 +87,13 @@
 		return CareFall.Game.plr?.LastStageCompletion < 2.5f && GetStages() > 0;
 	}
 
-	protected override int BuildHash() => System.HashCode.Combine(GetBumps(), GetSqueezes(), GetScrapes(), GetStages(),
-	ShowStageMessage(), IsAlive(),
-	IsFlying());
+	protected override int BuildHash() => System.HashCode.Combine(
+	GetBumps(),
+	GetSqueezes(),
+	GetScrapes(),
+	GetStages(),
+	ShowStageMessage(),
+	IsAlive(),
+	IsFlying()
+	);
 }

@@ -1,3 +1,4 @@
+using System.IO;
 using Sandbox.Audio;
 
 [Group( "CareFall" )]
@@ -33,6 +34,7 @@ public sealed class StageController : Component
 		{
 			obstacle.Restore();
 		}
+		CareFall.Game.RaiseRestartEvent();
 		CareFall.Game.plr.Respawn();
 	}
 

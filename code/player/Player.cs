@@ -178,13 +178,29 @@ public sealed class Player : Component
 		}
 	}
 
+	public int GetScore()
+	{
+		return
+			(CareFall.SCORE_STAGE_AMT * ScoreStages) +
+			(CareFall.SCORE_SQUEEZE_AMT * ScoreSqueezes) +
+			(CareFall.SCORE_BUMP_AMT * ScoreBumps) +
+			(int)ScoreScrapes;
+	}
+
+	public void Die()
+	{
+		Alive = false;
+		Sandbox.Services.Stats.Increment( FinishedRun ? "wins" : "deaths", 1 );
+		Sandbox.Services.Stats.SetValue( "high-score", GetScore() );
+	}
+
 	public void FinishRun()
 	{
-		if ( CanScore() )
+		if ( Alive )
 		{
 			ScoreStage();
 			FinishedRun = true;
-			Alive = false;
+			Die();
 		}
 	}
 
@@ -332,7 +348,7 @@ public sealed class Player : Component
 		}
 		if ( Alive && dVelSq >= DVelSqKill )
 		{
-			Alive = false;
+			Die();
 		}
 
 		if ( !Flying || !Alive )

@@ -1,13 +1,12 @@
-Credits {
+Instructions {
 	width: 100%;
 	height: 100%;
-	font-size: 48px;
 	font-weight: bold;
 	font-family: Poppins;
 	color: #fff;
 	display: flex;
-	flex-direction: column;
-	text-shadow: -2px 2px 0 #000;
+	flex-direction: row;
+	text-shadow: -1px 1px 0 #000;
 	background-color: #00000080;
 	border: #000;
 	border-width: 5px;
@@ -21,15 +20,17 @@ Credits {
 	.category {
 		display: flex;
 		flex-direction: column;
-		padding-top: 10px;
 	}
 
 	.title {
-		font-size: 16px;
+		padding-top: 16px;
+		font-size: 26px;
 		line-height: 14px;
 	}
 
-	.byline {
+	.hint {
 		font-size: 12px;
+		line-height: 14px;
+		padding-top: 16px;
 	}
 }

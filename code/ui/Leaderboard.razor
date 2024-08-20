@@ -1,0 +1,75 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System.Threading;
+@inherits PanelComponent
+
+<root>
+	<label class="title">Least Careful Fallers</label>
+	<div class="scoreboard">
+		<div class="row header">
+			<label class="col rank">#</label>
+			<label class="col plr">Faller</label>
+			<label class="col score">Score</label>
+		</div>
+		@for (int i = 0; i < 10; i++)
+		{
+			<div class="row">
+				<label class="col rank">@(GetLeaderboardData(i, "rank"))</label>
+				<label class="col plr">@(GetLeaderboardData(i, "plr"))</label>
+				<label class="col score">@(GetLeaderboardData(i, "score"))</label>
+			</div>
+		}
+	</div>
+</root>
+
+@code
+{
+	private bool fetching = false;
+
+	private double last_fetch = -1;
+
+	Sandbox.Services.Leaderboards.Board board = Sandbox.Services.Leaderboards.Get("scoreboard");
+
+	protected override void OnAwake()
+	{
+		CareFall.Game.leaderboard = this;
+		board.MaxEntries = 10;
+		board.Group = "global";
+
+		CareFall.Game.RestartEvent += UpdateLeaderboard;
+		UpdateLeaderboard();
+	}
+
+	public async void UpdateLeaderboard()
+	{
+		if (!fetching)
+		{
+			fetching = true;
+			await board.Refresh();
+			last_fetch = Sandbox.RealTime.GlobalNow;
+			fetching = false;
+		}
+	}
+
+	private string GetLeaderboardData(int idx, string key)
+	{
+		var entries = board.Entries;
+		if (idx >= 0 && idx < entries.Length)
+		{
+			switch (key)
+			{
+				case "rank":
+					return entries[idx].Rank.ToString();
+				case "plr":
+					return entries[idx].DisplayName;
+				case "score":
+					return entries[idx].Value.ToString();
+				default:
+					return "???";
+			}
+		}
+		return "---";
+	}
+
+	protected override int BuildHash() => System.HashCode.Combine(last_fetch);
+}
