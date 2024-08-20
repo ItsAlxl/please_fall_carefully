@@ -210,7 +210,7 @@
               "__guid": "9f3adf3c-9c96-45c3-b660-48da6cf1839e",
               "Flags": 0,
               "Name": "PlrStart",
-              "Position": "0,0,5",
+              "Position": "0,0,-207899",
               "Enabled": true
             },
             {
@@ -3333,110 +3333,288 @@
                   ]
                 },
                 {
-                  "__guid": "53ea20af-8241-4bab-b2de-ea19253d0eb5",
+                  "__guid": "2be53d72-baca-44b4-a749-76fcb43e96c5",
                   "Flags": 0,
-                  "Name": "ice",
-                  "Position": "-2113.897,-1295.296,-10020",
-                  "Scale": "100,100,1",
+                  "Name": "icesheet",
+                  "Position": "563.5988,1043.041,-10020",
+                  "Rotation": "0,0,-1,0.0000001947072",
                   "Enabled": true,
                   "Components": [
                     {
                       "__type": "Sandbox.ModelRenderer",
-                      "__guid": "25572806-1add-4bdc-a9c7-77f9abcf447a",
+                      "__guid": "f1d4b4d6-1653-4ee9-adda-96513e4c3c6b",
                       "BodyGroups": 18446744073709551615,
-                      "MaterialOverride": "materials/serpent/ice.vmat",
-                      "Model": "models/dev/box.vmdl",
+                      "Model": "models/icesheet/icesheet.vmdl",
                       "RenderType": "On",
                       "Tint": "1,1,1,1"
                     },
                     {
-                      "__type": "Sandbox.BoxCollider",
-                      "__guid": "98d8aea4-1a30-4bc7-9de0-3e3407223ca9",
-                      "Center": "0,0,0",
+                      "__type": "Sandbox.ModelCollider",
+                      "__guid": "4a900a11-43a6-46d6-a599-3015e0a57914",
                       "IsTrigger": false,
-                      "Scale": "50,50,50",
-                      "Static": false
+                      "Model": "models/icesheet/icesheet.vmdl",
+                      "Static": true
                     }
                   ]
                 },
                 {
                   "__guid": "a2064db4-0ab5-4dea-8faa-6f647b12936b",
                   "Flags": 0,
-                  "Name": "ice",
-                  "Position": "2885.94,-1657.781,-10020",
-                  "Scale": "100,100,1",
+                  "Name": "wall0",
+                  "Position": "262.4809,7526.426,-6370.078",
+                  "Rotation": "0.7071067,0,0,0.7071068",
+                  "Scale": "200,200,10",
                   "Enabled": true,
                   "Components": [
-                    {
-                      "__type": "Sandbox.ModelRenderer",
-                      "__guid": "be454284-ac1d-4e5b-9164-ace1840747e2",
-                      "BodyGroups": 18446744073709551615,
-                      "MaterialOverride": "materials/serpent/ice.vmat",
-                      "Model": "models/dev/box.vmdl",
-                      "RenderType": "On",
-                      "Tint": "1,1,1,1"
-                    },
                     {
                       "__type": "Sandbox.BoxCollider",
                       "__guid": "3c6067fd-15f1-45de-a3aa-c7a5426c5957",
                       "Center": "0,0,0",
                       "IsTrigger": false,
                       "Scale": "50,50,50",
-                      "Static": false
+                      "Static": true
+                    },
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "17fdea49-b699-4cd9-b7d7-0e44b9118ead",
+                      "__enabled": false,
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/forest/sky_2o3.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.50233,0.50233,0.50233,1"
                     }
                   ]
                 },
                 {
-                  "__guid": "42c40d3c-de03-445a-8311-24302f180a0b",
+                  "__guid": "f711c4b9-fc0c-42ce-82d6-7587f4b5b25d",
                   "Flags": 0,
-                  "Name": "ice",
-                  "Position": "3257.473,3339.239,-10020",
-                  "Scale": "100,100,1",
+                  "Name": "wall0",
+                  "Position": "5564.74,5433.954,-6370.078",
+                  "Rotation": "0.6532815,-0.270598,-0.2705981,0.6532816",
+                  "Scale": "200,200,10",
                   "Enabled": true,
                   "Components": [
                     {
-                      "__type": "Sandbox.ModelRenderer",
-                      "__guid": "185e4019-99b6-4b95-8bc6-06e20953d854",
-                      "BodyGroups": 18446744073709551615,
-                      "MaterialOverride": "materials/serpent/ice.vmat",
-                      "Model": "models/dev/box.vmdl",
-                      "RenderType": "On",
-                      "Tint": "1,1,1,1"
-                    },
-                    {
                       "__type": "Sandbox.BoxCollider",
-                      "__guid": "e2fa3a16-783f-4f5d-bb02-c3756f03f4ad",
+                      "__guid": "5e00659a-a9c0-47f1-81b2-2a3510ef6305",
                       "Center": "0,0,0",
                       "IsTrigger": false,
                       "Scale": "50,50,50",
-                      "Static": false
+                      "Static": true
+                    },
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "34ce2414-8d7c-46c9-9033-8c4fea982132",
+                      "__enabled": false,
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/forest/sky_2o3.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.50233,0.50233,0.50233,1"
                     }
                   ]
                 },
                 {
-                  "__guid": "57e2de49-7634-4a24-9ad1-da8e23e6726f",
+                  "__guid": "0a9057ba-00d0-44ea-8bc0-81a9fde94f5a",
                   "Flags": 0,
-                  "Name": "ice",
-                  "Position": "-1744.255,3704.898,-10020",
-                  "Scale": "100,100,1",
+                  "Name": "wall0",
+                  "Position": "6702.833,687.2202,-6370.078",
+                  "Rotation": "0.5000001,-0.4999999,-0.5000001,0.5000001",
+                  "Scale": "200,200,10",
                   "Enabled": true,
                   "Components": [
                     {
-                      "__type": "Sandbox.ModelRenderer",
-                      "__guid": "6dc28175-ffe8-4b3f-8ac9-bae329a3b253",
-                      "BodyGroups": 18446744073709551615,
-                      "MaterialOverride": "materials/serpent/ice.vmat",
-                      "Model": "models/dev/box.vmdl",
-                      "RenderType": "On",
-                      "Tint": "1,1,1,1"
-                    },
-                    {
                       "__type": "Sandbox.BoxCollider",
-                      "__guid": "9a355dd2-2218-4e3c-94f6-29e9160015b2",
+                      "__guid": "59777584-6e80-4692-a98b-5eccbfd7d52e",
                       "Center": "0,0,0",
                       "IsTrigger": false,
                       "Scale": "50,50,50",
-                      "Static": false
+                      "Static": true
+                    },
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "765745be-a988-4429-8b7c-cec140500cd6",
+                      "__enabled": false,
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/forest/sky_2o3.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.50233,0.50233,0.50233,1"
+                    }
+                  ]
+                },
+                {
+                  "__guid": "2ce589d7-f6c7-431e-824f-1d0079123a1f",
+                  "Flags": 0,
+                  "Name": "wall0",
+                  "Position": "-8171.495,1263.661,-6370.078",
+                  "Rotation": "0.5000001,-0.4999999,-0.5000001,0.5000001",
+                  "Scale": "200,200,10",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "205add97-8339-4710-bbd2-0307b5e019d9",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": true
+                    },
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "349cb7a7-04a5-4c2c-8f28-39afe4c3160a",
+                      "__enabled": false,
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/forest/sky_2o3.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.50233,0.50233,0.50233,1"
+                    }
+                  ]
+                },
+                {
+                  "__guid": "04fdd633-0e9a-4b3d-bd8c-1bcc207f4685",
+                  "Flags": 0,
+                  "Name": "wall0",
+                  "Position": "2505.976,-388.6848,-9785.984",
+                  "Rotation": "-0.0000000412906,0.00000009920388,0.1957425,0.9806553",
+                  "Scale": "9.620694,43.70572,14.97538",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "15fa0421-f44e-42a0-9d22-327d54c433d9",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": true
+                    },
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "445783d6-59bf-440e-a916-a3795a3381d0",
+                      "__enabled": false,
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/forest/sky_2o3.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.50233,0.50233,0.50233,1"
+                    }
+                  ]
+                },
+                {
+                  "__guid": "9b3cd76b-a1a5-4053-91bb-89cebe4e53a0",
+                  "Flags": 0,
+                  "Name": "wall0",
+                  "Position": "4280.403,-4340.717,-6370.078",
+                  "Rotation": "0.2705982,-0.6532815,-0.6532816,0.2705982",
+                  "Scale": "200,200,10",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "e9100b32-d057-4d68-9a09-e9b34fdddfa5",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": true
+                    },
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "15d4a9c2-6dd7-4152-acf7-4aba4b72889b",
+                      "__enabled": false,
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/forest/sky_2o3.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.50233,0.50233,0.50233,1"
+                    }
+                  ]
+                },
+                {
+                  "__guid": "37a4c924-1204-4640-a632-b758db1d8067",
+                  "Flags": 0,
+                  "Name": "wall0",
+                  "Position": "-5954.736,5688.416,-6370.078",
+                  "Rotation": "0.2705982,-0.6532815,-0.6532816,0.2705982",
+                  "Scale": "200,200,10",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "bc7852b2-6f94-4935-b528-3ea1230ec969",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": true
+                    },
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "9a0df184-a89e-4fbe-828e-aab0fe272f4e",
+                      "__enabled": false,
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/forest/sky_2o3.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.50233,0.50233,0.50233,1"
+                    }
+                  ]
+                },
+                {
+                  "__guid": "a85021c5-9add-497e-bb8d-c622c27eb355",
+                  "Flags": 0,
+                  "Name": "wall0",
+                  "Position": "-2642.661,-7277.306,-6370.078",
+                  "Rotation": "0.0000001639128,-0.7071068,-0.7071069,0.0000001192093",
+                  "Scale": "200,200,10",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "c8114109-d7ae-4b61-a6b1-19fffbd377de",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": true
+                    },
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "aeea1b61-8e23-41a9-92ac-0c4f6fb29161",
+                      "__enabled": false,
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/forest/sky_2o3.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.50233,0.50233,0.50233,1"
+                    }
+                  ]
+                },
+                {
+                  "__guid": "dc717007-3c68-4289-9956-9730c41d3c14",
+                  "Flags": 0,
+                  "Name": "wall0",
+                  "Position": "-5694.837,-5347.639,-6370.078",
+                  "Rotation": "-0.2705979,-0.6532816,-0.6532817,-0.2705979",
+                  "Scale": "200,200,10",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.BoxCollider",
+                      "__guid": "a9da3391-4d23-4378-ac1f-34505f9e3623",
+                      "Center": "0,0,0",
+                      "IsTrigger": false,
+                      "Scale": "50,50,50",
+                      "Static": true
+                    },
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "079ed532-373e-41f3-8514-decc86677c20",
+                      "__enabled": false,
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": "materials/forest/sky_2o3.vmat",
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "0.50233,0.50233,0.50233,1"
                     }
                   ]
                 }
