@@ -10,7 +10,7 @@
         {
           "__type": "Sandbox.CameraComponent",
           "__guid": "cf3cbf96-22b6-4be4-a5d0-672a96c17f9f",
-          "BackgroundColor": "0,0,0,1",
+          "BackgroundColor": "0.11765,0.24706,0.37255,1",
           "ClearFlags": "All",
           "FieldOfView": 60,
           "IsMainCamera": true,
@@ -3684,11 +3684,44 @@
             {
               "__type": "FallStage",
               "__guid": "649edba7-78d0-4f1c-9882-89304afdfa02",
+              "HideModel": {
+                "_type": "component",
+                "component_id": "ac6e1cdb-f9d8-4f16-9b47-ebb87b474db6",
+                "go": "4f23f58f-7b3e-41d6-a5d6-ff3f042249c9",
+                "component_type": "ModelRenderer"
+              },
               "IsFinish": true,
-              "SkyColor": "0.52549,0.71765,0.83529,1"
+              "SkyColor": "0.11765,0.24706,0.37255,1"
             }
           ],
           "Children": [
+            {
+              "__guid": "e79f2c80-2764-4ee4-8357-d50e54cfeeb2",
+              "Flags": 0,
+              "Name": "OnBegin",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "Children": [
+                {
+                  "__guid": "3a832f8b-8a32-4a4d-b135-bae94ac0cffa",
+                  "Flags": 0,
+                  "Name": "corpse",
+                  "Position": "-4166.097,-3384.287,109622.9",
+                  "Rotation": "-0,0,1,-0.00000004371139",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.ModelRenderer",
+                      "__guid": "6a967ca6-fa9a-4cf0-ae88-77379dd6ee62",
+                      "BodyGroups": 18446744073709551615,
+                      "Model": "models/serpent/corpse.vmdl",
+                      "RenderType": "On",
+                      "Tint": "1,1,1,1"
+                    }
+                  ]
+                }
+              ]
+            },
             {
               "__guid": "1bfee1df-075d-40e8-a14c-a9aff0907253",
               "Flags": 0,

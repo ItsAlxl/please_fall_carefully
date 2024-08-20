@@ -3,6 +3,7 @@
 [Icon( "waterfall_chart" )]
 public sealed class FallStage : Component
 {
+	[Property] public ModelRenderer HideModel { get; set; } = null;
 	[Property] public Color SkyColor { get; set; } = Color.Black;
 	[Property] public bool IsFinish { get; set; } = false;
 
@@ -17,10 +18,7 @@ public sealed class FallStage : Component
 		StageEndZ = GameObject.Children.Find( c => c.Name == "EndStage" )?.Transform.LocalPosition.z ?? float.NaN;
 
 		BeginObject = GameObject.Children.Find( c => c.Name == "OnBegin" );
-		if ( BeginObject is not null )
-		{
-			BeginObject.Enabled = false;
-		}
+		Restore();
 	}
 
 	public void Begin()
@@ -28,6 +26,22 @@ public sealed class FallStage : Component
 		if ( BeginObject is not null )
 		{
 			BeginObject.Enabled = true;
+		}
+		if (HideModel is not null)
+		{
+			HideModel.Enabled = false;
+		}
+	}
+
+	public void Restore()
+	{
+		if ( BeginObject is not null )
+		{
+			BeginObject.Enabled = false;
+		}
+		if ( HideModel is not null )
+		{
+			HideModel.Enabled = true;
 		}
 	}
 }

@@ -29,6 +29,10 @@ public sealed class StageController : Component
 
 	public void RestartToBeginning()
 	{
+		foreach ( var s in stages)
+		{
+			s.Restore();
+		}
 		BeginStage( 0 );
 		foreach ( var obstacle in Scene.GetAllComponents<FallObstacle>() )
 		{
@@ -54,8 +58,8 @@ public sealed class StageController : Component
 			Transform.Position = Transform.Position.WithZ( prevZ + plr.VerticalBound - stage.Transform.Position.z );
 			Transform.ClearInterpolation();
 			plr.AdvanceStage( stage, Transform.Position.z - prevZ, idx > 0 );
-			stage.Begin();
 		}
+		stage.Begin();
 		currentStage = idx;
 	}
 
