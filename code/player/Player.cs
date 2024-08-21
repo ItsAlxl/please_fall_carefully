@@ -11,6 +11,8 @@ public sealed class Player : Component
 	const int SQUEEZE_COL_THRESHOLD = FEELERS_PER_LAYER / 16;
 	const int SQUEEZE_MAX_THRESHOLD = FEELERS_PER_LAYER - SQUEEZE_COL_THRESHOLD - 1;
 	const float SQUEEZE_COOLDOWN = 0.15f;
+	const float FOOTLIGHT_RADIUS_MAX = 3200.0f;
+	const float FOOTLIGHT_RADIUS_SPEED = FOOTLIGHT_RADIUS_MAX / 2.5f;
 
 	[Property] public float RunSpeed { get; set; } = 150.0f;
 	[Property] public float FlySpeed { get; set; } = 4250.0f;
@@ -44,6 +46,9 @@ public sealed class Player : Component
 	public int ScoreSqueezes = 0;
 	public int ScoreStages = 0;
 
+	public int NumWins = 0;
+	public int NumDeaths = 0;
+
 	private readonly Mixer mixerScore = Mixer.FindMixerByName( "Scoring" );
 	private readonly Mixer mixerSmack = Mixer.FindMixerByName( "Impacts" );
 	private SoundHandle scrapeSound = null;
@@ -56,14 +61,21 @@ public sealed class Player : Component
 	private readonly Vector3[] feelerDirs = new Vector3[FEELER_LAYERS * FEELERS_PER_LAYER];
 	private HashSet<Collider> prevCols = new( FEELER_LAYERS * FEELERS_PER_LAYER );
 	private readonly HashSet<Collider> newCols = new( FEELER_LAYERS * FEELERS_PER_LAYER );
+	private float FootLightRadiusTarget = 0.0f;
 
 	private CameraComponent Camera;
+	private PointLight FootLight;
 
 	protected override void OnAwake()
 	{
 		CareFall.Game.plr = this;
 		Camera = Scene.GetAllComponents<CameraComponent>().FirstOrDefault( x => x.IsMainCamera );
+		FootLight = GameObject.Children.Find( c => c.Name == "Light" ).Components.Get<PointLight>();
 		RunBounciness = CharacterController.Bounciness;
+
+		var plrStats = Sandbox.Services.Stats.GetLocalPlayerStats( Game.Ident );
+		NumDeaths = (int)plrStats.Get( "deaths" ).Value;
+		NumWins = (int)plrStats.Get( "wins" ).Value;
 
 		const float feelerStep = (float)Math.Tau / FEELERS_PER_LAYER;
 		const float layerStep = (float)Math.PI * 0.25f / FEELER_LAYERS;
@@ -131,6 +143,11 @@ public sealed class Player : Component
 			EyeAngles = e;
 
 			Transform.Rotation = new Angles( 0, EyeAngles.yaw, 0 );
+
+			if ( FootLight.Radius < FootLightRadiusTarget )
+			{
+				FootLight.Radius = Math.Min( FootLight.Radius + (FOOTLIGHT_RADIUS_SPEED * Time.Delta), FootLightRadiusTarget );
+			}
 		}
 	}
 
@@ -189,12 +206,22 @@ public sealed class Player : Component
 
 	public void Die()
 	{
-		Alive = false;
+		if ( FinishedRun )
+		{
+			NumWins++;
+		}
+		else
+		{
+			NumDeaths++;
+		}
+
 		if ( !Application.IsEditor )
 		{
 			Sandbox.Services.Stats.Increment( FinishedRun ? "wins" : "deaths", 1 );
 			Sandbox.Services.Stats.SetValue( "high-score", GetScore() );
 		}
+
+		Alive = false;
 	}
 
 	public void FinishRun()
@@ -231,12 +258,15 @@ public sealed class Player : Component
 	{
 		CharacterController.Bounciness = RunBounciness;
 		Flying = false;
+		FootLight.Radius = 0.0f;
+		FootLightRadiusTarget = 0.0f;
 	}
 
 	private void BeginFlight()
 	{
 		CharacterController.Bounciness = FlyBounciness;
 		Flying = true;
+		FootLightRadiusTarget = FOOTLIGHT_RADIUS_MAX;
 	}
 
 	private void CheckFeelers()
@@ -367,6 +397,11 @@ public sealed class Player : Component
 				BeginFlight();
 			}
 		}
+	}
+
+	public bool JustBeganRun()
+	{
+		return lastGrounded > FlyTime && lastGrounded < (FlyTime + 2.5f);
 	}
 
 	protected override void OnPreRender()

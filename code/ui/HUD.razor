@@ -19,22 +19,23 @@
 			</div>
 		</div>
 
-		<div class="popup-stage @(ShowStageMessage() ? "" : "hidden")">
-			<label class="score-label">STAGE COMPLETE</label>
+		<div class="popup-stage @(ShowMessage() ? "" : "hidden")">
+			<label class="score-label">@(ShowAttemptMessage() ? ("ATTEMPT # " + (GetDeaths() + GetWins() + 1)) :
+				"STAGE COMPLETE")</label>
 		</div>
 	</div>
 	<div class="hud-dead@((IsAlive() ? " hidden" : "") + (HasFinished() ? " winner" : " loser"))">
-		<label class="rip @(HasFinished() ? "hidden" : "")">YOU HAVE PERISHED</label>
-		<label class="rip @(HasFinished() ? "" : "hidden")">YOU HAVE SURVIVED</label>
+		<label class="small">ATTEMPT # @(GetWins() + GetDeaths())</label>
+		<label class="rip">YOU HAVE @(HasFinished() ? "SURVIVED" : "PERISHED")</label>
+		<label class="small">FOR THE @(Ordinate(HasFinished() ? GetWins() : GetDeaths())) TIME</label>
 		<div class="score-tally">
-			<label class="score-tuple">SCRAPES: @(GetScrapes()) x1</label>
-			<label class="score-tuple">BUMPS: @(GetBumps()) x@(CareFall.SCORE_BUMP_AMT)</label>
-			<label class="score-tuple">SQUEEZES: @(GetSqueezes()) x@(CareFall.SCORE_SQUEEZE_AMT)</label>
-			<label class="score-tuple">STAGES: @(GetStages()) x@(CareFall.SCORE_STAGE_AMT)</label>
-			<label class="score-tuple">FINAL SCORE: @(GetScore())</label>
-			<label class="score-tuple"></label>
-			<label class="score-tuple">PRESS '@(restartAct?.KeyboardCode.ToUpper())' TO RESTART</label>
+			<label>SCRAPES: @(GetScrapes()) x1</label>
+			<label>BUMPS: @(GetBumps()) x@(CareFall.SCORE_BUMP_AMT)</label>
+			<label>SQUEEZES: @(GetSqueezes()) x@(CareFall.SCORE_SQUEEZE_AMT)</label>
+			<label>STAGES: @(GetStages()) x@(CareFall.SCORE_STAGE_AMT)</label>
+			<label>FINAL SCORE: @(GetScore())</label>
 		</div>
+		<label class="small">PRESS '@(restartAct?.KeyboardCode.ToUpper())' TO RESTART</label>
 	</div>
 </root>
 
@@ -82,9 +83,51 @@
 		return CareFall.Game.plr?.FinishedRun ?? false;
 	}
 
+	public bool ShowAttemptMessage()
+	{
+		return CareFall.Game.plr?.JustBeganRun() ?? false;
+	}
+
 	public bool ShowStageMessage()
 	{
-		return CareFall.Game.plr?.LastStageCompletion < 2.5f && GetStages() > 0;
+		return GetStages() > 0 && CareFall.Game.plr?.LastStageCompletion < 2.5f;
+	}
+
+	public bool ShowMessage()
+	{
+		return ShowAttemptMessage() || ShowStageMessage();
+	}
+
+	public int GetDeaths()
+	{
+		return CareFall.Game.plr?.NumDeaths ?? 0;
+	}
+
+	public int GetWins()
+	{
+		return CareFall.Game.plr?.NumWins ?? 0;
+	}
+
+	public string Ordinate(int i)
+	{
+		var s = i.ToString();
+		i %= 100;
+		if (i >= 11 && i <= 13)
+		{
+			return s + "TH";
+		}
+
+		switch (i % 10)
+		{
+			case 1:
+				return s + "ST";
+			case 2:
+				return s + "ND";
+			case 3:
+				return s + "RD";
+			default:
+				return s + "TH";
+		}
 	}
 
 	protected override int BuildHash() => System.HashCode.Combine(
@@ -92,7 +135,7 @@
 	GetSqueezes(),
 	GetScrapes(),
 	GetStages(),
-	ShowStageMessage(),
+	ShowMessage(),
 	IsAlive(),
 	IsFlying()
 	);

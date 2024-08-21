@@ -86,7 +86,7 @@
           "Components": [
             {
               "__type": "HUD",
-              "__guid": "f4469225-97e9-4d11-81e0-2469c956660e"
+              "__guid": "49c4698f-7cb1-49db-9846-734b8648451c"
             }
           ]
         }
@@ -166,16 +166,27 @@
           "MaxFallSpeed": -5000,
           "RunSpeed": 150,
           "VerticalBound": 100000
-        },
+        }
+      ],
+      "Children": [
         {
-          "__type": "Sandbox.PointLight",
-          "__guid": "b8c89e2e-7edc-4c63-9af3-228d64f343f8",
-          "Attenuation": 0.01,
-          "FogMode": "Disabled",
-          "FogStrength": 1,
-          "LightColor": "0.91373,0.98039,1,1",
-          "Radius": 3200,
-          "Shadows": true
+          "__guid": "9dc4ba1a-dbcc-4a34-a620-92b46d767746",
+          "Flags": 0,
+          "Name": "Light",
+          "Position": "0,0,16",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.PointLight",
+              "__guid": "f6f91945-b026-4213-8bf9-4a784515941e",
+              "Attenuation": 0.01,
+              "FogMode": "Disabled",
+              "FogStrength": 1,
+              "LightColor": "0.91373,0.98039,1,1",
+              "Radius": 3200,
+              "Shadows": true
+            }
+          ]
         }
       ]
     },
@@ -210,7 +221,7 @@
               "__guid": "9f3adf3c-9c96-45c3-b660-48da6cf1839e",
               "Flags": 0,
               "Name": "PlrStart",
-              "Position": "0,0,-207899",
+              "Position": "0,0,5",
               "Enabled": true
             },
             {
