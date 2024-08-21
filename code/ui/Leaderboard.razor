@@ -41,7 +41,7 @@
 
 	public async void UpdateLeaderboard()
 	{
-		if (!fetching && !Application.IsEditor)
+		if (!fetching)
 		{
 			fetching = true;
 			await board.Refresh();

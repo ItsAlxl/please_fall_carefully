@@ -356,6 +356,30 @@
               ]
             },
             {
+              "__guid": "a15269bf-1660-4841-ae81-69553f3a03ce",
+              "Flags": 0,
+              "Name": "AttemptCount",
+              "Position": "-206.511,78.60548,53.17188",
+              "Rotation": "0,0,-0.7071069,0.7071065",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.WorldPanel",
+                  "__guid": "83364ce4-47af-4eca-852f-f3b03fe03c9f",
+                  "HorizontalAlign": "Center",
+                  "InteractionRange": 0,
+                  "LookAtCamera": false,
+                  "PanelSize": "1750,1750",
+                  "RenderScale": 4,
+                  "VerticalAlign": "Center"
+                },
+                {
+                  "__type": "AttemptCount",
+                  "__guid": "aaae9580-2618-404d-87af-e555baa2682b"
+                }
+              ]
+            },
+            {
               "__guid": "0347e29b-8361-4908-9282-50a102d30237",
               "Flags": 0,
               "Name": "ic_start",

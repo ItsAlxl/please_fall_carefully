@@ -1,0 +1,33 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div class="title">Careful Falls</div>
+	<div class="count">@NumWins</div>
+	<div class="title">Careless Falls</div>
+	<div class="count">@NumDeaths</div>
+</root>
+
+@code
+{
+	public int NumDeaths = 0;
+	public int NumWins = 0;
+
+	protected override void OnAwake()
+	{
+		CareFall.Game.RestartEvent += UpdateCounts;
+		UpdateCounts();
+	}
+
+	public void UpdateCounts()
+	{
+		var plrStats = Sandbox.Services.Stats.GetLocalPlayerStats(Game.Ident);
+		var gblStats = Sandbox.Services.Stats.GetGlobalStats(Game.Ident);
+		NumDeaths = (int)gblStats.Get("deaths").Value - (int)plrStats.Get("deaths").Value + (CareFall.Game.plr?.NumDeaths ??
+		0);
+		NumWins = (int)gblStats.Get("wins").Value - (int)plrStats.Get("wins").Value + (CareFall.Game.plr?.NumWins ?? 0);
+	}
+
+	protected override int BuildHash() => System.HashCode.Combine(NumDeaths, NumWins);
+}
